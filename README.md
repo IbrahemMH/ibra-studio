@@ -15,10 +15,13 @@
 
 A professional offer page where people can:
 
-1. Browse **18+ live website templates**
-2. Filter by type (gym, market, clinic, restaurant, salon, shop…)
-3. Preview each template in **English and Arabic**
-4. Request design-only or a full site online
+1. Browse **6 featured** templates (18 total demos)
+2. Preview each template in **English and Arabic**
+3. Switch **JOD | USD** next to language
+4. See **pricing packages** (`pricing.html` + `PRICING.md`)
+5. Open templates with real photos + **brand kit** (fonts + color squares)
+
+See **PRICING.md** for full package explanation and default prices.
 
 ---
 

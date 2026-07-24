@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ibra Studio pricing by Ibrahim — template customize, custom design, full website online. JOD and USD." />
+  <title>Pricing · Ibra Studio by Ibrahim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .price-page { padding: 3rem 0 4rem; }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+    .price-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 1.4rem; display: flex; flex-direction: column; gap: .75rem;
+    }
+    .price-card.featured { border-color: rgba(61,255,168,.4); box-shadow: 0 0 0 1px rgba(61,255,168,.15); }
+    .price-card h3 { font-family: var(--font-display); font-size: 1.25rem; }
+    .price-card .amount { font-family: var(--font-display); font-size: 1.6rem; color: var(--accent); letter-spacing: -.02em; }
+    .price-card ul { color: var(--muted); font-size: .92rem; padding-inline-start: 1.1rem; display: grid; gap: .35rem; flex: 1; }
+    .price-note { color: var(--muted); max-width: 40rem; margin-top: 1rem; font-size: .95rem; }
+    .back-row { margin-bottom: 1.5rem; }
+    @media (max-width: 900px) { .price-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">IS</span>
+        <span>Ibra Studio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#templates" data-i18n="nav_templates">Templates</a></li>
+        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-toggle" aria-label="Language">
+          <button type="button" data-lang="en" class="active">EN</button>
+          <button type="button" data-lang="ar">ع</button>
+        </div>
+        <div class="currency-toggle" aria-label="Currency">
+          <button type="button" data-currency="JOD" class="active">JOD</button>
+          <button type="button" data-currency="USD">USD</button>
+        </div>
+        <a class="btn btn-primary btn-sm btn-nav-cta" href="index.html#contact" data-i18n="nav_cta">Request a site</a>
+        <button class="menu-btn" type="button" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="price-page">
+    <div class="container">
+      <div class="back-row"><a class="btn btn-ghost btn-sm" href="index.html" data-i18n="back_home">← Home</a></div>
+      <div class="section-head">
+        <div class="section-label" data-i18n="pricing_label">Pricing</div>
+        <h2 data-i18n="pricing_title">Clear packages. Fair starting prices.</h2>
+        <p data-i18n="pricing_lead">Ibra Studio by Ibrahim — pick a package. Switch currency anytime (JOD / USD). Final quote depends on your scope.</p>
+      </div>
+
+      <div class="price-grid">
+        <article class="price-card">
+          <h3 data-i18n="pkg_a_title">A — Template customize</h3>
+          <div class="amount" data-jod-range="50-80"></div>
+          <p style="color:var(--muted);font-size:.92rem" data-i18n="pkg_a_what">What it is: take a ready template and make it yours.</p>
+          <ul>
+            <li data-i18n="pkg_a_1">Logo, colors, text, photos</li>
+            <li data-i18n="pkg_a_2">EN and/or AR</li>
+            <li data-i18n="pkg_a_3">Mobile-friendly pages</li>
+            <li data-i18n="pkg_a_4">1–2 revision rounds</li>
+          </ul>
+          <a class="btn btn-ghost" data-whatsapp data-i18n="pkg_cta">WhatsApp to order</a>
+        </article>
+        <article class="price-card featured">
+          <h3 data-i18n="pkg_b_title">B — Custom design</h3>
+          <div class="amount" data-jod-range="100-180"></div>
+          <p style="color:var(--muted);font-size:.92rem" data-i18n="pkg_b_what">What it is: unique design direction built for your brand.</p>
+          <ul>
+            <li data-i18n="pkg_b_1">Custom layouts & brand feel</li>
+            <li data-i18n="pkg_b_2">Not locked to one template</li>
+            <li data-i18n="pkg_b_3">Polished multi-section pages</li>
+            <li data-i18n="pkg_b_4">Design files / preview</li>
+          </ul>
+          <a class="btn btn-primary" data-whatsapp data-i18n="pkg_cta">WhatsApp to order</a>
+        </article>
+        <article class="price-card">
+          <h3 data-i18n="pkg_c_title">C — Full site online</h3>
+          <div class="amount" data-jod-range="150-300"></div>
+          <p style="color:var(--muted);font-size:.92rem" data-i18n="pkg_c_what">What it is: design + build + publish so people can open your link.</p>
+          <ul>
+            <li data-i18n="pkg_c_1">Everything in design packages</li>
+            <li data-i18n="pkg_c_2">Live hosting setup help</li>
+            <li data-i18n="pkg_c_3">Contact / WhatsApp ready</li>
+            <li data-i18n="pkg_c_4">Go-live checklist</li>
+          </ul>
+          <a class="btn btn-ghost" data-whatsapp data-i18n="pkg_cta">WhatsApp to order</a>
+        </article>
+      </div>
+
+      <p class="price-note" data-i18n="pricing_note">
+        Prices are starting ranges in JOD (switch to USD above). Logo from zero, payments systems, or heavy apps are quoted separately. Full details also in PRICING.md for Ibrahim.
+      </p>
+      <p class="price-note">
+        <strong data-i18n="c_email">Email</strong>: <a data-email-link>ibraheem.ha2@hotmail.com</a> ·
+        <strong data-i18n="c_phone">Phone</strong>: <a data-phone href="tel:+962792939802">+962 792939802</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span data-i18n="footer">Ibra Studio · by Ibrahim</span>
+      <span data-i18n="footer_host">Website design & templates</span>
+    </div>
+  </footer>
+
+  <script src="js/currency.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

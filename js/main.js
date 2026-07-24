@@ -5,8 +5,35 @@ const i18n = {
     nav_templates: "Templates",
     nav_services: "Services",
     nav_process: "Process",
+    nav_pricing: "Pricing",
     nav_contact: "Contact",
     nav_cta: "Request a site",
+    back_home: "← Home",
+    pricing_label: "Pricing",
+    pricing_title: "Clear packages. Fair starting prices.",
+    pricing_lead: "Ibra Studio by Ibrahim — pick a package. Switch currency anytime (JOD / USD). Final quote depends on your scope.",
+    pkg_a_title: "A — Template customize",
+    pkg_a_what: "What it is: take a ready template and make it yours.",
+    pkg_a_1: "Logo, colors, text, photos",
+    pkg_a_2: "EN and/or AR",
+    pkg_a_3: "Mobile-friendly pages",
+    pkg_a_4: "1–2 revision rounds",
+    pkg_b_title: "B — Custom design",
+    pkg_b_what: "What it is: unique design direction built for your brand.",
+    pkg_b_1: "Custom layouts & brand feel",
+    pkg_b_2: "Not locked to one template",
+    pkg_b_3: "Polished multi-section pages",
+    pkg_b_4: "Design files / preview",
+    pkg_c_title: "C — Full site online",
+    pkg_c_what: "What it is: design + build + publish so people can open your link.",
+    pkg_c_1: "Everything in design packages",
+    pkg_c_2: "Live hosting setup help",
+    pkg_c_3: "Contact / WhatsApp ready",
+    pkg_c_4: "Go-live checklist",
+    pkg_cta: "WhatsApp to order",
+    pricing_note: "Prices are starting ranges in JOD (switch to USD above). Logo from zero, payments systems, or heavy apps are quoted separately.",
+    home_pricing_title: "Simple pricing",
+    home_pricing_lead: "Starting ranges — open full details or switch JOD / USD in the header.",
     eyebrow: "Design studio · Templates · Full websites",
     hero_title: "I design websites people actually want to",
     hero_title_accent: "hire you from",
@@ -86,8 +113,35 @@ const i18n = {
     nav_templates: "القوالب",
     nav_services: "الخدمات",
     nav_process: "الخطوات",
+    nav_pricing: "الأسعار",
     nav_contact: "تواصل",
     nav_cta: "اطلب موقعاً",
+    back_home: "← الرئيسية",
+    pricing_label: "الأسعار",
+    pricing_title: "باقات واضحة. أسعار بداية عادلة.",
+    pricing_lead: "Ibra Studio بواسطة إبراهيم — اختر باقة. بدّل العملة في أي وقت (دينار / دولار). السعر النهائي حسب حجم العمل.",
+    pkg_a_title: "أ — تخصيص قالب",
+    pkg_a_what: "ما هي: قالب جاهز نعدّله ليصبح لك.",
+    pkg_a_1: "شعار وألوان ونصوص وصور",
+    pkg_a_2: "عربي و/أو إنجليزي",
+    pkg_a_3: "صفحات متوافقة مع الجوال",
+    pkg_a_4: "جولة أو اثنتان من التعديلات",
+    pkg_b_title: "ب — تصميم مخصص",
+    pkg_b_what: "ما هي: اتجاه تصميم فريد لعلامتك.",
+    pkg_b_1: "تخطيطات وإحساس علامة",
+    pkg_b_2: "غير مقيد بقالب واحد",
+    pkg_b_3: "صفحات متعددة مصقولة",
+    pkg_b_4: "ملفات تصميم / معاينة",
+    pkg_c_title: "ج — موقع كامل أونلاين",
+    pkg_c_what: "ما هي: تصميم + بناء + نشر ليصل الناس لرابطك.",
+    pkg_c_1: "كل ما في باقات التصميم",
+    pkg_c_2: "مساعدة إعداد الاستضافة",
+    pkg_c_3: "تواصل / واتساب جاهز",
+    pkg_c_4: "قائمة إطلاق",
+    pkg_cta: "واتساب للطلب",
+    pricing_note: "الأسعار نطاقات بداية بالدينار (بدّل للدولار أعلاه). الشعار من الصفر أو أنظمة الدفع تُسعَّر منفصلة.",
+    home_pricing_title: "أسعار بسيطة",
+    home_pricing_lead: "نطاقات بداية — افتح التفاصيل أو بدّل دينار/دولار من الأعلى.",
     eyebrow: "استوديو تصميم · قوالب · مواقع كاملة",
     hero_title: "أصمّم مواقع تجعل الناس",
     hero_title_accent: "تثق بك وتتواصل معك",
@@ -184,8 +238,7 @@ function applyLang(lang) {
   });
   localStorage.setItem("ibra_lang", lang);
   renderCatalog(lang);
-  const activeFilter = document.querySelector(".filter-btn.active");
-  if (activeFilter) applyFilter(activeFilter.dataset.filter);
+  if (window.IbraMoney) IbraMoney.applyAll();
 }
 
 function initLang() {
@@ -210,9 +263,13 @@ function renderCatalog(lang) {
         .join("");
       const bg = item.color || "linear-gradient(145deg,#222,#444)";
       const accent = item.accent || "#3dffa8";
+      const thumb = item.thumb
+        ? `<img class="thumb-img" src="${item.thumb}" alt="" loading="lazy" />`
+        : "";
       return `
       <article class="template-card" data-category="${item.category}">
         <a class="template-preview" href="${item.path}" target="_blank" rel="noopener" style="--thumb:${bg};--thumb-accent:${accent}" aria-label="${loc.title}">
+          ${thumb}
           <span class="thumb-ui">
             <span class="thumb-dot"></span><span class="thumb-dot"></span><span class="thumb-dot"></span>
           </span>

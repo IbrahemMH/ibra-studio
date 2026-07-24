@@ -25,6 +25,7 @@
       <ul class="nav-links">
         <li><a href="#templates" data-i18n="nav_templates">Templates</a></li>
         <li><a href="#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
         <li><a href="#process" data-i18n="nav_process">Process</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
@@ -32,6 +33,10 @@
         <div class="lang-toggle" aria-label="Language">
           <button type="button" data-lang="en" class="active">EN</button>
           <button type="button" data-lang="ar">ع</button>
+        </div>
+        <div class="currency-toggle" aria-label="Currency">
+          <button type="button" data-currency="JOD" class="active">JOD</button>
+          <button type="button" data-currency="USD">USD</button>
         </div>
         <a class="btn btn-primary btn-sm btn-nav-cta" href="#contact" data-i18n="nav_cta">Request a site</a>
         <button class="menu-btn" type="button" aria-label="Menu">☰</button>
@@ -128,6 +133,33 @@
           <p data-i18n="templates_lead">Open a live preview. Like one? Message me and we’ll make it yours.</p>
         </div>
         <div class="templates-grid" id="templates-grid"></div>
+      </div>
+    </section>
+
+    <section id="pricing-home">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label" data-i18n="pricing_label">Pricing</div>
+          <h2 data-i18n="home_pricing_title">Simple pricing</h2>
+          <p data-i18n="home_pricing_lead">Starting ranges — open full details or switch JOD / USD in the header.</p>
+        </div>
+        <div class="home-price-row">
+          <article class="home-price-card">
+            <h3 data-i18n="pkg_a_title">A — Template customize</h3>
+            <div class="amount" data-jod-range="50-80"></div>
+          </article>
+          <article class="home-price-card featured">
+            <h3 data-i18n="pkg_b_title">B — Custom design</h3>
+            <div class="amount" data-jod-range="100-180"></div>
+          </article>
+          <article class="home-price-card">
+            <h3 data-i18n="pkg_c_title">C — Full site online</h3>
+            <div class="amount" data-jod-range="150-300"></div>
+          </article>
+        </div>
+        <div style="margin-top:1.25rem">
+          <a class="btn btn-primary" href="pricing.html" data-i18n="nav_pricing">Pricing</a>
+        </div>
       </div>
     </section>
 
@@ -236,6 +268,7 @@
     </div>
   </footer>
 
+  <script src="js/currency.js"></script>
   <script src="js/catalog.js"></script>
   <script src="js/main.js"></script>
 </body>

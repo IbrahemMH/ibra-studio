@@ -7,63 +7,87 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Literata:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  
   <style>
-:root{--bg:#fff7ed;--text:#3b2a1a;--muted:#7c6654;--card:#fffdf8;--line:#f0e0cc;--accent:#ea580c;--on-accent:#fff;--accent-soft:rgba(234,88,12,.12);--panel:linear-gradient(145deg,#fed7aa,#fff7ed 50%,#fdba74);--display:'Literata';--body:'Source Sans 3';--max:1040px}
+:root{--display:'Literata';--body:'Source Sans 3';--bg:#fff7ed;--text:#3b2a1a;--muted:#7c6654;--card:#fffdf8;--line:#f0e0cc;--accent:#ea580c;--on-accent:#fff;--max:1040px}
 
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1rem;background:rgba(0,0,0,.35);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.back{font-size:.85rem;font-weight:600;opacity:.85}
-.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.lang-btn{border:0;background:transparent;color:var(--muted);padding:.35rem .7rem;cursor:pointer;font-weight:700;font-size:.8rem}
-.lang-btn.active{background:var(--accent-soft,rgba(255,255,255,.08));color:var(--accent)}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.9}
+.toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
+.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
-.nav-links{display:flex;gap:1.1rem;list-style:none;color:var(--muted);font-size:.92rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.2rem;font-weight:700;border:0;cursor:pointer}
+.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
 .btn-a{background:var(--accent);color:var(--on-accent,#111)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2.5rem 0 2rem}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;margin-bottom:.75rem}
-h1{font-family:var(--display),serif;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.85rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.35rem;font-size:1.05rem}
-.cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1rem 0 3rem}
-.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;align-items:center}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem}
-.card h3{font-family:var(--display),serif;font-size:1.2rem;margin-bottom:.4rem}
-.card p{color:var(--muted);font-size:.93rem}
-.price{display:block;margin-top:.65rem;font-weight:800;color:var(--accent)}
-.panel{border-radius:22px;border:1px solid var(--line);min-height:280px;background:var(--panel)}
-.section{padding:1rem 0 3rem}
-.section h2{font-family:var(--display),serif;font-size:1.7rem;margin-bottom:1rem;letter-spacing:-.02em}
-.footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
-@media(max-width:800px){.grid3,.grid2{grid-template-columns:1fr}.nav-links{display:none}}
+.hero{padding:2rem 0 1.5rem}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
+h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
+.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
+.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.section{padding:1.2rem 0 2.5rem}
+.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card-img{aspect-ratio:16/11;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:1rem}
+.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
+.card p{color:var(--muted);font-size:.9rem}
+.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.brand-row{margin-bottom:1rem}
+.brand-row:last-child{margin-bottom:0}
+.brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
+.font-lines{display:grid;gap:.35rem;font-size:.95rem}
+.font-lines strong{color:var(--accent)}
+.swatches{display:flex;flex-wrap:wrap;gap:.75rem}
+.swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
+.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-meta{display:flex;flex-direction:column;line-height:1.25}
+.swatch-name{font-size:.82rem;font-weight:600}
+.swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
+.footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
+@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
 
   </style>
 </head>
 <body>
   <div class="topbar">
     <a class="back" href="../../index.html" data-i18n="back">← Ibra Studio</a>
-    <div class="lang">
-      <button type="button" class="lang-btn active" data-lang="en">EN</button>
-      <button type="button" class="lang-btn" data-lang="ar">ع</button>
+    <div class="toggles">
+      <div class="lang" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="ar">ع</button>
+      </div>
+      <div class="currency-toggle" aria-label="Currency">
+        <button type="button" data-currency="JOD" class="active">JOD</button>
+        <button type="button" data-currency="USD">USD</button>
+      </div>
     </div>
   </div>
-
   <div class="wrap">
     <nav class="site">
       <div class="brand">Family Health Hub</div>
       <ul class="nav-links">
-        <li data-i18n="nav1">Classes</li>
-        <li data-i18n="nav2">Trainers</li>
-        <li data-i18n="nav3">Pricing</li>
+        <li data-i18n="nav1"></li>
+        <li data-i18n="nav2"></li>
+        <li data-i18n="nav3"></li>
       </ul>
-      <a class="btn btn-a" href="#" data-i18n="nav4">Join</a>
+      <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
     <header class="hero grid2">
       <div>
@@ -74,30 +98,119 @@ h1{font-family:var(--display),serif;font-size:clamp(2.1rem,5vw,3.4rem);line-heig
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="cta" style="gap:1.25rem;opacity:.9;font-size:.92rem;color:var(--muted)">
+        <div class="meta">
           <span data-i18n="f1"></span>
           <span data-i18n="f2"></span>
         </div>
       </div>
-      <div class="panel" aria-hidden="true"></div>
+      <div class="hero-photo"><img src="../../assets/images/family/hero.jpg" alt="Family Health Hub" width="800" height="600" /></div>
     </header>
     <section class="section">
       <h2 data-i18n="s_title"></h2>
       <div class="grid3">
-        <article class="card"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price" data-i18n="c1pr"></span></article>
-        <article class="card"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price" data-i18n="c2pr"></span></article>
-        <article class="card"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price" data-i18n="c3pr"></span></article>
+        <article class="card">
+          <div class="card-img"><img src="../../assets/images/family/card1.jpg" alt="" loading="lazy" /></div>
+          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="20"></span></div>
+        </article>
+        <article class="card">
+          <div class="card-img"><img src="../../assets/images/family/card2.jpg" alt="" loading="lazy" /></div>
+          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="15"></span></div>
+        </article>
+        <article class="card">
+          <div class="card-img"><img src="../../assets/images/family/card3.jpg" alt="" loading="lazy" /></div>
+          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price" data-i18n="c3pr"></span></div>
+        </article>
+      </div>
+    </section>
+    <section class="brand-kit" id="brand-kit">
+      <h2><span data-i18n="brand_title">Brand kit</span> · Family Health Hub</h2>
+      <div class="brand-row">
+        <div class="brand-label" data-i18n="fonts_label">Fonts</div>
+        <div class="font-lines">
+          <div><strong>Literata</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
+          <div><strong>Source Sans 3</strong> — body</div>
+        </div>
+      </div>
+      <div class="brand-row">
+        <div class="brand-label" data-i18n="colors_label">Colors</div>
+        <div class="swatches">
+        <div class="swatch">
+          <span class="swatch-sq" style="background:#fff7ed" title="#fff7ed"></span>
+          <span class="swatch-meta">
+            <span class="swatch-name" data-color-en="Warm cream" data-color-ar="كريمي دافئ">Warm cream</span>
+            <span class="swatch-hex">#fff7ed</span>
+          </span>
+        </div>
+        <div class="swatch">
+          <span class="swatch-sq" style="background:#ea580c" title="#ea580c"></span>
+          <span class="swatch-meta">
+            <span class="swatch-name" data-color-en="Care orange" data-color-ar="برتقالي رعاية">Care orange</span>
+            <span class="swatch-hex">#ea580c</span>
+          </span>
+        </div>
+        <div class="swatch">
+          <span class="swatch-sq" style="background:#3b2a1a" title="#3b2a1a"></span>
+          <span class="swatch-meta">
+            <span class="swatch-name" data-color-en="Cocoa text" data-color-ar="نص كاكاو">Cocoa text</span>
+            <span class="swatch-hex">#3b2a1a</span>
+          </span>
+        </div>
+        <div class="swatch">
+          <span class="swatch-sq" style="background:#fed7aa" title="#fed7aa"></span>
+          <span class="swatch-meta">
+            <span class="swatch-name" data-color-en="Soft peach" data-color-ar="خوخي ناعم">Soft peach</span>
+            <span class="swatch-hex">#fed7aa</span>
+          </span>
+        </div>
+        <div class="swatch">
+          <span class="swatch-sq" style="background:#7c6654" title="#7c6654"></span>
+          <span class="swatch-meta">
+            <span class="swatch-name" data-color-en="Warm mute" data-color-ar="دافئ خافت">Warm mute</span>
+            <span class="swatch-hex">#7c6654</span>
+          </span>
+        </div>
+        </div>
       </div>
     </section>
     <footer class="footer">
       <span data-i18n="foot"></span>
-      <span>EN · AR</span>
+      <span>EN · AR · JOD · USD</span>
     </footer>
   </div>
-
   <script src="../shared/lang.js"></script>
+  <script src="../../js/currency.js"></script>
   <script>
-    IbraLang.init({"en": {"back": "← Ibra Studio", "nav1": "Family care", "nav2": "Labs", "nav3": "Hours", "nav4": "Call clinic", "kicker": "Neighborhood family practice", "h1": "One clinic for the whole family.", "lead": "Family Health Hub covers kids, adults, labs, and follow-ups — warm design for a trusted local clinic.", "cta1": "Book for family", "cta2": "Lab services", "s_title": "Why families choose us", "c1t": "Kids & adults", "c1p": "Care under one roof.", "c1pr": "All ages", "c2t": "On-site labs", "c2p": "Fast results, clear reports.", "c2pr": "Same day*", "c3t": "Easy follow-up", "c3p": "Reminders and simple booking.", "c3pr": "WhatsApp", "f1": "Walk-ins welcome", "f2": "Arabic & English staff", "foot": "Family Health Hub · Template by Ibra Studio"}, "ar": {"back": "← Ibra Studio", "nav1": "رعاية العائلة", "nav2": "المختبر", "nav3": "الأوقات", "nav4": "اتصل بالعيادة", "kicker": "عيادة عائلية في الحي", "h1": "عيادة واحدة لكل العائلة.", "lead": "مركز صحة العائلة يغطي الأطفال والكبار والمختبرات والمتابعة — تصميم دافئ لعيادة محلية موثوقة.", "cta1": "احجز للعائلة", "cta2": "خدمات المختبر", "s_title": "لماذا تختاره العائلات", "c1t": "أطفال وكبار", "c1p": "رعاية تحت سقف واحد.", "c1pr": "كل الأعمار", "c2t": "مختبر في الموقع", "c2p": "نتائج سريعة وتقارير واضحة.", "c2pr": "نفس اليوم*", "c3t": "متابعة سهلة", "c3p": "تذكير وحجز بسيط.", "c3pr": "واتساب", "f1": "نستقبل بدون موعد", "f2": "طاقم عربي وإنجليزي", "foot": "مركز صحة العائلة · قالب من Ibra Studio"}});
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Family care", "nav2": "Labs", "nav3": "Hours", "nav4": "Call clinic", "kicker": "Neighborhood family practice", "h1": "One clinic for the whole family.", "lead": "Kids, adults, labs, follow-ups — warm design for a trusted local clinic.", "cta1": "Book for family", "cta2": "Lab services", "s_title": "Why families choose us", "c1t": "Kids & adults", "c1p": "Care under one roof.", "c2t": "On-site labs", "c2p": "Fast clear reports.", "c3t": "Easy follow-up", "c3p": "Reminders via WhatsApp.", "c3pr": "WhatsApp", "suffix": "", "f1": "Walk-ins welcome", "f2": "Arabic & English", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Family Health Hub · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "رعاية العائلة", "nav2": "المختبر", "nav3": "الأوقات", "nav4": "اتصل", "kicker": "عيادة عائلية في الحي", "h1": "عيادة واحدة لكل العائلة.", "lead": "أطفال وكبار ومختبرات — تصميم دافئ لعيادة موثوقة.", "cta1": "احجز للعائلة", "cta2": "المختبر", "s_title": "لماذا العائلات", "c1t": "أطفال وكبار", "c1p": "رعاية تحت سقف واحد.", "c2t": "مختبر في الموقع", "c2p": "تقارير واضحة سريعة.", "c3t": "متابعة سهلة", "c3p": "تذكير عبر واتساب.", "c3pr": "واتساب", "suffix": "", "f1": "بدون موعد", "f2": "عربي وإنجليزي", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "صحة العائلة · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#fff7ed", "en": "Warm cream", "ar": "كريمي دافئ"}, {"hex": "#ea580c", "en": "Care orange", "ar": "برتقالي رعاية"}, {"hex": "#3b2a1a", "en": "Cocoa text", "ar": "نص كاكاو"}, {"hex": "#fed7aa", "en": "Soft peach", "ar": "خوخي ناعم"}, {"hex": "#7c6654", "en": "Warm mute", "ar": "دافئ خافت"}];
+    function paintColorNames(lang) {
+      document.querySelectorAll("[data-color-en]").forEach(function (el) {
+        el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
+      });
+    }
+    function applySuffix() {
+      var lang = document.documentElement.lang === "ar" ? "ar" : "en";
+      var suf = (DICT[lang] && DICT[lang].suffix) || "";
+      document.querySelectorAll(".money-price").forEach(function (el) {
+        el.setAttribute("data-suffix", suf);
+      });
+      if (window.IbraMoney) IbraMoney.applyAll();
+    }
+    var _init = IbraLang.init;
+    IbraLang.init = function (dict) {
+      _init(dict);
+      paintColorNames(document.documentElement.lang === "ar" ? "ar" : "en");
+      applySuffix();
+      document.querySelectorAll(".lang-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setTimeout(function () {
+            paintColorNames(btn.getAttribute("data-lang"));
+            applySuffix();
+          }, 0);
+        });
+      });
+    };
+    IbraLang.init(DICT);
+    document.addEventListener("ibra-currency", applySuffix);
   </script>
 </body>
 </html>

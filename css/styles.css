@@ -140,7 +140,8 @@ textarea {
   gap: 0.6rem;
 }
 
-.lang-toggle {
+.lang-toggle,
+.currency-toggle {
   display: inline-flex;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -148,7 +149,8 @@ textarea {
   background: var(--bg-elevated);
 }
 
-.lang-toggle button {
+.lang-toggle button,
+.currency-toggle button {
   border: 0;
   background: transparent;
   color: var(--muted);
@@ -158,9 +160,46 @@ textarea {
   font-weight: 600;
 }
 
-.lang-toggle button.active {
+.lang-toggle button.active,
+.currency-toggle button.active {
   background: var(--accent-soft);
   color: var(--accent);
+}
+
+.home-price-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.home-price-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.1rem 1.15rem;
+}
+
+.home-price-card.featured {
+  border-color: rgba(61, 255, 168, 0.35);
+}
+
+.home-price-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.home-price-card .amount {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 800px) {
+  .home-price-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .menu-btn {
@@ -525,19 +564,26 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--thumb);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55)), var(--thumb);
+  z-index: 0;
+}
+
+.thumb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
 }
 
 .template-preview::after {
   content: "";
   position: absolute;
-  inset: auto 12% 18% 12%;
-  height: 42%;
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--thumb-accent, var(--accent)) 35%, transparent);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55));
   z-index: 1;
+  pointer-events: none;
 }
 
 .thumb-ui {
