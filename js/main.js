@@ -60,7 +60,8 @@ const i18n = {
     s3_text: "Design + build + publish. Your site goes live on the web so customers can find you.",
     templates_label: "Gallery",
     templates_title: "Template designs",
-    templates_lead: "Filter by business type. Open a live preview — every template works in English and Arabic.",
+    templates_lead: "Default shows 6 featured. Use the tags to open every template by category.",
+    filter_featured: "Featured",
     filter_all: "All",
     filter_gym: "Gym",
     filter_market: "Market",
@@ -168,7 +169,8 @@ const i18n = {
     s3_text: "تصميم + بناء + نشر. موقعك يظهر على الويب ويصل لعملائك.",
     templates_label: "المعرض",
     templates_title: "تصاميم القوالب",
-    templates_lead: "صفّ حسب نوع النشاط. افتح معاينة مباشرة — كل قالب يعمل بالعربي والإنجليزي.",
+    templates_lead: "الافتراضي 6 مميزة. استخدم الوسوم لعرض كل القوالب حسب النوع.",
+    filter_featured: "مميزة",
     filter_all: "الكل",
     filter_gym: "نادي",
     filter_market: "سوق",
@@ -238,6 +240,8 @@ function applyLang(lang) {
   });
   localStorage.setItem("ibra_lang", lang);
   renderCatalog(lang);
+  const active = document.querySelector(".filter-btn.active");
+  applyFilter(active ? active.dataset.filter : "featured");
   if (window.IbraMoney) IbraMoney.applyAll();
 }
 
@@ -250,24 +254,24 @@ function initLang() {
   });
 }
 
+let currentFilter = "featured";
+
 function renderCatalog(lang) {
   const grid = document.getElementById("templates-grid");
   if (!grid || !window.IBRA_CATALOG) return;
   const t = i18n[lang] || i18n.en;
-  const items = window.IBRA_CATALOG.filter((item) => item.featured).slice(0, 6);
-  grid.innerHTML = items
-    .map((item) => {
-      const loc = item[lang] || item.en;
-      const tags = (item.tags || [])
-        .map((tag) => `<span class="tag">${tag}</span>`)
-        .join("");
-      const bg = item.color || "linear-gradient(145deg,#222,#444)";
-      const accent = item.accent || "#3dffa8";
-      const thumb = item.thumb
-        ? `<img class="thumb-img" src="${item.thumb}" alt="" loading="lazy" />`
-        : "";
-      return `
-      <article class="template-card" data-category="${item.category}">
+  grid.innerHTML = window.IBRA_CATALOG.map((item) => {
+    const loc = item[lang] || item.en;
+    const tags = (item.tags || [])
+      .map((tag) => `<span class="tag">${tag}</span>`)
+      .join("");
+    const bg = item.color || "linear-gradient(145deg,#222,#444)";
+    const accent = item.accent || "#3dffa8";
+    const thumb = item.thumb
+      ? `<img class="thumb-img" src="${item.thumb}" alt="" loading="lazy" />`
+      : "";
+    return `
+      <article class="template-card" data-category="${item.category}" data-featured="${item.featured ? "1" : "0"}">
         <a class="template-preview" href="${item.path}" target="_blank" rel="noopener" style="--thumb:${bg};--thumb-accent:${accent}" aria-label="${loc.title}">
           ${thumb}
           <span class="thumb-ui">
@@ -285,13 +289,17 @@ function renderCatalog(lang) {
           </div>
         </div>
       </article>`;
-    })
-    .join("");
+  }).join("");
+  applyFilter(currentFilter);
 }
 
 function applyFilter(f) {
+  currentFilter = f || "featured";
   document.querySelectorAll(".template-card").forEach((card) => {
-    const show = f === "all" || card.dataset.category === f;
+    let show = false;
+    if (currentFilter === "all") show = true;
+    else if (currentFilter === "featured") show = card.dataset.featured === "1";
+    else show = card.dataset.category === currentFilter;
     card.style.display = show ? "" : "none";
   });
 }
@@ -312,9 +320,11 @@ function initFilters() {
     btn.addEventListener("click", () => {
       buttons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      applyFilter(btn.dataset.filter);
+      applyFilter(btn.dataset.filter || "featured");
     });
   });
+  const active = document.querySelector(".filter-btn.active");
+  applyFilter(active ? active.dataset.filter : "featured");
 }
 
 function initForm() {
