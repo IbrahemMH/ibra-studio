@@ -11,38 +11,38 @@
   <style>
 :root{--bg:#f4f7f2;--text:#1c2b1f;--muted:#5b6b5e;--card:#ffffff;--line:#d5e0d4;--accent:#4d7c0f;--on-accent:#fff;--accent-soft:rgba(77,124,15,.12);--panel:linear-gradient(160deg,#d9f99d,#f4f7f2 40%,#bbf7d0);--display:'Fraunces';--body:'Karla';--max:1020px}
 
-*{{box-sizing:border-box;margin:0;padding:0}}
-body{{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}}
-html[dir="rtl"] body{{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}}
-a{{color:inherit;text-decoration:none}}
-.wrap{{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}}
-.topbar{{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}}
-.back{{font-size:.85rem;font-weight:600;opacity:.85}}
-.lang{{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}}
-.lang-btn{{border:0;background:transparent;color:var(--muted);padding:.35rem .7rem;cursor:pointer;font-weight:700;font-size:.8rem}}
-.lang-btn.active{{background:var(--accent-soft,rgba(255,255,255,.08));color:var(--accent)}}
-nav.site{{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}}
-.brand{{font-family:var(--display),serif;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}}
-.nav-links{{display:flex;gap:1.1rem;list-style:none;color:var(--muted);font-size:.92rem;flex-wrap:wrap}}
-.btn{{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.2rem;font-weight:700;border:0;cursor:pointer}}
-.btn-a{{background:var(--accent);color:var(--on-accent,#111)}}
-.btn-g{{background:transparent;border:1px solid var(--line);color:var(--text)}}
-.hero{{padding:2.5rem 0 2rem}}
-.kicker{{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;margin-bottom:.75rem}}
-h1{{font-family:var(--display),serif;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.85rem}}
-.lead{{color:var(--muted);max-width:34rem;margin-bottom:1.35rem;font-size:1.05rem}}
-.cta{{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}}
-.grid3{{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1rem 0 3rem}}
-.grid2{{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;align-items:center}}
-.card{{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem}}
-.card h3{{font-family:var(--display),serif;font-size:1.2rem;margin-bottom:.4rem}}
-.card p{{color:var(--muted);font-size:.93rem}}
-.price{{display:block;margin-top:.65rem;font-weight:800;color:var(--accent)}}
-.panel{{border-radius:22px;border:1px solid var(--line);min-height:280px;background:var(--panel)}}
-.section{{padding:1rem 0 3rem}}
-.section h2{{font-family:var(--display),serif;font-size:1.7rem;margin-bottom:1rem;letter-spacing:-.02em}}
-.footer{{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}}
-@media(max-width:800px){{.grid3,.grid2{{grid-template-columns:1fr}}.nav-links{{display:none}}}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1rem;background:rgba(0,0,0,.35);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.back{font-size:.85rem;font-weight:600;opacity:.85}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang-btn{border:0;background:transparent;color:var(--muted);padding:.35rem .7rem;cursor:pointer;font-weight:700;font-size:.8rem}
+.lang-btn.active{background:var(--accent-soft,rgba(255,255,255,.08));color:var(--accent)}
+nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
+.brand{font-family:var(--display),serif;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
+.nav-links{display:flex;gap:1.1rem;list-style:none;color:var(--muted);font-size:.92rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.2rem;font-weight:700;border:0;cursor:pointer}
+.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
+.hero{padding:2.5rem 0 2rem}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;margin-bottom:.75rem}
+h1{font-family:var(--display),serif;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.85rem}
+.lead{color:var(--muted);max-width:34rem;margin-bottom:1.35rem;font-size:1.05rem}
+.cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1rem 0 3rem}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;align-items:center}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem}
+.card h3{font-family:var(--display),serif;font-size:1.2rem;margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.93rem}
+.price{display:block;margin-top:.65rem;font-weight:800;color:var(--accent)}
+.panel{border-radius:22px;border:1px solid var(--line);min-height:280px;background:var(--panel)}
+.section{padding:1rem 0 3rem}
+.section h2{font-family:var(--display),serif;font-size:1.7rem;margin-bottom:1rem;letter-spacing:-.02em}
+.footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
+@media(max-width:800px){.grid3,.grid2{grid-template-columns:1fr}.nav-links{display:none}}
 
   </style>
 </head>

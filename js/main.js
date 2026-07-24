@@ -17,7 +17,7 @@ const i18n = {
     stat1_label: "Focus",
     stat1_value: "Design first",
     stat2_label: "Templates",
-    stat2_value: "18+ demos",
+    stat2_value: "6 featured",
     stat3_label: "Languages",
     stat3_value: "EN + AR",
     mock_brand: "Your Brand",
@@ -98,7 +98,7 @@ const i18n = {
     stat1_label: "التركيز",
     stat1_value: "التصميم أولاً",
     stat2_label: "القوالب",
-    stat2_value: "+18 عرض",
+    stat2_value: "6 مميزة",
     stat3_label: "اللغات",
     stat3_value: "عربي + إنجليزي",
     mock_brand: "علامتك",
@@ -201,16 +201,23 @@ function renderCatalog(lang) {
   const grid = document.getElementById("templates-grid");
   if (!grid || !window.IBRA_CATALOG) return;
   const t = i18n[lang] || i18n.en;
-  grid.innerHTML = window.IBRA_CATALOG.map((item) => {
-    const loc = item[lang] || item.en;
-    const tags = (item.tags || [])
-      .map((tag) => `<span class="tag">${tag}</span>`)
-      .join("");
-    return `
+  const items = window.IBRA_CATALOG.filter((item) => item.featured).slice(0, 6);
+  grid.innerHTML = items
+    .map((item) => {
+      const loc = item[lang] || item.en;
+      const tags = (item.tags || [])
+        .map((tag) => `<span class="tag">${tag}</span>`)
+        .join("");
+      const bg = item.color || "linear-gradient(145deg,#222,#444)";
+      const accent = item.accent || "#3dffa8";
+      return `
       <article class="template-card" data-category="${item.category}">
-        <div class="template-preview">
-          <iframe src="${item.path}" title="${loc.title} preview" loading="lazy" tabindex="-1"></iframe>
-        </div>
+        <a class="template-preview" href="${item.path}" target="_blank" rel="noopener" style="--thumb:${bg};--thumb-accent:${accent}" aria-label="${loc.title}">
+          <span class="thumb-ui">
+            <span class="thumb-dot"></span><span class="thumb-dot"></span><span class="thumb-dot"></span>
+          </span>
+          <span class="thumb-title">${loc.title}</span>
+        </a>
         <div class="template-body">
           <div class="template-tags">${tags}</div>
           <h3>${loc.title}</h3>
@@ -221,7 +228,8 @@ function renderCatalog(lang) {
           </div>
         </div>
       </article>`;
-  }).join("");
+    })
+    .join("");
 }
 
 function applyFilter(f) {
