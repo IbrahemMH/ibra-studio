@@ -28,11 +28,11 @@
 
   window.IbraLang = {
     init: function (dict) {
-      var saved = "en";
+      var saved = "ar";
       try {
-        saved = localStorage.getItem("ibra_lang") || "en";
+        saved = localStorage.getItem("ibra_lang") || "ar";
       } catch (e) {}
-      if (saved !== "ar" && saved !== "en") saved = "en";
+      if (saved !== "ar" && saved !== "en") saved = "ar";
       apply(dict, saved);
       document.querySelectorAll(".lang-btn").forEach(function (btn) {
         btn.addEventListener("click", function () {
