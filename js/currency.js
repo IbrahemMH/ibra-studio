@@ -46,7 +46,8 @@
       var parts = el.getAttribute("data-jod-range").split("-");
       var a = formatJod(parts[0]);
       var b = formatJod(parts[1]);
-      el.textContent = a + " – " + b;
+      var prefix = el.getAttribute("data-prefix") || "From ";
+      el.textContent = prefix + a + " – " + b;
     });
   }
 
