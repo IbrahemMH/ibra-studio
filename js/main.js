@@ -231,7 +231,9 @@ function applyLang(lang) {
   document.documentElement.dir = t.dir;
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (t[key] != null) el.innerHTML = t[key];
+    if (t[key] == null) return;
+    if (el.tagName === "OPTION") el.textContent = t[key];
+    else el.innerHTML = t[key];
   });
   document.querySelectorAll(".lang-toggle button").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
