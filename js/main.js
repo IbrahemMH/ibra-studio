@@ -256,6 +256,81 @@ function initLang() {
 
 let currentFilter = "featured";
 
+function getPreviews(thumb) {
+  if (!thumb) return [];
+  var base = thumb.replace(/\/[^/]+$/,"/");
+  return [base+"card1.jpg",base+"card2.jpg",base+"card3.jpg"];
+}
+
+/* floating preview popup */
+var previewPopup=null;
+function createPreviewPopup(){
+  if(previewPopup)return;
+  previewPopup=document.createElement("div");
+  previewPopup.className="preview-popup";
+  previewPopup.innerHTML='<div class="pp-inner"><div class="pp-imgs"></div><div class="pp-name"></div></div>';
+  document.body.appendChild(previewPopup);
+}
+
+function showPreviewPopup(card){
+  if(!card||card.dataset.category!=="gym")return;
+  createPreviewPopup();
+  var link=card.querySelector(".template-preview");
+  var src=link?link.getAttribute("href"):"";
+  if(!src)return;
+  var imgs=previewPopup.querySelector(".pp-imgs");
+  imgs.innerHTML='<iframe class="pp-frame" src="'+src+'" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>';
+  previewPopup.querySelector(".pp-name").textContent=card.querySelector("h3")?.textContent||"";
+  /* position */
+  var rect=card.getBoundingClientRect();
+  var gap=12;
+  var left=rect.right+gap;
+  var top=rect.top;
+  var pw=420,ph=340;
+  /* flip if overflow right */
+  if(left+pw>window.innerWidth-16)left=rect.left-pw-gap;
+  /* flip if overflow bottom */
+  if(top+ph>window.innerHeight-16)top=window.innerHeight-ph-16;
+  if(top<16)top=16;
+  previewPopup.style.left=left+"px";
+  previewPopup.style.top=top+"px";
+  previewPopup.style.width=pw+"px";
+  previewPopup.style.display="block";
+}
+
+function hidePreviewPopup(card){
+  if(previewPopup)previewPopup.style.display="none";
+  if(card&&card._ppTimer){clearInterval(card._ppTimer);card._ppTimer=null}
+}
+
+function initHoverPreview(card){
+  var previews = card.querySelectorAll(".thumb-preview");
+  var timer=null,el=card.querySelector(".template-preview");
+  /* floating popup for gym, in-card cycle for others */
+  if(card.dataset.category==="gym"){
+    card.addEventListener("mouseenter",function(){showPreviewPopup(card)});
+    card.addEventListener("mouseleave",function(){hidePreviewPopup(card)});
+  } else {
+    card.addEventListener("mouseenter",function(){
+      var idx=0;
+      if(previews.length<2)return;
+      previews.forEach(function(p,i){p.style.opacity=i===0?"1":"0"});
+      timer=setInterval(function(){
+        previews.forEach(function(p){p.style.opacity="0"});
+        idx=(idx+1)%previews.length;
+        if(previews[idx])previews[idx].style.opacity="1";
+      },1000);
+    });
+    card.addEventListener("mouseleave",function(){
+      if(timer){clearInterval(timer);timer=null}
+      previews.forEach(function(p,i){p.style.opacity=i===0?"1":"0"});
+    });
+  }
+}
+/* hide popup on scroll/resize to avoid stale positioning */
+window.addEventListener("scroll",function(){if(previewPopup)previewPopup.style.display="none"},{passive:true});
+window.addEventListener("resize",function(){if(previewPopup)previewPopup.style.display="none"},{passive:true});
+
 function renderCatalog(lang) {
   const grid = document.getElementById("templates-grid");
   if (!grid || !window.IBRA_CATALOG) return;
@@ -267,13 +342,13 @@ function renderCatalog(lang) {
       .join("");
     const bg = item.color || "linear-gradient(145deg,#222,#444)";
     const accent = item.accent || "#3dffa8";
-    const thumb = item.thumb
-      ? `<img class="thumb-img" src="${item.thumb}" alt="" loading="lazy" />`
-      : "";
+    var previewSrcs = getPreviews(item.thumb);
+    var heroImg = item.thumb ? '<img class="thumb-img thumb-preview" src="'+item.thumb+'" alt="" loading="lazy" />' : "";
+    var extraPreviews = previewSrcs.map(function(s){return '<img class="thumb-preview thumb-extra" src="'+s+'" alt="" loading="lazy" />'}).join("");
     return `
       <article class="template-card" data-category="${item.category}" data-featured="${item.featured ? "1" : "0"}">
         <a class="template-preview" href="${item.path}" target="_blank" rel="noopener" style="--thumb:${bg};--thumb-accent:${accent}" aria-label="${loc.title}">
-          ${thumb}
+          ${heroImg}${extraPreviews}
           <span class="thumb-ui">
             <span class="thumb-dot"></span><span class="thumb-dot"></span><span class="thumb-dot"></span>
           </span>
@@ -291,6 +366,7 @@ function renderCatalog(lang) {
       </article>`;
   }).join("");
   applyFilter(currentFilter);
+  document.querySelectorAll(".template-card").forEach(initHoverPreview);
 }
 
 function applyFilter(f) {

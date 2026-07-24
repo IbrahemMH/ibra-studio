@@ -3,52 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aria Cole Portfolio · Ibra Studio</title>
+  <title>Creative Portfolio · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Fraunces:wght@600;700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Fraunces';--body:'Schibsted Grotesk';--bg:#f6f1e8;--text:#1a1410;--muted:#6b5e52;--card:#fffdf8;--line:#e6dccf;--accent:#c45c26;--on-accent:#fff;--max:1000px}
-
+:root{--display:'DM Serif Display';--body:'Inter';--bg:#f8f5f0;--text:#1e1a16;--muted:#7a7068;--card:#ffffff;--line:rgba(30,26,22,.06);--accent:#c45c26;--accent-light:#f5d6c0;--on-accent:#fff;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(248,245,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(196,92,38,.06)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:#fff}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:600;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
+
+/* hero — editorial header */
+.hero{text-align:center;padding:3rem 0 2rem;max-width:620px;margin:0 auto}
+.hero .kicker{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.5rem}
+.hero h1{font-family:var(--display);font-style:italic;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem}
+.hero .lead{color:var(--muted);font-size:.95rem}
+
+/* polaroid project cards */
+.polaroid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
+.polaroid-grid .pg-item:nth-child(2){margin-top:3rem}
+.polaroid-grid .pg-item:nth-child(3){margin-top:-1rem}
+.polaroid-grid .pg-item:nth-child(4){margin-top:1.5rem}
+.pg-item{background:var(--card);padding:.5rem .5rem 1.2rem;box-shadow:0 8px 30px rgba(196,92,38,.04);transition:transform .2s;cursor:default}
+.pg-item:hover{transform:rotate(0deg) scale(1.01)}
+.pg-item:nth-child(odd){transform:rotate(-1deg)}
+.pg-item:nth-child(even){transform:rotate(1.5deg)}
+.pg-item .pg-img{aspect-ratio:4/3;overflow:hidden;margin-bottom:.6rem}
+.pg-item .pg-img img{width:100%;height:100%;object-fit:cover}
+.pg-item .pg-cat{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.15rem;padding:0 .4rem}
+.pg-item h3{font-family:var(--display);font-size:1rem;font-weight:400;margin-bottom:.15rem;padding:0 .4rem}
+.pg-item p{color:var(--muted);font-size:.82rem;padding:0 .4rem}
+
+/* masonry gallery */
+.masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:2rem}
+.masonry .m-item:first-child{grid-row:span 2}
+.masonry-item{background:var(--card);border:1px solid var(--line);overflow:hidden;position:relative;border-radius:4px}
+.masonry-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.masonry-item:hover img{transform:scale(1.03)}
+.masonry-item .m-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,26,22,.6),transparent 50%);opacity:0;transition:opacity .2s;display:flex;align-items:flex-end;padding:.8rem}
+.masonry-item:hover .m-overlay{opacity:1}
+.masonry-item .m-overlay span{color:#fff;font-size:.85rem;font-weight:500}
+
+/* brand kit */
 .brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem;font-style:italic}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +70,23 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .polaroid-grid{grid-template-columns:1fr}
+  .polaroid-grid .pg-item:nth-child(2),.polaroid-grid .pg-item:nth-child(3),.polaroid-grid .pg-item:nth-child(4){margin-top:0}
+  .pg-item:nth-child(odd),.pg-item:nth-child(even){transform:none}
+  .masonry{grid-template-columns:1fr}
+  .masonry .m-item:first-child{grid-row:auto}
+  .hero{padding:2rem 0 1rem}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -81,7 +105,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   </div>
   <div class="wrap">
     <nav class="site">
-      <div class="brand">Aria Cole Portfolio</div>
+      <div class="brand">Portfolio</div>
       <ul class="nav-links">
         <li data-i18n="nav1"></li>
         <li data-i18n="nav2"></li>
@@ -89,86 +113,47 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
-        <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
-        <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
-          <a class="btn btn-a" href="#" data-i18n="cta1"></a>
-          <a class="btn btn-g" href="#" data-i18n="cta2"></a>
-        </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
-        </div>
-      </div>
-      <div class="hero-photo"><img src="../../assets/images/portfolio/hero.jpg" alt="Aria Cole Portfolio" width="800" height="600" /></div>
-    </header>
-    <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/portfolio/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price" data-i18n="c1pr"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/portfolio/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price" data-i18n="c2pr"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/portfolio/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price" data-i18n="c3pr"></span></div>
-        </article>
-      </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="kicker" data-i18n="kicker"></div>
+      <h1 data-i18n-html="h1"></h1>
+      <p class="lead" data-i18n="lead"></p>
     </section>
+
+    <div class="polaroid-grid reveal">
+      <div class="pg-item"><div class="pg-img"><img src="../../assets/images/portfolio/hero.jpg" alt="" loading="lazy" /></div><div class="pg-cat" data-i18n="cat1"></div><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p></div>
+      <div class="pg-item"><div class="pg-img"><img src="../../assets/images/portfolio/card1.jpg" alt="" loading="lazy" /></div><div class="pg-cat" data-i18n="cat2"></div><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p></div>
+      <div class="pg-item"><div class="pg-img"><img src="../../assets/images/portfolio/card2.jpg" alt="" loading="lazy" /></div><div class="pg-cat" data-i18n="cat3"></div><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p></div>
+      <div class="pg-item"><div class="pg-img"><img src="../../assets/images/portfolio/card3.jpg" alt="" loading="lazy" /></div><div class="pg-cat" data-i18n="cat1"></div><h3 data-i18n="c4t"></h3><p data-i18n="c4p"></p></div>
+    </div>
+
+    <div class="masonry reveal">
+      <div class="masonry-item m-item"><img src="../../assets/images/portfolio/hero.jpg" alt="" loading="lazy" /><div class="m-overlay"><span data-i18n="m1"></span></div></div>
+      <div class="masonry-item"><img src="../../assets/images/portfolio/card1.jpg" alt="" loading="lazy" /><div class="m-overlay"><span data-i18n="m2"></span></div></div>
+      <div class="masonry-item"><img src="../../assets/images/portfolio/card2.jpg" alt="" loading="lazy" /><div class="m-overlay"><span data-i18n="m3"></span></div></div>
+      <div class="masonry-item"><img src="../../assets/images/portfolio/card3.jpg" alt="" loading="lazy" /><div class="m-overlay"><span data-i18n="m4"></span></div></div>
+      <div class="masonry-item"><img src="../../assets/images/portfolio/hero.jpg" alt="" loading="lazy" /><div class="m-overlay"><span data-i18n="m5"></span></div></div>
+    </div>
+
     <section class="brand-kit" id="brand-kit">
-      <h2><span data-i18n="brand_title">Brand kit</span> · Aria Cole Portfolio</h2>
+      <h2><span data-i18n="brand_title">Brand kit</span> · Creative Portfolio</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Fraunces</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Schibsted Grotesk</strong> — body</div>
+          <div><strong>DM Serif Display</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#f6f1e8" title="#f6f1e8"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Paper warm" data-color-ar="ورقي دافئ">Paper warm</span>
-            <span class="swatch-hex">#f6f1e8</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#c45c26" title="#c45c26"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Clay accent" data-color-ar="طيني">Clay accent</span>
-            <span class="swatch-hex">#c45c26</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#1a1410" title="#1a1410"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Ink brown" data-color-ar="بني حبر">Ink brown</span>
-            <span class="swatch-hex">#1a1410</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#d9c3a8" title="#d9c3a8"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Sand tone" data-color-ar="رملي">Sand tone</span>
-            <span class="swatch-hex">#d9c3a8</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#6b5e52" title="#6b5e52"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Muted cocoa" data-color-ar="كاكاو خافت">Muted cocoa</span>
-            <span class="swatch-hex">#6b5e52</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#f8f5f0" title="#f8f5f0"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Warm paper" data-color-ar="ورق دافئ">Warm paper</span><span class="swatch-hex">#f8f5f0</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#c45c26" title="#c45c26"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Terracotta" data-color-ar="طيني محروق">Terracotta</span><span class="swatch-hex">#c45c26</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#f5d6c0" title="#f5d6c0"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Peach skin" data-color-ar="قشر خوخ">Peach skin</span><span class="swatch-hex">#f5d6c0</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#7a7068" title="#7a7068"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Warm gray" data-color-ar="رمادي دافئ">Warm gray</span><span class="swatch-hex">#7a7068</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#ffffff" title="#ffffff"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="White" data-color-ar="أبيض">White</span><span class="swatch-hex">#ffffff</span></span></div>
         </div>
       </div>
     </section>
@@ -180,37 +165,13 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Work", "nav2": "About", "nav3": "Contact", "nav4": "Hire me", "kicker": "Creative portfolio", "h1": "Design with room to breathe.", "lead": "Editorial portfolio for freelancers — big type and project cards.", "cta1": "View selected work", "cta2": "About", "s_title": "Selected projects", "c1t": "Brand system", "c1p": "Identity and packaging.", "c2t": "Studio website", "c2p": "Clean motion-ready layout.", "c3t": "Festival booklet", "c3p": "Typography-led print.", "c1pr": "Case study", "c2pr": "Web", "c3pr": "Print", "suffix": "", "f1": "Available for work", "f2": "Remote friendly", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Portfolio · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الأعمال", "nav2": "نبذة", "nav3": "تواصل", "nav4": "وظّفني", "kicker": "بورتفوليو إبداعي", "h1": "تصميم بمساحة للتنفّس.", "lead": "معرض أعمال للمستقلين — خطوط كبيرة وبطاقات مشاريع.", "cta1": "عرض الأعمال", "cta2": "نبذة", "s_title": "مشاريع مختارة", "c1t": "نظام هوية", "c1p": "هوية وتغليف.", "c2t": "موقع استوديو", "c2p": "تخطيط نظيف.", "c3t": "كتيّب مهرجان", "c3p": "طباعة تعتمد على الخط.", "c1pr": "دراسة حالة", "c2pr": "ويب", "c3pr": "طباعة", "suffix": "", "f1": "متاح للعمل", "f2": "عن بُعد", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "بورتفوليو · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#f6f1e8", "en": "Paper warm", "ar": "ورقي دافئ"}, {"hex": "#c45c26", "en": "Clay accent", "ar": "طيني"}, {"hex": "#1a1410", "en": "Ink brown", "ar": "بني حبر"}, {"hex": "#d9c3a8", "en": "Sand tone", "ar": "رملي"}, {"hex": "#6b5e52", "en": "Muted cocoa", "ar": "كاكاو خافت"}];
-    function paintColorNames(lang) {
-      document.querySelectorAll("[data-color-en]").forEach(function (el) {
-        el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
-      });
-    }
-    function applySuffix() {
-      var lang = document.documentElement.lang === "ar" ? "ar" : "en";
-      var suf = (DICT[lang] && DICT[lang].suffix) || "";
-      document.querySelectorAll(".money-price").forEach(function (el) {
-        el.setAttribute("data-suffix", suf);
-      });
-      if (window.IbraMoney) IbraMoney.applyAll();
-    }
-    var _init = IbraLang.init;
-    IbraLang.init = function (dict) {
-      _init(dict);
-      paintColorNames(document.documentElement.lang === "ar" ? "ar" : "en");
-      applySuffix();
-      document.querySelectorAll(".lang-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          setTimeout(function () {
-            paintColorNames(btn.getAttribute("data-lang"));
-            applySuffix();
-          }, 0);
-        });
-      });
-    };
-    IbraLang.init(DICT);
-    document.addEventListener("ibra-currency", applySuffix);
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Projects", "nav2": "About", "nav3": "Contact", "nav4": "Hire me", "kicker": "Freelance designer", "h1": "Making<span>things that matter.</span>", "lead": "Brand identity, UI/UX, and visual design for purposeful brands.", "cat1": "Branding", "cat2": "UI/UX", "cat3": "Print", "c1t": "Sahara Coffee", "c1p": "Full brand identity — logo, packaging, and storefront design.", "c2t": "Pulse Health App", "c2p": "UX research, wireframes, and high-fidelity interface design.", "c3t": "Ammura Magazine", "c3p": "Editorial layout and art direction for a cultural quarterly.", "c4t": "Noor Skincare", "c4p": "Minimalist packaging and brand guidelines.", "m1": "Sahara Coffee — packaging mockup", "m2": "Pulse Health — onboarding screens", "m3": "Ammura — editorial spread", "m4": "Noor — product photography", "m5": "Brand pattern exploration", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Creative Portfolio · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "المشاريع", "nav2": "عن", "nav3": "اتصل", "nav4": "وظفني", "kicker": "مصمم مستقل", "h1": "صناعة<span>أشياء مهمة.</span>", "lead": "هوية علامة تجارية وتصميم واجهات وتصميم بصري للعلامات الهادفة.", "cat1": "علامات", "cat2": "واجهات", "cat3": "مطبوعات", "c1t": "صحراء كوفي", "c1p": "هوية كاملة — شعار وتغليف وتصميم متجر.", "c2t": "تطبيق Pulse الصحي", "c2p": "بحث UX وتصميم واجهات عالية الدقة.", "c3t": "مجلة عمورة", "c3p": "تخطيط تحريري وإخراج فني لمجلة فصلية.", "c4t": "نور للعناية", "c4p": "تغليف بسيط ودليل هوية.", "m1": "صحراء قهوة — نموذج تغليف", "m2": "Pulse Health — شاشات التعريف", "m3": "عمورة — صفحة مجلة", "m4": "نور — تصوير منتجات", "m5": "استكشاف أنماط العلامة", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "بورتفوليو · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#f8f5f0", "en": "Warm paper", "ar": "ورق دافئ"}, {"hex": "#c45c26", "en": "Terracotta", "ar": "طيني محروق"}, {"hex": "#f5d6c0", "en": "Peach skin", "ar": "قشر خوخ"}, {"hex": "#7a7068", "en": "Warm gray", "ar": "رمادي دافئ"}, {"hex": "#ffffff", "en": "White", "ar": "أبيض"}];
+
+    function observeReveal() {document.querySelectorAll(".reveal").forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){el.classList.add("visible");o.unobserve(el)}})},{threshold:.1});o.observe(el)})}
+    function paintColorNames(lang){document.querySelectorAll("[data-color-en]").forEach(function(el){el.textContent=lang==="ar"?el.getAttribute("data-color-ar"):el.getAttribute("data-color-en")})}
+    function applySuffix(){var lang=document.documentElement.lang==="ar"?"ar":"en";var suf=(DICT[lang]&&DICT[lang].suffix)||"";document.querySelectorAll(".money-price").forEach(function(el){el.setAttribute("data-suffix",suf)});if(window.IbraMoney)IbraMoney.applyAll()}
+    var _init=IbraLang.init;IbraLang.init=function(dict){_init(dict);paintColorNames(document.documentElement.lang==="ar"?"ar":"en");applySuffix();document.querySelectorAll(".lang-btn").forEach(function(btn){btn.addEventListener("click",function(){setTimeout(function(){paintColorNames(btn.getAttribute("data-lang"));applySuffix()},0)})})};IbraLang.init(DICT);document.addEventListener("ibra-currency",applySuffix);observeReveal();
   </script>
 </body>
 </html>

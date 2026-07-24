@@ -6,49 +6,72 @@
   <title>Charcoal Grill House · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Oswald:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Oswald';--body:'Roboto';--bg:#120e0c;--text:#f5ebe0;--muted:#b9a99a;--card:#1c1613;--line:rgba(245,235,224,.1);--accent:#f97316;--on-accent:#1c1008;--max:1040px}
-
+:root{--display:'Bebas Neue';--body:'Inter';--bg:#120b08;--text:#f0e6dc;--muted:#a08068;--card:#1c1410;--line:rgba(240,230,220,.08);--accent:#f97316;--accent-glow:rgba(249,115,22,.15);--on-accent:#120b08;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;overflow-x:hidden}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(18,11,8,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.25)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:var(--on-accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:.02em;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:700;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
-.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding:2rem 0;position:relative}
+.hero-visual{min-height:380px;position:relative;overflow:hidden}
+.hero-visual img{width:100%;height:380px;object-fit:cover;border-radius:0;filter:contrast(1.1) saturate(1.1)}
+.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(249,115,22,.08),transparent 40%)}
+.hero-text .kicker{font-family:var(--display);font-size:.9rem;letter-spacing:.12em;color:var(--accent);margin-bottom:.3rem}
+.hero-text h1{font-family:var(--display);font-size:clamp(2.8rem,5.5vw,4rem);line-height:1;letter-spacing:.01em;margin-bottom:.5rem}
+.hero-text .lead{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
+.hero-meta{display:flex;gap:1.5rem;color:var(--muted);font-size:.82rem}
+.hero-meta strong{color:var(--accent);display:block;font-family:var(--display);font-size:1.2rem;letter-spacing:.05em}
+
+/* wooden board menu */
+.section{padding:2rem 0 2.5rem}
+.section-head{margin-bottom:1.2rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:.02em}
+.section-head p{color:var(--muted);font-size:.9rem}
+
+.wood-board{background:#2a1f18;padding:1.2rem;border-radius:4px;position:relative;box-shadow:inset 0 0 0 1px rgba(249,115,22,.06),0 8px 30px rgba(0,0,0,.2)}
+.wood-board .board-inner{border:1px solid rgba(249,115,22,.08);padding:1rem}
+.wood-board .board-item{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px dashed rgba(240,230,220,.06)}
+.wood-board .board-item:last-child{border-bottom:none}
+.wood-board .bi-left{display:flex;flex-direction:column}
+.wood-board .bi-name{font-family:var(--display);font-size:1.1rem;letter-spacing:.03em;color:var(--accent)}
+.wood-board .bi-desc{font-size:.8rem;color:var(--muted)}
+.wood-board .bi-price{font-family:var(--display);font-size:1.1rem;letter-spacing:.03em;color:var(--accent);white-space:nowrap}
+
+/* grill cards with fire glow */
+.grill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
+.grill-card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.grill-card:hover{transform:translateY(-4px);border-color:rgba(249,115,22,.25);box-shadow:0 0 24px var(--accent-glow),0 12px 36px rgba(0,0,0,.3)}
+.grill-card .gc-img{aspect-ratio:16/10;overflow:hidden}
+.grill-card .gc-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.grill-card:hover .gc-img img{transform:scale(1.05)}
+.grill-card .gc-body{padding:.9rem 1rem 1rem}
+.grill-card .gc-cut{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.2rem}
+.grill-card h3{font-family:var(--display);font-size:1.15rem;letter-spacing:.03em;margin-bottom:.2rem}
+.grill-card p{color:var(--muted);font-size:.85rem}
+.grill-card .price{font-family:var(--display);display:block;margin-top:.5rem;color:var(--accent);font-size:1.15rem;letter-spacing:.03em}
+
+/* brand kit */
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);background:var(--card)}
+.brand-kit h2{font-family:var(--display);font-size:1.4rem;margin-bottom:.85rem;letter-spacing:.02em}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +79,22 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:0;border:1px solid rgba(249,115,22,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding:1rem 0}
+  .hero-visual{min-height:240px;order:-1}
+  .hero-visual img{height:240px}
+  .grill-grid{grid-template-columns:1fr}
+  .wood-board .board-item{flex-direction:column;align-items:flex-start;gap:.2rem}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -81,7 +113,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   </div>
   <div class="wrap">
     <nav class="site">
-      <div class="brand">Charcoal Grill House</div>
+      <div class="brand">Charcoal Grill</div>
       <ul class="nav-links">
         <li data-i18n="nav1"></li>
         <li data-i18n="nav2"></li>
@@ -89,86 +121,64 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-text">
         <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
+        <h1 data-i18n-html="h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
+        <div class="hero-cta">
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
+        <div class="hero-meta">
+          <div><strong>100%</strong> <span data-i18n="m1"></span></div>
+          <div><strong>4.9</strong> <span data-i18n="m2"></span></div>
         </div>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/grill/hero.jpg" alt="Charcoal Grill House" width="800" height="600" /></div>
-    </header>
+      <div class="hero-visual"><img src="../../assets/images/grill/hero.jpg" alt="Charcoal Grill House" /></div>
+    </section>
+
+    <div class="wood-board reveal">
+      <div class="board-inner">
+        <div class="board-item"><div class="bi-left"><span class="bi-name" data-i18n="b1n"></span><span class="bi-desc" data-i18n="b1d"></span></div><span class="bi-price" data-i18n="b1p"></span></div>
+        <div class="board-item"><div class="bi-left"><span class="bi-name" data-i18n="b2n"></span><span class="bi-desc" data-i18n="b2d"></span></div><span class="bi-price" data-i18n="b2p"></span></div>
+        <div class="board-item"><div class="bi-left"><span class="bi-name" data-i18n="b3n"></span><span class="bi-desc" data-i18n="b3d"></span></div><span class="bi-price" data-i18n="b3p"></span></div>
+        <div class="board-item"><div class="bi-left"><span class="bi-name" data-i18n="b4n"></span><span class="bi-desc" data-i18n="b4d"></span></div><span class="bi-price" data-i18n="b4p"></span></div>
+      </div>
+    </div>
+
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/grill/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="14"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/grill/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="16"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/grill/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="32"></span></div>
-        </article>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="grill-grid reveal">
+        <article class="grill-card"><div class="gc-img"><img src="../../assets/images/grill/card1.jpg" alt="" loading="lazy" /></div><div class="gc-body"><div class="gc-cut" data-i18n="cut1"></div><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="22"></span></div></article>
+        <article class="grill-card"><div class="gc-img"><img src="../../assets/images/grill/card2.jpg" alt="" loading="lazy" /></div><div class="gc-body"><div class="gc-cut" data-i18n="cut2"></div><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="35"></span></div></article>
+        <article class="grill-card"><div class="gc-img"><img src="../../assets/images/grill/card3.jpg" alt="" loading="lazy" /></div><div class="gc-body"><div class="gc-cut" data-i18n="cut3"></div><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="28"></span></div></article>
       </div>
     </section>
+
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Charcoal Grill House</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Oswald</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Roboto</strong> — body</div>
+          <div><strong>Bebas Neue</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#120e0c" title="#120e0c"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Charcoal night" data-color-ar="فحمي ليلي">Charcoal night</span>
-            <span class="swatch-hex">#120e0c</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#f97316" title="#f97316"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Flame orange" data-color-ar="برتقالي لهب">Flame orange</span>
-            <span class="swatch-hex">#f97316</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#f5ebe0" title="#f5ebe0"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Smoke cream" data-color-ar="كريمي دخان">Smoke cream</span>
-            <span class="swatch-hex">#f5ebe0</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#1c1613" title="#1c1613"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Grill dark" data-color-ar="شواء داكن">Grill dark</span>
-            <span class="swatch-hex">#1c1613</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#b9a99a" title="#b9a99a"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Ash mute" data-color-ar="رماد خافت">Ash mute</span>
-            <span class="swatch-hex">#b9a99a</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#120b08" title="#120b08"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Charcoal black" data-color-ar="أسود فحم">Charcoal black</span><span class="swatch-hex">#120b08</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#f97316" title="#f97316"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Fire orange" data-color-ar="برتقالي نار">Fire orange</span><span class="swatch-hex">#f97316</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#f0e6dc" title="#f0e6dc"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Smoke white" data-color-ar="أبيض دخان">Smoke white</span><span class="swatch-hex">#f0e6dc</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#a08068" title="#a08068"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Warm stone" data-color-ar="حجر دافئ">Warm stone</span><span class="swatch-hex">#a08068</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#1c1410" title="#1c1410"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Dark wood" data-color-ar="خشب داكن">Dark wood</span><span class="swatch-hex">#1c1410</span></span></div>
         </div>
       </div>
     </section>
@@ -180,8 +190,19 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Grill menu", "nav2": "Combos", "nav3": "Catering", "nav4": "Order now", "kicker": "Fire · Smoke · Meat", "h1": "Charcoal. Cut. Serve hot.", "lead": "Bold grill-house for mixed grills, combos, and late-night cravings.", "cta1": "Order mixed grill", "cta2": "View combos", "s_title": "From the fire", "c1t": "Mixed grill", "c1p": "Kebab, chicken, chops.", "c2t": "Ribs platter", "c2p": "Slow smoke, sticky glaze.", "c3t": "Family combo", "c3p": "Feeds 4 with sides.", "suffix": "", "f1": "Open late", "f2": "Delivery ready", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Charcoal Grill · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الشواء", "nav2": "الوجبات", "nav3": "تموين", "nav4": "اطلب الآن", "kicker": "نار · دخان · لحم", "h1": "فحم. تقطيع. تقديم ساخن.", "lead": "مطعم مشاوي جريء للمشاوي والوجبات وطلبات الليل.", "cta1": "اطلب مشاوي", "cta2": "الوجبات", "s_title": "من النار", "c1t": "مشاوي مشكلة", "c1p": "كباب ودجاج وريش.", "c2t": "طبق أضلاع", "c2p": "شواء بطيء وصوص.", "c3t": "وجبة عائلية", "c3p": "تكفي 4 مع مقبلات.", "suffix": "", "f1": "مفتوح متأخراً", "f2": "جاهز للتوصيل", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "بيت الشواء · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#120e0c", "en": "Charcoal night", "ar": "فحمي ليلي"}, {"hex": "#f97316", "en": "Flame orange", "ar": "برتقالي لهب"}, {"hex": "#f5ebe0", "en": "Smoke cream", "ar": "كريمي دخان"}, {"hex": "#1c1613", "en": "Grill dark", "ar": "شواء داكن"}, {"hex": "#b9a99a", "en": "Ash mute", "ar": "رماد خافت"}];
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Menu", "nav2": "Reserve", "nav3": "Gallery", "nav4": "Book table", "kicker": "Grill house · Amman", "h1": "Fire. Smoke.<span>Perfection.</span>", "lead": "Premium cuts grilled over charcoal — steaks, chops, and flame-grilled combos.", "cta1": "Reserve a table", "cta2": "View menu", "m1": "Charcoal grilled", "m2": "Rating", "b1n": "Ribeye 300g", "b1d": "Prime cut, charred exterior, tender inside.", "b1p": "22 JOD", "b2n": "Mixed Grill Platter", "b2d": "Lamb, chicken, kofta — for two.", "b2p": "32 JOD", "b3n": "T-Bone Steak 500g", "b3d": "Thick-cut bone-in, grilled to order.", "b3p": "38 JOD", "b4n": "Grilled Sea Bass", "b4d": "Whole sea bass with lemon-herb butter.", "b4p": "25 JOD", "s_title": "From the grill", "s_sub": "Hand-selected cuts, cooked over real charcoal.", "cut1": "Prime cut", "cut2": "For two", "cut3": "Specialty", "c1t": "Wagyu Striploin", "c1p": "Australian wagyu, 250g, with roasted bone marrow.", "c2t": "Lamb Rack", "c2p": "New Zealand lamb rack, herb crust, mint jus.", "c3t": "Grilled Octopus", "c3p": "Tender octopus with smoked paprika, lemon, aioli.", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Charcoal Grill House · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "القائمة", "nav2": "احجز", "nav3": "معرض", "nav4": "احجز طاولة", "kicker": "مشاوي · عمّان", "h1": "نار. دخان.<span>إتقان.</span>", "lead": "قطع فاخرة مشوية على الفحم — ستيك وضلوع ومقبلات.", "cta1": "احجز طاولة", "cta2": "عرض القائمة", "m1": "شوي على الفحم", "m2": "تقييم", "b1n": "ريب آي 300غ", "b1d": "قطعة أولى، قشرة متفحمة، طرية من الداخل.", "b1p": "٢٢ دينار", "b2n": "مقبلات مشكلة", "b2d": "خروف ودجاج وكفتة لشخصين.", "b2p": "٣٢ دينار", "b3n": "تي بون 500غ", "b3d": "قطعة سميكة بالعظم مشوية حسب الطلب.", "b3p": "٣٨ دينار", "b4n": "قاروص مشوي", "b4d": "قاروص كامل بزبدة الليمون والأعشاب.", "b4p": "٢٥ دينار", "s_title": "من المشواة", "s_sub": "قطع منتقاة، مطبوخة على الفحم الحقيقي.", "cut1": "قطعة أولى", "cut2": "لشخصين", "cut3": "اختصاص", "c1t": "واجيو ستربلوين", "c1p": "واجيو أسترالي 250غ مع نخاع العظم.", "c2t": "ضلع خروف", "c2p": "ضلع نيوزيلندي بقشرة أعشاب وصلصة نعناع.", "c3t": "أخطبوط مشوي", "c3p": "أخطبوط طري مع بابريكا مدخنة وليمون.", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "بيت الشواء · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#120b08", "en": "Charcoal black", "ar": "أسود فحم"}, {"hex": "#f97316", "en": "Fire orange", "ar": "برتقالي نار"}, {"hex": "#f0e6dc", "en": "Smoke white", "ar": "أبيض دخان"}, {"hex": "#a08068", "en": "Warm stone", "ar": "حجر دافئ"}, {"hex": "#1c1410", "en": "Dark wood", "ar": "خشب داكن"}];
+
+    function observeReveal() {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); }
+          });
+        }, {threshold: 0.1});
+        obs.observe(el);
+      });
+    }
     function paintColorNames(lang) {
       document.querySelectorAll("[data-color-en]").forEach(function (el) {
         el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
@@ -211,6 +232,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
     };
     IbraLang.init(DICT);
     document.addEventListener("ibra-currency", applySuffix);
+    observeReveal();
   </script>
 </body>
 </html>

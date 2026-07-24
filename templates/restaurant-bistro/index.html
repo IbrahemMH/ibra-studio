@@ -6,49 +6,76 @@
   <title>Noon Bistro · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Libre+Baskerville:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'DM Serif Display';--body:'DM Sans';--bg:#faf6f1;--text:#1c1917;--muted:#78716c;--card:#ffffff;--line:#e7e0d6;--accent:#b45309;--on-accent:#fff;--max:1000px}
-
+:root{--display:'Libre Baskerville';--body:'Inter';--bg:#fdf8f0;--text:#2a221a;--muted:#8a7a68;--card:#ffffff;--line:rgba(42,34,26,.06);--accent:#b45309;--accent-light:#fde68a;--on-accent:#fff;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(253,248,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(180,83,9,.06)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:#fff}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-size:1.3rem;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:600;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
+
+/* hero — sunlit */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:2rem 0;position:relative}
+.hero-visual{min-height:340px;border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(180,83,9,.06)}
+.hero-visual img{width:100%;height:340px;object-fit:cover;transition:transform .4s}
+.hero-visual:hover img{transform:scale(1.03)}
+.hero-text .kicker{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.3rem .7rem;border-radius:999px;margin-bottom:.7rem}
+.hero-text h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:.5rem}
+.hero-text .lead{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.2rem}
+
+/* chalkboard specials */
+.chalkboard{background:#2a221a;border-radius:6px;padding:1rem 1.2rem;margin-bottom:2rem;color:#fdf8f0;position:relative;overflow:hidden}
+.chalkboard::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 18px,rgba(255,255,255,.03) 18px,rgba(255,255,255,.03) 19px);pointer-events:none}
+.chalkboard .cb-head{font-family:var(--display);font-size:1rem;margin-bottom:.6rem;color:var(--accent-light)}
+.chalkboard .cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem}
+.chalkboard .cb-item{display:flex;justify-content:space-between;gap:.5rem;font-size:.85rem}
+.chalkboard .cb-item .cb-price{font-weight:700;color:var(--accent-light);white-space:nowrap}
+
+/* rotating special highlight */
+.rotating-special{text-align:center;padding:1.5rem;background:var(--accent-light);border-radius:16px;margin-bottom:2rem;border:1px solid rgba(180,83,9,.08)}
+.rotating-special .rs-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.2rem}
+.rotating-special .rs-dish{font-family:var(--display);font-size:1.2rem;margin-bottom:.2rem}
+.rotating-special .rs-desc{color:var(--muted);font-size:.85rem}
+
+/* horizontal scroll menu */
+.section{padding:1.5rem 0 2.5rem}
+.section-head{margin-bottom:1.2rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.3rem,2.5vw,1.7rem);letter-spacing:-.02em}
+.section-head p{color:var(--muted);margin-top:.2rem;font-size:.9rem}
+.scroll-menu{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin;scrollbar-color:var(--accent-light) transparent}
+.scroll-menu::-webkit-scrollbar{height:4px}
+.scroll-menu::-webkit-scrollbar-track{background:transparent}
+.scroll-menu::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:999px}
+.scroll-card{scroll-snap-align:start;flex:0 0 280px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s}
+.scroll-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(180,83,9,.04)}
+.scroll-card .sc-img{aspect-ratio:16/12;overflow:hidden}
+.scroll-card .sc-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.scroll-card:hover .sc-img img{transform:scale(1.05)}
+.scroll-card .sc-body{padding:.85rem .95rem 1rem}
+.scroll-card .sc-tag{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:.15rem}
+.scroll-card h3{font-family:var(--display);font-size:1rem;margin-bottom:.15rem}
+.scroll-card p{color:var(--muted);font-size:.8rem}
+.scroll-card .price{font-weight:700;display:block;margin-top:.4rem;color:var(--accent);font-size:.95rem}
+
+/* brand kit */
 .brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +83,22 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding:1rem 0}
+  .hero-visual{min-height:240px;order:-1}
+  .hero-visual img{height:240px}
+  .chalkboard .cb-grid{grid-template-columns:1fr}
+  .scroll-card{flex:0 0 240px}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -89,86 +125,70 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-text">
         <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
+        <h1 data-i18n-html="h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
+        <div class="hero-cta">
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
-        </div>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/bistro/hero.jpg" alt="Noon Bistro" width="800" height="600" /></div>
-    </header>
+      <div class="hero-visual"><img src="../../assets/images/bistro/hero.jpg" alt="Noon Bistro" /></div>
+    </section>
+
+    <!-- chalkboard specials -->
+    <div class="chalkboard reveal">
+      <div class="cb-head" data-i18n="cb_title"></div>
+      <div class="cb-grid">
+        <div class="cb-item"><span data-i18n="cb1n"></span><span class="cb-price" data-i18n="cb1p"></span></div>
+        <div class="cb-item"><span data-i18n="cb2n"></span><span class="cb-price" data-i18n="cb2p"></span></div>
+        <div class="cb-item"><span data-i18n="cb3n"></span><span class="cb-price" data-i18n="cb3p"></span></div>
+        <div class="cb-item"><span data-i18n="cb4n"></span><span class="cb-price" data-i18n="cb4p"></span></div>
+      </div>
+    </div>
+
+    <!-- rotating daily special -->
+    <div class="rotating-special reveal" id="daily-special">
+      <div class="rs-label" data-i18n="rs_label"></div>
+      <div class="rs-dish" data-i18n="rs_dish"></div>
+      <div class="rs-desc" data-i18n="rs_desc"></div>
+    </div>
+
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/bistro/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="7.5"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/bistro/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="6.5"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/bistro/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="4"></span></div>
-        </article>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="scroll-menu reveal">
+        <div class="scroll-card"><div class="sc-img"><img src="../../assets/images/bistro/card1.jpg" alt="" loading="lazy" /></div><div class="sc-body"><div class="sc-tag" data-i18n="t1"></div><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="8"></span></div></div>
+        <div class="scroll-card"><div class="sc-img"><img src="../../assets/images/bistro/card2.jpg" alt="" loading="lazy" /></div><div class="sc-body"><div class="sc-tag" data-i18n="t2"></div><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="12"></span></div></div>
+        <div class="scroll-card"><div class="sc-img"><img src="../../assets/images/bistro/card3.jpg" alt="" loading="lazy" /></div><div class="sc-body"><div class="sc-tag" data-i18n="t3"></div><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="15"></span></div></div>
+        <div class="scroll-card"><div class="sc-img"><img src="../../assets/images/bistro/card1.jpg" alt="" loading="lazy" /></div><div class="sc-body"><div class="sc-tag" data-i18n="t4"></div><h3 data-i18n="c4t"></h3><p data-i18n="c4p"></p><span class="price money-price" data-jod="10"></span></div></div>
       </div>
     </section>
+
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Noon Bistro</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>DM Serif Display</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>DM Sans</strong> — body</div>
+          <div><strong>Libre Baskerville</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#faf6f1" title="#faf6f1"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Brunch linen" data-color-ar="كتان برانش">Brunch linen</span>
-            <span class="swatch-hex">#faf6f1</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#b45309" title="#b45309"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Amber spice" data-color-ar="عنبر توابل">Amber spice</span>
-            <span class="swatch-hex">#b45309</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#1c1917" title="#1c1917"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Espresso text" data-color-ar="نص إسبريسو">Espresso text</span>
-            <span class="swatch-hex">#1c1917</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#fde68a" title="#fde68a"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Sun yellow" data-color-ar="أصفر شمس">Sun yellow</span>
-            <span class="swatch-hex">#fde68a</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#78716c" title="#78716c"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Stone mute" data-color-ar="حجري">Stone mute</span>
-            <span class="swatch-hex">#78716c</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#fdf8f0" title="#fdf8f0"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Warm cream" data-color-ar="كريمي دافئ">Warm cream</span><span class="swatch-hex">#fdf8f0</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#b45309" title="#b45309"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Amber brown" data-color-ar="بني عنبري">Amber brown</span><span class="swatch-hex">#b45309</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#fde68a" title="#fde68a"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Soft yellow" data-color-ar="أصفر ناعم">Soft yellow</span><span class="swatch-hex">#fde68a</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#8a7a68" title="#8a7a68"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Warm taupe" data-color-ar="بني رملي">Warm taupe</span><span class="swatch-hex">#8a7a68</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#ffffff" title="#ffffff"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="White" data-color-ar="أبيض">White</span><span class="swatch-hex">#ffffff</span></span></div>
         </div>
       </div>
     </section>
@@ -180,8 +200,19 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Menu", "nav2": "Brunch", "nav3": "Location", "nav4": "Reserve", "kicker": "Daytime bistro · Amman", "h1": "Sunlit plates. Slow brunch.", "lead": "Light modern bistro for brunch, coffee, and neighborhood lunches.", "cta1": "See brunch menu", "cta2": "Get directions", "s_title": "On the table", "c1t": "Shakshuka board", "c1p": "Eggs, herbs, flatbread.", "c2t": "Garden bowl", "c2p": "Grains, greens, citrus.", "c3t": "Lemon tart", "c3p": "Bright finish with cream.", "suffix": "", "f1": "Open 8–5", "f2": "Weekend brunch", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Noon Bistro · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "القائمة", "nav2": "برانش", "nav3": "الموقع", "nav4": "احجز", "kicker": "بيسترو نهاري", "h1": "أطباق مشمسة. برانش هادئ.", "lead": "بيسترو خفيف للبرانش والقهوة وغداء الحي.", "cta1": "قائمة البرانش", "cta2": "الاتجاهات", "s_title": "على الطاولة", "c1t": "شكشوكة", "c1p": "بيض وأعشاب وخبز.", "c2t": "صحن الحديقة", "c2p": "حبوب وخضار وصوص.", "c3t": "تارت ليمون", "c3p": "ختام منعش.", "suffix": "", "f1": "٨ ص – ٥ م", "f2": "برانش نهاية الأسبوع", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "نون بيسترو · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#faf6f1", "en": "Brunch linen", "ar": "كتان برانش"}, {"hex": "#b45309", "en": "Amber spice", "ar": "عنبر توابل"}, {"hex": "#1c1917", "en": "Espresso text", "ar": "نص إسبريسو"}, {"hex": "#fde68a", "en": "Sun yellow", "ar": "أصفر شمس"}, {"hex": "#78716c", "en": "Stone mute", "ar": "حجري"}];
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Menu", "nav2": "Reserve", "nav3": "Gallery", "nav4": "Book", "kicker": "Bistro · Amman", "h1": "Sunlit bites<span>all day.</span>", "lead": "Neighbourhood bistro serving brunch, light lunches, and artisan coffee in a warm setting.", "cta1": "See the menu", "cta2": "Reserve a spot", "cb_title": "Today's specials", "cb1n": "Avocado Toast", "cb1p": "6 JOD", "cb2n": "Truffle Eggs", "cb2p": "8 JOD", "cb3n": "Brioche French Toast", "cb3p": "7 JOD", "cb4n": "Cold Brew", "cb4p": "3 JOD", "rs_label": "Chef's pick", "rs_dish": "Shakshuka with Feta", "rs_desc": "Baked eggs in spiced tomato sauce with creamy feta and sourdough.", "s_title": "All-day menu", "s_sub": "Scroll through our food and drink selection.", "t1": "Brunch", "t2": "Lunch", "t3": "Drinks", "t4": "Sides", "c1t": "Avocado & Egg Toast", "c1p": "Smashed avocado, poached eggs, chili flakes on sourdough.", "c2t": "Tuna Niçoise Salad", "c2p": "Seared tuna, green beans, olives, egg, and vinaigrette.", "c3t": "Iced Matcha Latte", "c3p": "Ceremonial matcha with oat milk and honey.", "c4t": "Truffle Fries", "c4p": "Crispy fries with truffle oil, parmesan, and aioli.", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Noon Bistro · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "القائمة", "nav2": "احجز", "nav3": "معرض", "nav4": "احجز", "kicker": "بيسترو · عمّان", "h1": "وجبات مضاءة<span>طوال اليوم.</span>", "lead": "بيسترو حي يقدم فطور وغداء خفيف وقهوة حرفية في أجواء دافئة.", "cta1": "شاهد القائمة", "cta2": "احجز مكان", "cb_title": "عروض اليوم", "cb1n": "توست الأفوكادو", "cb1p": "٦ دينار", "cb2n": "بيض الترافل", "cb2p": "٨ دينار", "cb3n": "بريوش فرينش توست", "cb3p": "٧ دينار", "cb4n": "كولد برو", "cb4p": "٣ دينار", "rs_label": "اختيار الشيف", "rs_dish": "شكشوكة مع فيتا", "rs_desc": "بيض مخبوز بصلصة طماطم حارة مع فيتا كريمية وخبز حامض.", "s_title": "قائمة طوال اليوم", "s_sub": "تصفح قائمة الطعام والمشروبات.", "t1": "فطور", "t2": "غداء", "t3": "مشروبات", "t4": "مقبلات", "c1t": "توست الأفوكادو والبيض", "c1p": "أفوكادو مهروس وبيض بوشيه على خبز حامض.", "c2t": "سلطة نيسواز بالتونة", "c2p": "تونة مشوية وفاصوليا خضراء وزيتون.", "c3t": "ماتشا لاتيه مثلج", "c3p": "ماتشا احتفالية مع حليب الشوفان والعسل.", "c4t": "بطاطس الترافل", "c4p": "بطاطس مقلية بزيت الترافل وجبن بارميزان.", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "نون بيسترو · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#fdf8f0", "en": "Warm cream", "ar": "كريمي دافئ"}, {"hex": "#b45309", "en": "Amber brown", "ar": "بني عنبري"}, {"hex": "#fde68a", "en": "Soft yellow", "ar": "أصفر ناعم"}, {"hex": "#8a7a68", "en": "Warm taupe", "ar": "بني رملي"}, {"hex": "#ffffff", "en": "White", "ar": "أبيض"}];
+
+    function observeReveal() {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); }
+          });
+        }, {threshold: 0.1});
+        obs.observe(el);
+      });
+    }
     function paintColorNames(lang) {
       document.querySelectorAll("[data-color-en]").forEach(function (el) {
         el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
@@ -211,6 +242,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
     };
     IbraLang.init(DICT);
     document.addEventListener("ibra-currency", applySuffix);
+    observeReveal();
   </script>
 </body>
 </html>

@@ -3,52 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NovaPulse · Ibra Studio</title>
+  <title>NovaPulse SaaS · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Outfit:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Outfit';--body:'DM Sans';--bg:#07090f;--text:#eef2ff;--muted:#93a0b8;--card:#111622;--line:rgba(255,255,255,.08);--accent:#7c5cff;--on-accent:#fff;--max:1040px}
-
+:root{--display:'Inter';--body:'Inter';--bg:#07080f;--text:#eef1f7;--muted:#7a80a0;--card:#11131f;--line:rgba(238,241,247,.06);--accent:#7c5cff;--accent-dim:#5a3fff;--accent-bg:rgba(124,92,255,.08);--on-accent:#fff;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(7,8,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.2)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:#fff}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-weight:800;font-size:1.3rem;letter-spacing:-.04em;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:600;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
-.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.btn-b{background:rgba(124,92,255,.12);color:var(--accent);border:1px solid transparent}
+
+/* hero with floating shapes */
+.hero{position:relative;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+.shapes{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.shape{position:absolute;border-radius:50%;opacity:.08;animation:floatShape 8s ease-in-out infinite}
+.shape:nth-child(1){width:120px;height:120px;background:var(--accent);top:10%;left:10%;animation-delay:0s}
+.shape:nth-child(2){width:80px;height:80px;background:var(--accent-dim);top:20%;right:15%;animation-delay:1.5s}
+.shape:nth-child(3){width:160px;height:160px;background:var(--accent);bottom:5%;left:20%;animation-delay:3s}
+.shape:nth-child(4){width:60px;height:60px;background:var(--accent-dim);bottom:30%;right:10%;animation-delay:2s;border-radius:4px;transform:rotate(45deg)}
+.shape:nth-child(5){width:100px;height:100px;background:var(--accent);top:50%;left:80%;animation-delay:4s;border-radius:4px;transform:rotate(15deg)}
+@keyframes floatShape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(5deg)}}
+.hero-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.hero-inner .kicker{display:inline-block;background:var(--accent-bg);color:var(--accent);font-size:.7rem;font-weight:700;padding:.35rem .8rem;border-radius:999px;margin-bottom:.8rem;border:1px solid rgba(124,92,255,.1)}
+.hero-inner h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.04em;margin-bottom:.6rem}
+.hero-inner h1 span{background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-inner .lead{color:var(--muted);font-size:1.02rem;margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:1.5rem}
+.hero-metrics{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.hero-metrics .hm{text-align:center}
+.hero-metrics .hm-val{font-weight:800;font-size:1.5rem;color:var(--accent);letter-spacing:-.02em}
+.hero-metrics .hm-label{font-size:.75rem;color:var(--muted)}
+
+/* features grid */
+.section{padding:3rem 0 3rem}
+.section-head{text-align:center;margin-bottom:2rem}
+.section-head h2{font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.03em}
+.section-head p{color:var(--muted);margin-top:.4rem;font-size:.95rem;max-width:420px;margin-left:auto;margin-right:auto}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.feat-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.3rem;transition:border-color .2s,transform .15s}
+.feat-card:hover{border-color:rgba(124,92,255,.15);transform:translateY(-2px)}
+.feat-card .fc-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-bg);color:var(--accent);display:grid;place-items:center;font-size:1.1rem;margin-bottom:.8rem}
+.feat-card h3{font-weight:700;font-size:.95rem;margin-bottom:.25rem}
+.feat-card p{color:var(--muted);font-size:.85rem}
+
+/* pricing toggle */
+.price-toggle{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:2rem;font-size:.9rem;color:var(--muted)}
+.price-toggle .toggle-track{width:44px;height:24px;background:var(--card);border:1px solid var(--line);border-radius:999px;position:relative;cursor:pointer;transition:background .2s}
+.price-toggle .toggle-track.active{background:var(--accent-bg);border-color:rgba(124,92,255,.2)}
+.price-toggle .toggle-knob{width:18px;height:18px;background:var(--accent);border-radius:50%;position:absolute;top:2px;left:2px;transition:transform .2s}
+.price-toggle .toggle-track.active .toggle-knob{transform:translateX(20px)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem;text-align:center;transition:border-color .2s}
+.price-card.featured{border-color:rgba(124,92,255,.2);background:linear-gradient(180deg,rgba(124,92,255,.04),transparent)}
+.price-card .plan{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.5rem}
+.price-card .amount{font-weight:800;font-size:1.8rem;letter-spacing:-.04em;color:var(--accent)}
+.price-card .amount span{font-size:.85rem;color:var(--muted);font-weight:400}
+.price-card .p-desc{font-size:.82rem;color:var(--muted);margin:.3rem 0 .8rem}
+.price-card .btn{width:100%;font-size:.85rem;padding:.6rem}
+
+/* brand kit */
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.brand-kit h2{font-weight:800;font-size:1.25rem;margin-bottom:.85rem}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +88,20 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(124,92,255,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .feat-grid,.price-grid{grid-template-columns:1fr}
+  .hero{padding:3rem 0 2rem}
+  .hero-metrics{gap:1.2rem}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -89,86 +128,77 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
+  </div>
+
+  <section class="hero">
+    <div class="shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+    <div class="wrap">
+      <div class="hero-inner">
         <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
+        <h1 data-i18n-html="h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
+        <div class="hero-cta">
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
+        <div class="hero-metrics">
+          <div class="hm"><div class="hm-val">99.9%</div><div class="hm-label" data-i18n="m1"></div></div>
+          <div class="hm"><div class="hm-val">12K+</div><div class="hm-label" data-i18n="m2"></div></div>
+          <div class="hm"><div class="hm-val">4.9★</div><div class="hm-label" data-i18n="m3"></div></div>
         </div>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/saas/hero.jpg" alt="NovaPulse" width="800" height="600" /></div>
-    </header>
+    </div>
+  </section>
+
+  <div class="wrap">
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/saas/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price" data-i18n="c1pr"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/saas/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="29"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/saas/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="79"></span></div>
-        </article>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="feat-grid reveal">
+        <div class="feat-card"><div class="fc-icon">⚡</div><h3 data-i18n="f1t"></h3><p data-i18n="f1p"></p></div>
+        <div class="feat-card"><div class="fc-icon">🔒</div><h3 data-i18n="f2t"></h3><p data-i18n="f2p"></p></div>
+        <div class="feat-card"><div class="fc-icon">📊</div><h3 data-i18n="f3t"></h3><p data-i18n="f3p"></p></div>
+        <div class="feat-card"><div class="fc-icon">🔗</div><h3 data-i18n="f4t"></h3><p data-i18n="f4p"></p></div>
+        <div class="feat-card"><div class="fc-icon">🌐</div><h3 data-i18n="f5t"></h3><p data-i18n="f5p"></p></div>
+        <div class="feat-card"><div class="fc-icon">🤖</div><h3 data-i18n="f6t"></h3><p data-i18n="f6p"></p></div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 data-i18n="p_title"></h2>
+        <p data-i18n="p_sub"></p>
+      </div>
+      <div class="price-toggle" id="pricing-toggle">
+        <span data-i18n="pm1"></span>
+        <div class="toggle-track" onclick="this.classList.toggle('active')"><div class="toggle-knob"></div></div>
+        <span data-i18n="pm2"></span>
+      </div>
+      <div class="price-grid reveal">
+        <div class="price-card"><div class="plan" data-i18n="pl1"></div><div class="amount">19<span> / mo</span></div><div class="p-desc" data-i18n="pd1"></div><a class="btn btn-b" href="#" data-i18n="pa1"></a></div>
+        <div class="price-card featured"><div class="plan" data-i18n="pl2"></div><div class="amount">49<span> / mo</span></div><div class="p-desc" data-i18n="pd2"></div><a class="btn btn-a" href="#" data-i18n="pa2"></a></div>
+        <div class="price-card"><div class="plan" data-i18n="pl3"></div><div class="amount">99<span> / mo</span></div><div class="p-desc" data-i18n="pd3"></div><a class="btn btn-b" href="#" data-i18n="pa3"></a></div>
+      </div>
+    </section>
+
     <section class="brand-kit" id="brand-kit">
-      <h2><span data-i18n="brand_title">Brand kit</span> · NovaPulse</h2>
+      <h2><span data-i18n="brand_title">Brand kit</span> · NovaPulse SaaS</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Outfit</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>DM Sans</strong> — body</div>
+          <div><strong>Inter</strong> — <span data-i18n="font_roles">All text</span></div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#07090f" title="#07090f"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Void black" data-color-ar="أسود فراغ">Void black</span>
-            <span class="swatch-hex">#07090f</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#7c5cff" title="#7c5cff"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Pulse violet" data-color-ar="بنفسجي نبض">Pulse violet</span>
-            <span class="swatch-hex">#7c5cff</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#eef2ff" title="#eef2ff"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Ice white" data-color-ar="أبيض جليد">Ice white</span>
-            <span class="swatch-hex">#eef2ff</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#22d3ee" title="#22d3ee"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Cyan signal" data-color-ar="سماوي إشارة">Cyan signal</span>
-            <span class="swatch-hex">#22d3ee</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#93a0b8" title="#93a0b8"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Cool mute" data-color-ar="رمادي بارد">Cool mute</span>
-            <span class="swatch-hex">#93a0b8</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#07080f" title="#07080f"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Deep space" data-color-ar="فضاء عميق">Deep space</span><span class="swatch-hex">#07080f</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#7c5cff" title="#7c5cff"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Violet pulse" data-color-ar="نبض بنفسجي">Violet pulse</span><span class="swatch-hex">#7c5cff</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#eef1f7" title="#eef1f7"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="White frost" data-color-ar="صقيع أبيض">White frost</span><span class="swatch-hex">#eef1f7</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#7a80a0" title="#7a80a0"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Muted lavender" data-color-ar="خزامي هادئ">Muted lavender</span><span class="swatch-hex">#7a80a0</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#11131f" title="#11131f"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Dark card" data-color-ar="بطاقة داكنة">Dark card</span><span class="swatch-hex">#11131f</span></span></div>
         </div>
       </div>
     </section>
@@ -180,37 +210,13 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Product", "nav2": "Pricing", "nav3": "Docs", "nav4": "Start free", "kicker": "SaaS landing template", "h1": "Ship updates customers notice.", "lead": "Dark conversion landing for apps and tools — hero, features, strong CTA.", "cta1": "Get started", "cta2": "View demo", "s_title": "Plans", "c1t": "Free", "c1p": "Try core features.", "c2t": "Pro", "c2p": "Teams & integrations.", "c3t": "Business", "c3p": "Scale with support.", "c1pr": "Free", "suffix": " / mo", "f1": "No backend needed", "f2": "Mobile ready", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "NovaPulse · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "المنتج", "nav2": "الأسعار", "nav3": "التوثيق", "nav4": "ابدأ مجاناً", "kicker": "قالب صفحة منتج", "h1": "أطلق تحديثات يلاحظها عملاؤك.", "lead": "صفحة هبوط داكنة للتطبيقات — بطل ومميزات ودعوة واضحة.", "cta1": "ابدأ الآن", "cta2": "عرض تجريبي", "s_title": "الخطط", "c1t": "مجاني", "c1p": "جرّب الميزات الأساسية.", "c2t": "احترافي", "c2p": "فرق وتكاملات.", "c3t": "أعمال", "c3p": "توسّع مع دعم.", "c1pr": "مجاني", "suffix": " / شهر", "f1": "بدون خادم", "f2": "متوافق مع الجوال", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "نوفا بالس · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#07090f", "en": "Void black", "ar": "أسود فراغ"}, {"hex": "#7c5cff", "en": "Pulse violet", "ar": "بنفسجي نبض"}, {"hex": "#eef2ff", "en": "Ice white", "ar": "أبيض جليد"}, {"hex": "#22d3ee", "en": "Cyan signal", "ar": "سماوي إشارة"}, {"hex": "#93a0b8", "en": "Cool mute", "ar": "رمادي بارد"}];
-    function paintColorNames(lang) {
-      document.querySelectorAll("[data-color-en]").forEach(function (el) {
-        el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
-      });
-    }
-    function applySuffix() {
-      var lang = document.documentElement.lang === "ar" ? "ar" : "en";
-      var suf = (DICT[lang] && DICT[lang].suffix) || "";
-      document.querySelectorAll(".money-price").forEach(function (el) {
-        el.setAttribute("data-suffix", suf);
-      });
-      if (window.IbraMoney) IbraMoney.applyAll();
-    }
-    var _init = IbraLang.init;
-    IbraLang.init = function (dict) {
-      _init(dict);
-      paintColorNames(document.documentElement.lang === "ar" ? "ar" : "en");
-      applySuffix();
-      document.querySelectorAll(".lang-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          setTimeout(function () {
-            paintColorNames(btn.getAttribute("data-lang"));
-            applySuffix();
-          }, 0);
-        });
-      });
-    };
-    IbraLang.init(DICT);
-    document.addEventListener("ibra-currency", applySuffix);
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Features", "nav2": "Pricing", "nav3": "Docs", "nav4": "Get started", "kicker": "SaaS platform", "h1": "Ship faster.<span>Worry less.</span>", "lead": "The all-in-one platform for modern teams — analytics, automation, and collaboration.", "cta1": "Start free trial", "cta2": "See demo", "m1": "Uptime", "m2": "Users", "m3": "Rating", "s_title": "Everything you need", "s_sub": "Built for teams that move fast.", "f1t": "Lightning Speed", "f1p": "Edge-optimized CDN with sub-50ms response times globally.", "f2t": "Enterprise Security", "f2p": "SOC 2 compliant with end-to-end encryption and audit logs.", "f3t": "Real-time Analytics", "f3p": "Live dashboards and custom reports with drag-and-drop builder.", "f4t": "API-first", "f4p": "REST & GraphQL APIs with webhooks for seamless integrations.", "f5t": "Global Scale", "f5p": "Auto-scaling infrastructure across 15+ regions worldwide.", "f6t": "AI Assistant", "f6p": "Built-in AI that helps you automate workflows and analyze data.", "p_title": "Simple pricing", "p_sub": "No hidden fees. Cancel anytime.", "pm1": "Monthly", "pm2": "Yearly", "pl1": "Starter", "pd1": "Up to 3 users, basic analytics, community support.", "pa1": "Get started", "pl2": "Pro", "pd2": "Up to 10 users, advanced analytics, priority support.", "pa2": "Start trial", "pl3": "Enterprise", "pd3": "Unlimited users, custom integrations, dedicated support.", "pa3": "Contact sales", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "All text", "foot": "NovaPulse SaaS · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الميزات", "nav2": "الأسعار", "nav3": "المستندات", "nav4": "ابدأ الآن", "kicker": "منصة SaaS", "h1": "انطلق أسرع.<span>اقلق أقل.</span>", "lead": "المنصة المتكاملة للفرق الحديثة — تحليلات وأتمتة وتعاون.", "cta1": "بداية مجانية", "cta2": "شاهد العرض", "m1": "وقت التشغيل", "m2": "مستخدم", "m3": "تقييم", "s_title": "كل ما تحتاجه", "s_sub": "مبنية للفرق التي تتحرك بسرعة.", "f1t": "سرعة خارقة", "f1p": "شبكة توصيل محتوى محسّنة بأقل من 50 مللي ثانية.", "f2t": "أمان مؤسسي", "f2p": "متوافق مع SOC 2 مع تشفير كامل وسجلات تدقيق.", "f3t": "تحليلات فورية", "f3p": "لوحات معلومات حية وتقارير مخصصة.", "f4t": "API أولاً", "f4p": "واجهات REST و GraphQL مع webhooks.", "f5t": "نطاق عالمي", "f5p": "بنية تحتية قابلة للتوسع في 15+ منطقة.", "f6t": "مساعد AI", "f6p": "ذكاء اصطناعي مدمج يساعدك في أتمتة المهام.", "p_title": "أسعار بسيطة", "p_sub": "بدون رسوم خفية. إلغاء في أي وقت.", "pm1": "شهري", "pm2": "سنوي", "pl1": "مبتدئ", "pd1": "حتى 3 مستخدمين، تحليلات أساسية، دعم مجتمعي.", "pa1": "ابدأ", "pl2": "احترافي", "pd2": "حتى 10 مستخدمين، تحليلات متقدمة، دعم أولوية.", "pa2": "جرب مجاناً", "pl3": "مؤسسات", "pd3": "مستخدمين غير محدود، تكاملات مخصصة، دعم مخصص.", "pa3": "اتصل بالمبيعات", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "جميع النصوص", "foot": "نوفا بالس · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#07080f", "en": "Deep space", "ar": "فضاء عميق"}, {"hex": "#7c5cff", "en": "Violet pulse", "ar": "نبض بنفسجي"}, {"hex": "#eef1f7", "en": "White frost", "ar": "صقيع أبيض"}, {"hex": "#7a80a0", "en": "Muted lavender", "ar": "خزامي هادئ"}, {"hex": "#11131f", "en": "Dark card", "ar": "بطاقة داكنة"}];
+
+    function observeReveal() {document.querySelectorAll(".reveal").forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){el.classList.add("visible");o.unobserve(el)}})},{threshold:.1});o.observe(el)})}
+    function paintColorNames(lang){document.querySelectorAll("[data-color-en]").forEach(function(el){el.textContent=lang==="ar"?el.getAttribute("data-color-ar"):el.getAttribute("data-color-en")})}
+    function applySuffix(){var lang=document.documentElement.lang==="ar"?"ar":"en";var suf=(DICT[lang]&&DICT[lang].suffix)||"";document.querySelectorAll(".money-price").forEach(function(el){el.setAttribute("data-suffix",suf)});if(window.IbraMoney)IbraMoney.applyAll()}
+    var _init=IbraLang.init;IbraLang.init=function(dict){_init(dict);paintColorNames(document.documentElement.lang==="ar"?"ar":"en");applySuffix();document.querySelectorAll(".lang-btn").forEach(function(btn){btn.addEventListener("click",function(){setTimeout(function(){paintColorNames(btn.getAttribute("data-lang"));applySuffix()},0)})})};IbraLang.init(DICT);document.addEventListener("ibra-currency",applySuffix);observeReveal();
   </script>
 </body>
 </html>

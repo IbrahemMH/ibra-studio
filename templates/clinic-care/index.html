@@ -6,49 +6,75 @@
   <title>CarePlus Clinic · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Libre+Franklin:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Libre Franklin';--body:'Plus Jakarta Sans';--bg:#f0f7ff;--text:#0f2744;--muted:#5b7391;--card:#ffffff;--line:#d7e6f5;--accent:#2563eb;--on-accent:#fff;--max:1040px}
-
+:root{--display:'Space Grotesk';--body:'Inter';--bg:#f2f6fc;--text:#0b1a2e;--muted:#4f6b85;--card:#ffffff;--line:rgba(11,26,46,.06);--accent:#2563eb;--accent-light:#bfdbfe;--on-accent:#fff;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(242,246,252,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(37,99,235,.06)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:#fff}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.03em;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:700;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent);box-shadow:0 8px 24px rgba(37,99,235,.25)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
+.btn-g:hover{background:rgba(37,99,235,.04)}
+
+/* hero with wave divider */
+.hero{display:grid;grid-template-columns:1fr .9fr;gap:2rem;align-items:center;padding:2rem 0 1.5rem;position:relative}
+.hero-text .kicker{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.hero-text h1{font-family:var(--display);font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1.08;letter-spacing:-.03em;margin-bottom:.6rem}
+.hero-text h1 span{color:var(--accent)}
+.hero-text .lead{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem;max-width:30rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem}
+.hero-stats{display:flex;gap:1.5rem}
+.hero-stats .hs{text-align:center}
+.hero-stats .hs-num{font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--accent);line-height:1}
+.hero-stats .hs-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:.1rem}
+.hero-visual{min-height:340px;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(37,99,235,.08)}
+.hero-visual img{width:100%;height:340px;object-fit:cover}
+.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,.08),transparent 50%)}
+
+/* wave divider */
+.wave{margin:-1px 0 0;line-height:0;transform:translateY(1px)}
+.wave svg{display:block;width:100%;height:40px}
+
+/* section */
+.section{padding:2rem 0 2.5rem}
+.section-head{margin-bottom:1.5rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:600;letter-spacing:-.02em}
+.section-head p{color:var(--muted);margin-top:.3rem;font-size:.9rem}
+
+/* doctor ID cards */
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.doc-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.doc-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(37,99,235,.06)}
+.doc-card .doc-img{aspect-ratio:1;overflow:hidden;border-bottom:1px solid var(--line)}
+.doc-card .doc-img img{width:100%;height:100%;object-fit:cover}
+.doc-card .doc-body{padding:1rem 1.1rem;display:flex;flex-direction:column;flex:1}
+.doc-card .doc-spec{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:.2rem}
+.doc-card h3{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.doc-card p{color:var(--muted);font-size:.85rem;flex:1}
+.doc-card .doc-price{font-weight:700;color:var(--accent);margin-top:.5rem;display:block}
+
+/* service checklist */
+.services-list{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:2rem}
+.svc{display:flex;align-items:center;gap:.6rem;padding:.7rem;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:.9rem;font-weight:500}
+.svc .check{width:22px;height:22px;border-radius:50%;background:var(--accent-light);color:var(--accent);display:grid;place-items:center;font-size:.7rem;flex-shrink:0}
+
+/* brand kit */
 .brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +82,22 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr}
+  .hero-visual{min-height:240px;order:-1}
+  .hero-visual img{height:240px}
+  .hero-stats{justify-content:center}
+  .doc-grid,.services-list{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -81,7 +116,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   </div>
   <div class="wrap">
     <nav class="site">
-      <div class="brand">CarePlus Clinic</div>
+      <div class="brand">CarePlus</div>
       <ul class="nav-links">
         <li data-i18n="nav1"></li>
         <li data-i18n="nav2"></li>
@@ -89,86 +124,85 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-text">
         <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
+        <h1 data-i18n-html="h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
+        <div class="hero-cta">
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
+        <div class="hero-stats">
+          <div class="hs"><div class="hs-num" data-count="12">0<span>+</span></div><div class="hs-label" data-i18n="s1"></div></div>
+          <div class="hs"><div class="hs-num" data-count="8">0<span>K+</span></div><div class="hs-label" data-i18n="s2"></div></div>
+          <div class="hs"><div class="hs-num" data-count="15">0<span>+</span></div><div class="hs-label" data-i18n="s3"></div></div>
         </div>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/clinic/hero.jpg" alt="CarePlus Clinic" width="800" height="600" /></div>
-    </header>
+      <div class="hero-visual"><img src="../../assets/images/clinic/hero.jpg" alt="CarePlus Clinic" /></div>
+    </section>
+  </div>
+
+  <!-- wave -->
+  <div class="wave"><svg viewBox="0 0 1440 40" preserveAspectRatio="none"><path d="M0,20 C240,40 480,0 720,20 C960,40 1200,0 1440,20 L1440,40 L0,40Z" fill="var(--bg)"/></svg></div>
+
+  <div class="wrap">
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/clinic/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="25"></span></div>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="services-list reveal">
+        <div class="svc"><span class="check">✓</span><span data-i18n="sv1"></span></div>
+        <div class="svc"><span class="check">✓</span><span data-i18n="sv2"></span></div>
+        <div class="svc"><span class="check">✓</span><span data-i18n="sv3"></span></div>
+        <div class="svc"><span class="check">✓</span><span data-i18n="sv4"></span></div>
+        <div class="svc"><span class="check">✓</span><span data-i18n="sv5"></span></div>
+        <div class="svc"><span class="check">✓</span><span data-i18n="sv6"></span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 data-i18n="d_title"></h2>
+        <p data-i18n="d_sub"></p>
+      </div>
+      <div class="doc-grid reveal">
+        <article class="doc-card">
+          <div class="doc-img"><img src="../../assets/images/clinic/card1.jpg" alt="" loading="lazy" /></div>
+          <div class="doc-body"><div class="doc-spec" data-i18n="spec1"></div><h3 data-i18n="d1t"></h3><p data-i18n="d1p"></p><span class="doc-price money-price" data-jod="25"></span></div>
         </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/clinic/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="40"></span></div>
+        <article class="doc-card">
+          <div class="doc-img"><img src="../../assets/images/clinic/card2.jpg" alt="" loading="lazy" /></div>
+          <div class="doc-body"><div class="doc-spec" data-i18n="spec2"></div><h3 data-i18n="d2t"></h3><p data-i18n="d2p"></p><span class="doc-price money-price" data-jod="35"></span></div>
         </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/clinic/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="30"></span></div>
+        <article class="doc-card">
+          <div class="doc-img"><img src="../../assets/images/clinic/card3.jpg" alt="" loading="lazy" /></div>
+          <div class="doc-body"><div class="doc-spec" data-i18n="spec3"></div><h3 data-i18n="d3t"></h3><p data-i18n="d3p"></p><span class="doc-price money-price" data-jod="45"></span></div>
         </article>
       </div>
     </section>
+
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · CarePlus Clinic</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Libre Franklin</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Plus Jakarta Sans</strong> — body</div>
+          <div><strong>Space Grotesk</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#f0f7ff" title="#f0f7ff"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Clinic blue mist" data-color-ar="أزرق عيادي">Clinic blue mist</span>
-            <span class="swatch-hex">#f0f7ff</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#2563eb" title="#2563eb"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Trust blue" data-color-ar="أزرق ثقة">Trust blue</span>
-            <span class="swatch-hex">#2563eb</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#0f2744" title="#0f2744"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Deep navy" data-color-ar="كحلي عميق">Deep navy</span>
-            <span class="swatch-hex">#0f2744</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#5b7391" title="#5b7391"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Soft steel" data-color-ar="فولاذ ناعم">Soft steel</span>
-            <span class="swatch-hex">#5b7391</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#ffffff" title="#ffffff"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Sterile white" data-color-ar="أبيض معقم">Sterile white</span>
-            <span class="swatch-hex">#ffffff</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#f2f6fc" title="#f2f6fc"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Clinical white" data-color-ar="أبيض سريري">Clinical white</span><span class="swatch-hex">#f2f6fc</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#2563eb" title="#2563eb"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Medical blue" data-color-ar="أزرق طبي">Medical blue</span><span class="swatch-hex">#2563eb</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#bfdbfe" title="#bfdbfe"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Ice accent" data-color-ar="لون ثلجي">Ice accent</span><span class="swatch-hex">#bfdbfe</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#4f6b85" title="#4f6b85"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Slate gray" data-color-ar="رمادي أردوازي">Slate gray</span><span class="swatch-hex">#4f6b85</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#ffffff" title="#ffffff"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="White" data-color-ar="أبيض">White</span><span class="swatch-hex">#ffffff</span></span></div>
         </div>
       </div>
     </section>
@@ -180,8 +214,19 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Services", "nav2": "Doctors", "nav3": "Insurance", "nav4": "Book visit", "kicker": "Multi-specialty clinic", "h1": "Care that feels clear and human.", "lead": "Book visits, meet doctors, understand services — calm medical design.", "cta1": "Book appointment", "cta2": "Meet doctors", "s_title": "Services", "c1t": "General medicine", "c1p": "Checkups & follow-up.", "c2t": "Diagnostics", "c2p": "Labs & imaging referrals.", "c3t": "Pediatrics", "c3p": "Child wellness visits.", "suffix": " visit", "f1": "Licensed doctors", "f2": "Evening hours", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "CarePlus · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الخدمات", "nav2": "الأطباء", "nav3": "التأمين", "nav4": "احجز زيارة", "kicker": "عيادة متعددة التخصصات", "h1": "رعاية واضحة وإنسانية.", "lead": "احجز زيارات وتعرّف على الأطباء — تصميم طبي هادئ.", "cta1": "احجز موعداً", "cta2": "الأطباء", "s_title": "الخدمات", "c1t": "طب عام", "c1p": "فحوصات ومتابعة.", "c2t": "تشخيص", "c2p": "مختبرات وتصوير.", "c3t": "أطفال", "c3p": "متابعة صحة الطفل.", "suffix": " زيارة", "f1": "أطباء مرخّصون", "f2": "مواعيد مسائية", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "كير بلس · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#f0f7ff", "en": "Clinic blue mist", "ar": "أزرق عيادي"}, {"hex": "#2563eb", "en": "Trust blue", "ar": "أزرق ثقة"}, {"hex": "#0f2744", "en": "Deep navy", "ar": "كحلي عميق"}, {"hex": "#5b7391", "en": "Soft steel", "ar": "فولاذ ناعم"}, {"hex": "#ffffff", "en": "Sterile white", "ar": "أبيض معقم"}];
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Doctors", "nav2": "Services", "nav3": "Contact", "nav4": "Book visit", "kicker": "Medical clinic · Amman", "h1": "Your health<span>comes first.</span>", "lead": "Comprehensive family medicine, diagnostics, and specialist care in a comforting environment.", "cta1": "Book appointment", "cta2": "Our services", "s1": "Doctors", "s2": "Patients", "s3": "Years", "s_title": "Our services", "s_sub": "Full-spectrum care for every age.", "sv1": "General check-ups & physicals", "sv2": "Pediatric care & vaccinations", "sv3": "Chronic disease management", "sv4": "Lab & diagnostic imaging", "sv5": "Women's health & screenings", "sv6": "Minor procedures & wound care", "d_title": "Meet our doctors", "d_sub": "Experienced professionals dedicated to your well-being.", "spec1": "Family medicine", "spec2": "Pediatrics", "spec3": "Internal medicine", "d1t": "Dr. Sara Khalil", "d1p": "15+ years in family practice and preventive care.", "d2t": "Dr. Omar Nassar", "d2p": "Board-certified pediatrician with a gentle approach.", "d3t": "Dr. Lina Haddad", "d3p": "Specialist in internal medicine and chronic conditions.", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "CarePlus Clinic · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الأطباء", "nav2": "الخدمات", "nav3": "اتصل", "nav4": "احجز زيارة", "kicker": "عيادة طبية · عمّان", "h1": "صحّتك<span>أولاً.</span>", "lead": "طب عائلي شامل وتشخيص ورعاية اختصاصية في بيئة مريحة.", "cta1": "احجز موعد", "cta2": "خدماتنا", "s1": "أطباء", "s2": "مريض", "s3": "سنة", "s_title": "خدماتنا", "s_sub": "رعاية متكاملة لكل الأعمار.", "sv1": "فحوصات عامة وكشف دوري", "sv2": "رعاية أطفال وتطعيمات", "sv3": "إدارة الأمراض المزمنة", "sv4": "مختبر وتصوير تشخيصي", "sv5": "صحة المرأة وفحوصات", "sv6": "إجراءات بسيطة وجروح", "d_title": "أطباؤنا", "d_sub": "محترفون ذوو خبرة ملتزمون براحتك.", "spec1": "طب عائلي", "spec2": "طب أطفال", "spec3": "طب باطني", "d1t": "د. سارة خليل", "d1p": "أكثر من 15 عاماً في الطب العائلي.", "d2t": "د. عمر نصار", "d2p": "طبيب أطفال معتمد بلطف في التعامل.", "d3t": "د. لينا حداد", "d3p": "اختصاصية طب باطني وأمراض مزمنة.", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "كير بلس · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#f2f6fc", "en": "Clinical white", "ar": "أبيض سريري"}, {"hex": "#2563eb", "en": "Medical blue", "ar": "أزرق طبي"}, {"hex": "#bfdbfe", "en": "Ice accent", "ar": "لون ثلجي"}, {"hex": "#4f6b85", "en": "Slate gray", "ar": "رمادي أردوازي"}, {"hex": "#ffffff", "en": "White", "ar": "أبيض"}];
+
+    function observeReveal() {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); }
+          });
+        }, {threshold: 0.1});
+        obs.observe(el);
+      });
+    }
     function paintColorNames(lang) {
       document.querySelectorAll("[data-color-en]").forEach(function (el) {
         el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
@@ -211,6 +256,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
     };
     IbraLang.init(DICT);
     document.addEventListener("ibra-currency", applySuffix);
+    observeReveal();
   </script>
 </body>
 </html>

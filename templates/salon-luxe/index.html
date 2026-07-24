@@ -6,49 +6,69 @@
   <title>Luxe Hair Studio · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Cormorant:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Cormorant';--body:'Jost';--bg:#1a1420;--text:#f7f0f8;--muted:#b5a6b8;--card:#241b2b;--line:rgba(247,240,248,.1);--accent:#e879f9;--on-accent:#1a1420;--max:1000px}
-
+:root{--display:'Playfair Display';--body:'Inter';--bg:#1a1420;--text:#f0e8f0;--muted:#a08aa8;--card:#241e2c;--line:rgba(240,232,240,.06);--accent:#e879f9;--accent-dim:#a855c7;--accent-bg:rgba(232,121,249,.04);--on-accent:#1a1420;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(26,20,32,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.2)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:var(--on-accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.3rem;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:600;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
-.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+
+/* hero with mirror frame */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding:2rem 0;min-height:420px}
+.hero-visual{position:relative;display:grid;place-items:center}
+.mirror-frame{width:min(40vw,320px);height:min(40vw,420px);border:8px solid var(--accent-dim);border-radius:4px;overflow:hidden;position:relative;box-shadow:0 0 0 2px var(--accent-bg),0 20px 50px rgba(0,0,0,.2)}
+.mirror-frame img{width:100%;height:100%;object-fit:cover}
+.mirror-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,121,249,.06),transparent)}
+.hero-text{text-align:right}
+.hero-text .kicker{font-family:var(--display);font-style:italic;font-size:.9rem;color:var(--accent);margin-bottom:.3rem}
+.hero-text h1{font-family:var(--display);font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1.08;font-weight:600;letter-spacing:-.02em;margin-bottom:.5rem}
+.hero-text .lead{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem;margin-left:auto;max-width:28rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:flex-end}
+
+/* service carousel */
+.section{padding:2rem 0 2.5rem}
+.section-head{margin-bottom:1.2rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.4rem,2.5vw,1.8rem);font-style:italic;font-weight:600;letter-spacing:-.02em}
+.section-head p{color:var(--muted);font-size:.9rem}
+.scroll-carousel{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin;scrollbar-color:var(--accent-dim) transparent}
+.scroll-carousel::-webkit-scrollbar{height:4px}
+.scroll-carousel::-webkit-scrollbar-track{background:transparent}
+.scroll-carousel::-webkit-scrollbar-thumb{background:var(--accent-dim);border-radius:999px}
+.srv-card{scroll-snap-align:start;flex:0 0 290px;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .2s}
+.srv-card:hover{transform:translateY(-4px)}
+.srv-card .srv-img{aspect-ratio:1;overflow:hidden}
+.srv-card .srv-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.srv-card:hover .srv-img img{transform:scale(1.04)}
+.srv-card .srv-body{padding:.85rem .95rem 1rem;text-align:center}
+.srv-card h3{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:.2rem}
+.srv-card p{color:var(--muted);font-size:.82rem}
+.srv-card .price{font-weight:700;display:block;margin-top:.4rem;color:var(--accent);font-size:.95rem}
+
+/* before/after */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+.ba-item{position:relative;aspect-ratio:3/4;overflow:hidden}
+.ba-item img{width:100%;height:100%;object-fit:cover}
+.ba-item .ba-label{position:absolute;bottom:.6rem;left:.6rem;background:rgba(0,0,0,.5);color:#fff;font-size:.65rem;font-weight:700;text-transform:uppercase;padding:.2rem .5rem;backdrop-filter:blur(4px)}
+
+/* brand kit */
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);background:var(--card)}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem;font-style:italic}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +76,24 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border:1px solid rgba(232,121,249,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:1rem 0}
+  .mirror-frame{width:240px;height:320px}
+  .hero-visual{order:-1}
+  .hero-text{text-align:left}
+  .hero-cta{justify-content:flex-start}
+  .srv-card{flex:0 0 240px}
+  .ba-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -81,7 +112,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   </div>
   <div class="wrap">
     <nav class="site">
-      <div class="brand">Luxe Hair Studio</div>
+      <div class="brand">Luxe Studio</div>
       <ul class="nav-links">
         <li data-i18n="nav1"></li>
         <li data-i18n="nav2"></li>
@@ -89,86 +120,64 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-visual">
+        <div class="mirror-frame"><img src="../../assets/images/salon/hero.jpg" alt="Luxe Hair Studio" /></div>
+      </div>
+      <div class="hero-text">
         <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
+        <h1 data-i18n-html="h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
+        <div class="hero-cta">
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
-        </div>
-      </div>
-      <div class="hero-photo"><img src="../../assets/images/salon/hero.jpg" alt="Luxe Hair Studio" width="800" height="600" /></div>
-    </header>
-    <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/salon/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="20"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/salon/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="45"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/salon/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="60"></span></div>
-        </article>
       </div>
     </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="scroll-carousel reveal">
+        <div class="srv-card"><div class="srv-img"><img src="../../assets/images/salon/card1.jpg" alt="" loading="lazy" /></div><div class="srv-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="25"></span></div></div>
+        <div class="srv-card"><div class="srv-img"><img src="../../assets/images/salon/card2.jpg" alt="" loading="lazy" /></div><div class="srv-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="40"></span></div></div>
+        <div class="srv-card"><div class="srv-img"><img src="../../assets/images/salon/card3.jpg" alt="" loading="lazy" /></div><div class="srv-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="65"></span></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 data-i18n="ba_title"></h2>
+        <p data-i18n="ba_sub"></p>
+      </div>
+      <div class="ba-grid reveal">
+        <div class="ba-item"><img src="../../assets/images/salon/card1.jpg" alt="" loading="lazy" /><span class="ba-label" data-i18n="ba1"></span></div>
+        <div class="ba-item"><img src="../../assets/images/salon/card2.jpg" alt="" loading="lazy" /><span class="ba-label" data-i18n="ba2"></span></div>
+      </div>
+    </section>
+
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Luxe Hair Studio</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Cormorant</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Jost</strong> — body</div>
+          <div><strong>Playfair Display</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#1a1420" title="#1a1420"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Velvet night" data-color-ar="ليلي مخملي">Velvet night</span>
-            <span class="swatch-hex">#1a1420</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#e879f9" title="#e879f9"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Luxe fuchsia" data-color-ar="فوشيا فاخر">Luxe fuchsia</span>
-            <span class="swatch-hex">#e879f9</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#f7f0f8" title="#f7f0f8"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Soft lilac white" data-color-ar="أبيض ليلكي">Soft lilac white</span>
-            <span class="swatch-hex">#f7f0f8</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#241b2b" title="#241b2b"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Plum card" data-color-ar="برقوقي">Plum card</span>
-            <span class="swatch-hex">#241b2b</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#b5a6b8" title="#b5a6b8"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Mauve mute" data-color-ar="موف خافت">Mauve mute</span>
-            <span class="swatch-hex">#b5a6b8</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#1a1420" title="#1a1420"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Deep violet" data-color-ar="بنفسجي عميق">Deep violet</span><span class="swatch-hex">#1a1420</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#e879f9" title="#e879f9"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Blush pink" data-color-ar="وردي وردي">Blush pink</span><span class="swatch-hex">#e879f9</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#a855c7" title="#a855c7"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Orchid" data-color-ar="أوركيد">Orchid</span><span class="swatch-hex">#a855c7</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#a08aa8" title="#a08aa8"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Lilac gray" data-color-ar="رمادي أرجواني">Lilac gray</span><span class="swatch-hex">#a08aa8</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#241e2c" title="#241e2c"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Dark plum" data-color-ar="برقوقي داكن">Dark plum</span><span class="swatch-hex">#241e2c</span></span></div>
         </div>
       </div>
     </section>
@@ -180,37 +189,13 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Services", "nav2": "Stylists", "nav3": "Gallery", "nav4": "Book", "kicker": "Hair · Color · Care", "h1": "Your next look, crafted.", "lead": "Elegant salon — cuts, color, bridal, easy booking.", "cta1": "Book appointment", "cta2": "View services", "s_title": "Signature services", "c1t": "Cut & style", "c1p": "Consultation + finish.", "c2t": "Color", "c2p": "Balayage, gloss, full color.", "c3t": "Bridal trial", "c3p": "Hair & soft glam.", "suffix": " from", "f1": "Senior stylists", "f2": "Products on site", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Luxe Hair · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الخدمات", "nav2": "المصففين", "nav3": "المعرض", "nav4": "احجز", "kicker": "شعر · لون · عناية", "h1": "إطلالتك القادمة… بإتقان.", "lead": "صالون أنيق — قص وصبغ وعرايس وحجز.", "cta1": "احجز موعداً", "cta2": "الخدمات", "s_title": "خدمات مميزة", "c1t": "قص وتصفيف", "c1p": "استشارة + تشطيب.", "c2t": "صبغ", "c2p": "بالاياح ولمعة ولون.", "c3t": "تجربة عروس", "c3p": "شعر ومكياج ناعم.", "suffix": " من", "f1": "مصففون خبراء", "f2": "منتجات في الصالون", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "لوكس · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#1a1420", "en": "Velvet night", "ar": "ليلي مخملي"}, {"hex": "#e879f9", "en": "Luxe fuchsia", "ar": "فوشيا فاخر"}, {"hex": "#f7f0f8", "en": "Soft lilac white", "ar": "أبيض ليلكي"}, {"hex": "#241b2b", "en": "Plum card", "ar": "برقوقي"}, {"hex": "#b5a6b8", "en": "Mauve mute", "ar": "موف خافت"}];
-    function paintColorNames(lang) {
-      document.querySelectorAll("[data-color-en]").forEach(function (el) {
-        el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
-      });
-    }
-    function applySuffix() {
-      var lang = document.documentElement.lang === "ar" ? "ar" : "en";
-      var suf = (DICT[lang] && DICT[lang].suffix) || "";
-      document.querySelectorAll(".money-price").forEach(function (el) {
-        el.setAttribute("data-suffix", suf);
-      });
-      if (window.IbraMoney) IbraMoney.applyAll();
-    }
-    var _init = IbraLang.init;
-    IbraLang.init = function (dict) {
-      _init(dict);
-      paintColorNames(document.documentElement.lang === "ar" ? "ar" : "en");
-      applySuffix();
-      document.querySelectorAll(".lang-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          setTimeout(function () {
-            paintColorNames(btn.getAttribute("data-lang"));
-            applySuffix();
-          }, 0);
-        });
-      });
-    };
-    IbraLang.init(DICT);
-    document.addEventListener("ibra-currency", applySuffix);
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Services", "nav2": "Gallery", "nav3": "Contact", "nav4": "Book now", "kicker": "Salon · Amman", "h1": "Where beauty<span>begins.</span>", "lead": "Premium hair services in an elegant, relaxing studio in the heart of Amman.", "cta1": "Book appointment", "cta2": "View services", "s_title": "Our services", "s_sub": "Tailored treatments for every hair type.", "c1t": "Cut & Style", "c1p": "Precision cut and blow-dry tailored to your face shape.", "c2t": "Balayage", "c2p": "Hand-painted highlights for a natural, sun-kissed look.", "c3t": "Keratin Treatment", "c3p": "Smoothing treatment that eliminates frizz for months.", "ba_title": "Before & after", "ba_sub": "Real transformations from our studio.", "ba1": "Before", "ba2": "After", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Luxe Hair Studio · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الخدمات", "nav2": "معرض", "nav3": "اتصل", "nav4": "احجز الآن", "kicker": "صالون · عمّان", "h1": "حيث يبدأ<span>الجمال.</span>", "lead": "خدمات شعر فاخرة في استوديو أنيق وهادئ في قلب عمّان.", "cta1": "احجز موعد", "cta2": "عرض الخدمات", "s_title": "خدماتنا", "s_sub": "علاجات مخصصة لكل نوع شعر.", "c1t": "قص وتصفيف", "c1p": "قص دقيق وتجفيف حسب شكل وجهك.", "c2t": "بالياج", "c2p": "خيوط ملونة مرسومة باليد لمظهر طبيعي.", "c3t": "علاج الكيراتين", "c3p": "علاج تنعيم يزيل التجعد لشهور.", "ba_title": "قبل وبعد", "ba_sub": "تحولات حقيقية من استوديونا.", "ba1": "قبل", "ba2": "بعد", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "لوكس · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#1a1420", "en": "Deep violet", "ar": "بنفسجي عميق"}, {"hex": "#e879f9", "en": "Blush pink", "ar": "وردي وردي"}, {"hex": "#a855c7", "en": "Orchid", "ar": "أوركيد"}, {"hex": "#a08aa8", "en": "Lilac gray", "ar": "رمادي أرجواني"}, {"hex": "#241e2c", "en": "Dark plum", "ar": "برقوقي داكن"}];
+
+    function observeReveal() {document.querySelectorAll(".reveal").forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){el.classList.add("visible");o.unobserve(el)}})},{threshold:.1});o.observe(el)})}
+    function paintColorNames(lang){document.querySelectorAll("[data-color-en]").forEach(function(el){el.textContent=lang==="ar"?el.getAttribute("data-color-ar"):el.getAttribute("data-color-en")})}
+    function applySuffix(){var lang=document.documentElement.lang==="ar"?"ar":"en";var suf=(DICT[lang]&&DICT[lang].suffix)||"";document.querySelectorAll(".money-price").forEach(function(el){el.setAttribute("data-suffix",suf)});if(window.IbraMoney)IbraMoney.applyAll()}
+    var _init=IbraLang.init;IbraLang.init=function(dict){_init(dict);paintColorNames(document.documentElement.lang==="ar"?"ar":"en");applySuffix();document.querySelectorAll(".lang-btn").forEach(function(btn){btn.addEventListener("click",function(){setTimeout(function(){paintColorNames(btn.getAttribute("data-lang"));applySuffix()},0)})})};IbraLang.init(DICT);document.addEventListener("ibra-currency",applySuffix);observeReveal();
   </script>
 </body>
 </html>

@@ -6,63 +6,95 @@
   <title>Box 42 Training · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Anton&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Anton';--body:'Barlow';--bg:#11130f;--text:#f2f5e9;--muted:#a3ad93;--card:#1a1e16;--line:rgba(242,245,233,.12);--accent:#c8f542;--on-accent:#111;--max:1060px}
-
+:root{--display:'Archivo Black';--mono:'JetBrains Mono';--body:'Inter';--bg:#1a1b14;--text:#e8e7d4;--muted:#8f8e7a;--card:#24251d;--line:rgba(232,231,212,.08);--accent:#c8f542;--accent-dim:#8ab82e;--on-accent:#15160e;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.012) 2px,rgba(255,255,255,.012) 4px);pointer-events:none;z-index:9999}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+
+/* topbar shared */
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(26,27,20,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.25)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:rgba(200,245,66,.12);color:var(--accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.02em;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:700;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
-.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.btn-g:hover{background:rgba(200,245,66,.04)}
+
+/* hero — industrial with glitch */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding:3rem 0 2rem}
+.hero-text .kicker{display:inline-block;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:.3rem .7rem;margin-bottom:1rem}
+.hero-text h1{font-family:var(--display);font-size:clamp(2.8rem,5.5vw,4rem);line-height:1;text-transform:uppercase;letter-spacing:-.03em;margin-bottom:.7rem;color:var(--text);position:relative;animation:glitch 5s infinite}
+@keyframes glitch{0%,84%,100%{text-shadow:none}85%{text-shadow:-2px 0 var(--accent),2px 0 var(--accent-dim)}87%{text-shadow:2px -1px var(--accent-dim),-2px 1px var(--accent)}89%{text-shadow:-3px 2px var(--accent),3px -2px var(--accent-dim)}91%{text-shadow:1px 2px var(--accent),-1px -2px var(--accent-dim)}}
+.hero-text .lead{color:var(--muted);font-size:1rem;margin-bottom:1.6rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
+.countdown{display:flex;gap:1rem}
+.countdown-item{text-align:center;min-width:52px}
+.countdown-num{font-family:var(--mono);font-size:1.6rem;color:var(--accent);line-height:1}
+.countdown-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:.15rem}
+
+/* hero image industrial border */
+.hero-visual{position:relative;min-height:380px}
+.hero-visual .img-frame{position:absolute;inset:0;border:3px solid var(--accent);border-radius:0;overflow:hidden;outline:4px solid var(--bg);outline-offset:-8px}
+.hero-visual .img-frame img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) saturate(.9)}
+.hero-visual .img-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,245,66,.08),transparent 50%)}
+
+/* section */
+.section{padding:1.8rem 0 3rem}
+.section-head{margin-bottom:1.8rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.5rem,2.8vw,2rem);text-transform:uppercase;letter-spacing:-.02em}
+.section-head p{color:var(--muted);margin-top:.4rem;font-size:.9rem}
+
+/* WOD board cards */
+.wod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.wod-card{background:var(--card);border:3px solid var(--line);padding:1.2rem;display:flex;flex-direction:column;transition:background .2s,border-color .2s}
+.wod-card:hover{border-color:var(--accent);background:rgba(200,245,66,.03)}
+.wod-card .wod-meta{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.6rem}
+.wod-card .wod-tag{font-family:var(--mono);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--accent);color:var(--accent);padding:.15rem .45rem}
+.wod-card .wod-diff{font-family:var(--mono);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.wod-card h3{font-family:var(--display);font-size:1.1rem;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.3rem}
+.wod-card p{color:var(--muted);font-size:.85rem;flex:1}
+.price{font-family:var(--mono);display:block;margin-top:.6rem;color:var(--accent);font-weight:700;font-size:1rem}
+
+/* brand kit shared */
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);background:var(--card)}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem;text-transform:uppercase}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
-.brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
+.brand-label{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
 .font-lines{display:grid;gap:.35rem;font-size:.95rem}
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:0;border:1px solid rgba(200,245,66,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
-.swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
+.swatch-hex{font-size:.75rem;color:var(--muted);font-family:var(--mono)}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
 
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding:1.5rem 0}
+  .hero-visual{min-height:260px;order:-1}
+  .wod-grid{grid-template-columns:1fr}
+  .countdown{justify-content:center}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -81,7 +113,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   </div>
   <div class="wrap">
     <nav class="site">
-      <div class="brand">Box 42 Training</div>
+      <div class="brand">Box 42</div>
       <ul class="nav-links">
         <li data-i18n="nav1"></li>
         <li data-i18n="nav2"></li>
@@ -89,84 +121,102 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
+  </div>
+
+  <div class="wrap">
+    <!-- hero: glitch text + countdown + industrial frame -->
+    <section class="hero">
+      <div class="hero-text">
         <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
+        <h1 data-i18n-html="h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
+        <div class="hero-cta">
           <a class="btn btn-a" href="#" data-i18n="cta1"></a>
           <a class="btn btn-g" href="#" data-i18n="cta2"></a>
         </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item"><div class="countdown-num" id="cd-hours">00</div><div class="countdown-label" data-i18n="cdh"></div></div>
+          <div class="countdown-item"><div class="countdown-num" id="cd-mins">00</div><div class="countdown-label" data-i18n="cdm"></div></div>
+          <div class="countdown-item"><div class="countdown-num" id="cd-secs">00</div><div class="countdown-label" data-i18n="cds"></div></div>
         </div>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/crossfit/hero.jpg" alt="Box 42 Training" width="800" height="600" /></div>
-    </header>
+      <div class="hero-visual">
+        <div class="img-frame"><img src="../../assets/images/crossfit/hero.jpg" alt="Box 42 Training" /></div>
+      </div>
+    </section>
+
+    <!-- WOD board -->
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/crossfit/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="15"></span></div>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="wod-grid">
+        <article class="wod-card reveal">
+          <div class="wod-meta"><span class="wod-tag" data-i18n="t1"></span><span class="wod-diff" data-i18n="d1"></span></div>
+          <h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p>
+          <span class="price money-price" data-jod="15"></span>
         </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/crossfit/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="15"></span></div>
+        <article class="wod-card reveal">
+          <div class="wod-meta"><span class="wod-tag" data-i18n="t2"></span><span class="wod-diff" data-i18n="d2"></span></div>
+          <h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p>
+          <span class="price money-price" data-jod="25"></span>
         </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/crossfit/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="20"></span></div>
+        <article class="wod-card reveal">
+          <div class="wod-meta"><span class="wod-tag" data-i18n="t3"></span><span class="wod-diff" data-i18n="d3"></span></div>
+          <h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p>
+          <span class="price money-price" data-jod="35"></span>
         </article>
       </div>
     </section>
+
+    <!-- brand kit -->
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Box 42 Training</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Anton</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Barlow</strong> — body</div>
+          <div><strong>Archivo Black</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>JetBrains Mono</strong> — monospace / tags</div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
         <div class="swatch">
-          <span class="swatch-sq" style="background:#11130f" title="#11130f"></span>
+          <span class="swatch-sq" style="background:#1a1b14" title="#1a1b14"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Box black" data-color-ar="أسود البوكس">Box black</span>
-            <span class="swatch-hex">#11130f</span>
+            <span class="swatch-name" data-color-en="Olive drab" data-color-ar="زيتي عسكري">Olive drab</span>
+            <span class="swatch-hex">#1a1b14</span>
           </span>
         </div>
         <div class="swatch">
           <span class="swatch-sq" style="background:#c8f542" title="#c8f542"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Acid lime" data-color-ar="ليموني حمضي">Acid lime</span>
+            <span class="swatch-name" data-color-en="Neon lime" data-color-ar="ليموني نيون">Neon lime</span>
             <span class="swatch-hex">#c8f542</span>
           </span>
         </div>
         <div class="swatch">
-          <span class="swatch-sq" style="background:#f2f5e9" title="#f2f5e9"></span>
+          <span class="swatch-sq" style="background:#e8e7d4" title="#e8e7d4"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Bone white" data-color-ar="أبيض عظمي">Bone white</span>
-            <span class="swatch-hex">#f2f5e9</span>
+            <span class="swatch-name" data-color-en="Chalk white" data-color-ar="أبيض طباشير">Chalk white</span>
+            <span class="swatch-hex">#e8e7d4</span>
           </span>
         </div>
         <div class="swatch">
-          <span class="swatch-sq" style="background:#a3ad93" title="#a3ad93"></span>
+          <span class="swatch-sq" style="background:#8f8e7a" title="#8f8e7a"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Olive mute" data-color-ar="زيتوني خافت">Olive mute</span>
-            <span class="swatch-hex">#a3ad93</span>
+            <span class="swatch-name" data-color-en="Concrete gray" data-color-ar="رمادي خرسانة">Concrete gray</span>
+            <span class="swatch-hex">#8f8e7a</span>
           </span>
         </div>
         <div class="swatch">
-          <span class="swatch-sq" style="background:#1a1e16" title="#1a1e16"></span>
+          <span class="swatch-sq" style="background:#24251d" title="#24251d"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Mat green" data-color-ar="أخضر سجادة">Mat green</span>
-            <span class="swatch-hex">#1a1e16</span>
+            <span class="swatch-name" data-color-en="Matte card" data-color-ar="بطاقة مطفي">Matte card</span>
+            <span class="swatch-hex">#24251d</span>
           </span>
         </div>
         </div>
@@ -180,8 +230,36 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "WODs", "nav2": "Coaches", "nav3": "Drop-in", "nav4": "Join box", "kicker": "Cross-training community", "h1": "Show up. Work hard. Repeat.", "lead": "Industrial floor with daily WODs and a loud supportive community.", "cta1": "Try a drop-in", "cta2": "Today's WOD", "s_title": "This week", "c1t": "Engine", "c1p": "Intervals + capacity.", "c2t": "Strength", "c2p": "Squat focus day.", "c3t": "Team WOD", "c3p": "Partner metcon.", "suffix": " drop-in", "f1": "Daily programming", "f2": "All levels", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Box 42 · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "التمارين", "nav2": "المدربين", "nav3": "تجريبي", "nav4": "انضم", "kicker": "مجتمع تدريب متقاطع", "h1": "احضر. اجتهد. كرر.", "lead": "صالة صناعية بتمارين يومية ومجتمع داعم.", "cta1": "جرّب حصة", "cta2": "تمرين اليوم", "s_title": "هذا الأسبوع", "c1t": "تحمّل", "c1p": "فواصل وقدرة.", "c2t": "قوة", "c2p": "يوم سكوات.", "c3t": "جماعي", "c3p": "ميتكون مع شريك.", "suffix": " حصة", "f1": "برنامج يومي", "f2": "لكل المستويات", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "بوكس 42 · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#11130f", "en": "Box black", "ar": "أسود البوكس"}, {"hex": "#c8f542", "en": "Acid lime", "ar": "ليموني حمضي"}, {"hex": "#f2f5e9", "en": "Bone white", "ar": "أبيض عظمي"}, {"hex": "#a3ad93", "en": "Olive mute", "ar": "زيتوني خافت"}, {"hex": "#1a1e16", "en": "Mat green", "ar": "أخضر سجادة"}];
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "WODs", "nav2": "Coaches", "nav3": "Schedule", "nav4": "Drop in", "kicker": "CrossFit · Amman", "h1": "Show<span>up.</span>", "lead": "Industrial training box — barbells, pull-up rigs, and daily WODs programmed by pro coaches.", "cta1": "Free trial", "cta2": "Today's WOD", "cdh": "Hours", "cdm": "Mins", "cds": "Secs", "s_title": "Daily WODs", "s_sub": "Scaled for every level — from beginner to games athlete.", "t1": "WOD", "t2": "Metcon", "t3": "Strength", "d1": "Intermediate", "d2": "Advanced", "d3": "All levels", "c1t": "Fight Gone Bad", "c1p": "3 rounds — wall balls, box jumps, push press, row.", "c2t": "Fran", "c2p": "21-15-9 thrusters and pull-ups for time.", "c3t": "Cindy", "c3p": "20 min AMRAP — 5 pull-ups, 10 push-ups, 15 squats.", "suffix": " / drop-in", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Box 42 Training · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "التمارين", "nav2": "المدربون", "nav3": "الجدول", "nav4": "انضم", "kicker": "كروس فت · عمّان", "h1": "اظهر.<span>وتحدى.</span>", "lead": "صالة تدريب صناعية — أثقال وقضبان سحب وتمارين يومية من مدربين محترفين.", "cta1": "تجربة مجانية", "cta2": "تمرين اليوم", "cdh": "ساعة", "cdm": "دقيقة", "cds": "ثانية", "s_title": "تمارين اليوم", "s_sub": "مناسبة لجميع المستويات — من مبتدئ إلى رياضي.", "t1": "WOD", "t2": "ميتكون", "t3": "قوة", "d1": "متوسط", "d2": "متقدم", "d3": "جميع المستويات", "c1t": "فايت غون باد", "c1p": "3 جولات — كرات حائط وقفز ورفع وتجديف.", "c2t": "فران", "c2p": "21-15-9 تمرين دفع وسحب للوقت.", "c3t": "سيندي", "c3p": "20 دقيقة — 5 سحب و10 دفع و15 قرفصاء.", "suffix": " / حصة", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "بوكس 42 · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#1a1b14", "en": "Olive drab", "ar": "زيتي عسكري"}, {"hex": "#c8f542", "en": "Neon lime", "ar": "ليموني نيون"}, {"hex": "#e8e7d4", "en": "Chalk white", "ar": "أبيض طباشير"}, {"hex": "#8f8e7a", "en": "Concrete gray", "ar": "رمادي خرسانة"}, {"hex": "#24251d", "en": "Matte card", "ar": "بطاقة مطفي"}];
+
+    /* countdown timer */
+    function startCountdown() {
+      var end = new Date();
+      end.setHours(end.getHours() + 8, 0, 0, 0);
+      function tick() {
+        var diff = Math.max(0, end - Date.now());
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById("cd-hours").textContent = String(h).padStart(2, "0");
+        document.getElementById("cd-mins").textContent = String(m).padStart(2, "0");
+        document.getElementById("cd-secs").textContent = String(s).padStart(2, "0");
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    function observeReveal() {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); }
+          });
+        }, {threshold: 0.1});
+        obs.observe(el);
+      });
+    }
     function paintColorNames(lang) {
       document.querySelectorAll("[data-color-en]").forEach(function (el) {
         el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
@@ -211,6 +289,8 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
     };
     IbraLang.init(DICT);
     document.addEventListener("ibra-currency", applySuffix);
+    startCountdown();
+    observeReveal();
   </script>
 </body>
 </html>

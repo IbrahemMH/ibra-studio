@@ -6,49 +6,77 @@
   <title>Flow Wellness · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Quicksand:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Cormorant Garamond';--body:'Outfit';--bg:#f7f3ee;--text:#1f1a17;--muted:#6f655c;--card:#fffdf9;--line:#e7ddd2;--accent:#2f6f5e;--on-accent:#fff;--max:1040px}
-
+:root{--display:'Quicksand';--body:'Inter';--bg:#f4f1ec;--text:#1e2a24;--muted:#6b7a70;--card:#ffffff;--line:rgba(30,42,36,.08);--accent:#2f6f5e;--accent-light:#d9ebe3;--on-accent:#fff;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;overflow-x:hidden}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+
+/* topbar shared */
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(244,241,236,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.04)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent-light);color:var(--accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.02em;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:700;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
+.btn-g:hover{background:rgba(47,111,94,.04)}
+
+/* hero — full rounded image with breathing text */
+.hero{position:relative;margin-bottom:1.5rem}
+.hero-visual{position:relative;border-radius:28px;overflow:hidden;min-height:420px;background:var(--accent-light)}
+.hero-visual img{width:100%;height:420px;object-fit:cover}
+.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(47,111,94,.15),transparent 40%,rgba(0,0,0,.2) 100%)}
+.hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:2.5rem 2rem;z-index:2}
+.hero-overlay .kicker{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:999px;margin-bottom:1rem;align-self:flex-start}
+.hero-overlay h1{font-family:var(--display);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:.6rem;animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.hero-overlay .lead{color:rgba(255,255,255,.85);font-size:1rem;max-width:28rem;margin-bottom:1.2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem}
+.hero-cta .btn-a{background:#fff;color:var(--accent);box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.hero-cta .btn-g{border-color:rgba(255,255,255,.3);color:#fff}
+
+/* section headings */
+.section{padding:1.8rem 0 3rem}
+.section-head{text-align:center;margin-bottom:1.8rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.5rem,2.8vw,2rem);color:var(--accent);letter-spacing:-.02em}
+.section-head p{color:var(--muted);margin-top:.4rem;font-size:.9rem}
+
+/* blob cards — horizontal scroll snap */
+.scroll-x{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-width:thin;scrollbar-color:var(--accent-light) transparent}
+.scroll-x::-webkit-scrollbar{height:5px}
+.scroll-x::-webkit-scrollbar-track{background:transparent}
+.scroll-x::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:999px}
+.blob-card{scroll-snap-align:start;flex:0 0 310px;background:var(--card);border-radius:26px;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.blob-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(47,111,94,.1)}
+.blob-card .card-img{aspect-ratio:16/12;overflow:hidden}
+.blob-card .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.blob-card:hover .card-img img{transform:scale(1.05)}
+.blob-card .card-body{padding:1rem 1.1rem 1.2rem;flex:1;display:flex;flex-direction:column}
+.blob-card h3{font-family:var(--display);font-size:1.1rem;color:var(--accent);margin-bottom:.2rem}
+.blob-card p{color:var(--muted);font-size:.87rem;flex:1}
+.price{display:block;font-weight:700;color:var(--accent);margin-top:.5rem;font-size:1rem}
+
+/* rounded info section */
+.info-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.25rem;text-align:center}
+.info-card .icon{font-size:1.6rem;margin-bottom:.4rem;display:block}
+.info-card h4{font-family:var(--display);font-size:.95rem;color:var(--accent);margin-bottom:.2rem}
+.info-card p{color:var(--muted);font-size:.82rem}
+
+/* brand kit shared */
 .brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem;color:var(--accent)}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +84,22 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
 
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:800px){
+  .info-row{grid-template-columns:1fr}
+  .blob-card{flex:0 0 260px}
+  .hero-overlay{padding:1.5rem}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -89,84 +126,106 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
-        <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
-        <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
-          <a class="btn btn-a" href="#" data-i18n="cta1"></a>
-          <a class="btn btn-g" href="#" data-i18n="cta2"></a>
-        </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
+  </div>
+
+  <!-- hero: full rounded banner with breathing text -->
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-visual">
+        <img src="../../assets/images/wellness/hero.jpg" alt="Flow Wellness" />
+        <div class="hero-overlay">
+          <div class="kicker" data-i18n="kicker"></div>
+          <h1 data-i18n-html="h1"></h1>
+          <p class="lead" data-i18n="lead"></p>
+          <div class="hero-cta">
+            <a class="btn btn-a" href="#" data-i18n="cta1"></a>
+            <a class="btn btn-g" href="#" data-i18n="cta2"></a>
+          </div>
         </div>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/wellness/hero.jpg" alt="Flow Wellness" width="800" height="600" /></div>
-    </header>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <!-- info highlights -->
+    <div class="info-row reveal">
+      <div class="info-card"><span class="icon">🧘</span><h4 data-i18n="hi1t"></h4><p data-i18n="hi1p"></p></div>
+      <div class="info-card"><span class="icon">🌿</span><h4 data-i18n="hi2t"></h4><p data-i18n="hi2p"></p></div>
+      <div class="info-card"><span class="icon">⏰</span><h4 data-i18n="hi3t"></h4><p data-i18n="hi3p"></p></div>
+    </div>
+
+    <!-- horizontal scroll classes -->
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="scroll-x reveal">
+        <article class="blob-card">
           <div class="card-img"><img src="../../assets/images/wellness/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="12"></span></div>
+          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="19"></span></div>
         </article>
-        <article class="card">
+        <article class="blob-card">
           <div class="card-img"><img src="../../assets/images/wellness/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="14"></span></div>
+          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="29"></span></div>
         </article>
-        <article class="card">
+        <article class="blob-card">
           <div class="card-img"><img src="../../assets/images/wellness/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="10"></span></div>
+          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="39"></span></div>
+        </article>
+        <article class="blob-card">
+          <div class="card-img"><img src="../../assets/images/wellness/card2.jpg" alt="" loading="lazy" /></div>
+          <div class="card-body"><h3 data-i18n="c4t"></h3><p data-i18n="c4p"></p><span class="price money-price" data-jod="49"></span></div>
         </article>
       </div>
     </section>
+
+    <!-- brand kit -->
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Flow Wellness</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Cormorant Garamond</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Outfit</strong> — body</div>
+          <div><strong>Quicksand</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
         <div class="swatch">
-          <span class="swatch-sq" style="background:#f7f3ee" title="#f7f3ee"></span>
+          <span class="swatch-sq" style="background:#f4f1ec" title="#f4f1ec"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Warm sand" data-color-ar="رمل دافئ">Warm sand</span>
-            <span class="swatch-hex">#f7f3ee</span>
+            <span class="swatch-name" data-color-en="Warm cream" data-color-ar="كريمي دافئ">Warm cream</span>
+            <span class="swatch-hex">#f4f1ec</span>
           </span>
         </div>
         <div class="swatch">
           <span class="swatch-sq" style="background:#2f6f5e" title="#2f6f5e"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Sage green" data-color-ar="أخضر حكيم">Sage green</span>
+            <span class="swatch-name" data-color-en="Forest teal" data-color-ar="غابي فيروزي">Forest teal</span>
             <span class="swatch-hex">#2f6f5e</span>
           </span>
         </div>
         <div class="swatch">
-          <span class="swatch-sq" style="background:#1f1a17" title="#1f1a17"></span>
+          <span class="swatch-sq" style="background:#d9ebe3" title="#d9ebe3"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Deep earth" data-color-ar="تراب عميق">Deep earth</span>
-            <span class="swatch-hex">#1f1a17</span>
+            <span class="swatch-name" data-color-en="Mint wash" data-color-ar="غسول نعناعي">Mint wash</span>
+            <span class="swatch-hex">#d9ebe3</span>
           </span>
         </div>
         <div class="swatch">
-          <span class="swatch-sq" style="background:#6f655c" title="#6f655c"></span>
+          <span class="swatch-sq" style="background:#6b7a70" title="#6b7a70"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Clay muted" data-color-ar="طين هادئ">Clay muted</span>
-            <span class="swatch-hex">#6f655c</span>
+            <span class="swatch-name" data-color-en="Sage gray" data-color-ar="رمادي مريمي">Sage gray</span>
+            <span class="swatch-hex">#6b7a70</span>
           </span>
         </div>
         <div class="swatch">
-          <span class="swatch-sq" style="background:#fffdf9" title="#fffdf9"></span>
+          <span class="swatch-sq" style="background:#ffffff" title="#ffffff"></span>
           <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Paper white" data-color-ar="أبيض ورقي">Paper white</span>
-            <span class="swatch-hex">#fffdf9</span>
+            <span class="swatch-name" data-color-en="Pure white" data-color-ar="أبيض نقي">Pure white</span>
+            <span class="swatch-hex">#ffffff</span>
           </span>
         </div>
         </div>
@@ -180,8 +239,19 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Yoga", "nav2": "Pilates", "nav3": "Schedule", "nav4": "Book", "kicker": "Mind · Body · Breath", "h1": "Move gently. Feel stronger.", "lead": "Calm studio for yoga, pilates, and recovery — book in minutes.", "cta1": "Book a class", "cta2": "See schedule", "s_title": "Popular sessions", "c1t": "Morning flow", "c1p": "45 min vinyasa.", "c2t": "Core pilates", "c2p": "Mat strength work.", "c3t": "Restore", "c3p": "Stretch & breathwork.", "suffix": "", "f1": "Small groups", "f2": "EN + AR coaches", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Flow Wellness · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "يوغا", "nav2": "بيلاتس", "nav3": "الجدول", "nav4": "احجز", "kicker": "عقل · جسد · تنفّس", "h1": "تحرّك بهدوء. اشعر بالقوة.", "lead": "استوديو هادئ لليوغا والبيلاتس — احجز خلال دقائق.", "cta1": "احجز حصة", "cta2": "عرض الجدول", "s_title": "حصص مميزة", "c1t": "تدفق صباحي", "c1p": "45 دقيقة فينياسا.", "c2t": "بيلاتس كور", "c2p": "تمارين حصيرة.", "c3t": "استشفاء", "c3p": "تمدد وتنفس.", "suffix": "", "f1": "مجموعات صغيرة", "f2": "مدربون عربي/إنجليزي", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "فلاو ويلنس · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#f7f3ee", "en": "Warm sand", "ar": "رمل دافئ"}, {"hex": "#2f6f5e", "en": "Sage green", "ar": "أخضر حكيم"}, {"hex": "#1f1a17", "en": "Deep earth", "ar": "تراب عميق"}, {"hex": "#6f655c", "en": "Clay muted", "ar": "طين هادئ"}, {"hex": "#fffdf9", "en": "Paper white", "ar": "أبيض ورقي"}];
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Classes", "nav2": "Schedule", "nav3": "Pricing", "nav4": "Book", "kicker": "Wellness · Amman", "h1": "Find your<span>flow.</span>", "lead": "Yoga, pilates, and breathwork in a light-filled studio designed for calm.", "cta1": "Try a free class", "cta2": "View schedule", "hi1t": "Yoga & Pilates", "hi1p": "Daily sessions for all levels from beginner to advanced.", "hi2t": "Holistic Wellness", "hi2p": "Breathwork, meditation, and mindful movement combined.", "hi3t": "Flexible Hours", "hi3p": "Early morning to evening — fit wellness into your day.", "s_title": "Popular classes", "s_sub": "Swipe or scroll through our most-loved sessions.", "c1t": "Sunrise Flow", "c1p": "Gentle vinyasa to start your day with intention.", "c2t": "Power Pilates", "c2p": "Core-strengthening mat work for endurance and posture.", "c3t": "Breath & Restore", "c3p": "Slow yin with breathwork — deep release.", "c4t": "Private Session", "c4p": "One-on-one coaching tailored to your body.", "suffix": " / session", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Flow Wellness · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "الحصص", "nav2": "الجدول", "nav3": "الأسعار", "nav4": "احجز", "kicker": "ويلنس · عمّان", "h1": "اعثر على<span>تدفقك.</span>", "lead": "يوغا وبيلاتس وتمارين تنفس في استوديو مليء بالضوء مصمم للهدوء.", "cta1": "جرب حصة مجانية", "cta2": "عرض الجدول", "hi1t": "يوغا وبيلاتس", "hi1p": "جلسات يومية لجميع المستويات من المبتدئ إلى المتقدم.", "hi2t": "عافية شاملة", "hi2p": "تمارين تنفس وتأمل وحركة واعية مجتمعة.", "hi3t": "ساعات مرنة", "hi3p": "من الصباح الباكر حتى المساء — ناسب العافية في يومك.", "s_title": "الحصص الشائعة", "s_sub": "اسحب أو مرر عبر حصصنا الأكثر حباً.", "c1t": "تدفق الشروق", "c1p": "فينياسا لطيفة لبدء يومك بنية.", "c2t": "بيلاتس القوة", "c2p": "تمارين تقوية الجذع للتحمل والوضعية.", "c3t": "تنفس واسترخاء", "c3p": "يين بطيء مع تمارين تنفس — تحرر عميق.", "c4t": "جلسة خاصة", "c4p": "تدريب فردي مصمم خصيصاً لجسمك.", "suffix": " / جلسة", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "فلاو ويلنس · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#f4f1ec", "en": "Warm cream", "ar": "كريمي دافئ"}, {"hex": "#2f6f5e", "en": "Forest teal", "ar": "غابي فيروزي"}, {"hex": "#d9ebe3", "en": "Mint wash", "ar": "غسول نعناعي"}, {"hex": "#6b7a70", "en": "Sage gray", "ar": "رمادي مريمي"}, {"hex": "#ffffff", "en": "Pure white", "ar": "أبيض نقي"}];
+
+    function observeReveal() {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); }
+          });
+        }, {threshold: 0.1});
+        obs.observe(el);
+      });
+    }
     function paintColorNames(lang) {
       document.querySelectorAll("[data-color-en]").forEach(function (el) {
         el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
@@ -211,6 +281,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
     };
     IbraLang.init(DICT);
     document.addEventListener("ibra-currency", applySuffix);
+    observeReveal();
   </script>
 </body>
 </html>

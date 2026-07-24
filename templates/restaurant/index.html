@@ -6,49 +6,74 @@
   <title>Olive & Ember · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Cormorant Garamond';--body:'Nunito';--bg:#1c1410;--text:#f7efe6;--muted:#cbb8a4;--card:#261c16;--line:rgba(247,239,230,.1);--accent:#e2b87a;--on-accent:#24180f;--max:980px}
-
+:root{--display:'Cormorant Garamond';--body:'Inter';--bg:#0d0a08;--text:#f0e8df;--muted:#a09082;--card:#1a1410;--line:rgba(240,232,223,.08);--accent:#e2b87a;--accent-dim:#b89356;--on-accent:#0d0a08;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
+body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(13,10,8,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.2)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:var(--on-accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-weight:700;font-size:1.5rem;font-style:italic;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:600;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
-.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+
+/* hero — moody full gradient */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;margin-bottom:1rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.3) saturate(.8)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,10,8,.3) 0%,rgba(13,10,8,.85) 80%,var(--bg) 100%)}
+.hero-overlay{position:relative;z-index:2;max-width:600px;padding:1rem}
+.hero-overlay .kicker{font-family:var(--display);font-style:italic;font-size:1rem;color:var(--accent);margin-bottom:.3rem}
+.hero-overlay h1{font-family:var(--display);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;line-height:1;letter-spacing:-.02em;margin-bottom:.6rem}
+.hero-overlay .lead{color:var(--muted);font-size:1rem;margin-bottom:1.5rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+
+/* menu accordion */
+.section{padding:2rem 0 2.5rem}
+.section-head{text-align:center;margin-bottom:1.5rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;font-style:italic}
+.section-head p{color:var(--muted);margin-top:.3rem;font-size:.9rem}
+
+.menu-accordion{display:grid;gap:.6rem;max-width:700px;margin:0 auto}
+.menu-item{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:border-color .2s}
+.menu-item:hover{border-color:rgba(226,184,122,.15)}
+.menu-trigger{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;cursor:pointer;gap:.5rem}
+.menu-trigger .left{display:flex;flex-direction:column;text-align:left;gap:.1rem}
+.menu-trigger .left .name{font-family:var(--display);font-size:1.1rem;font-weight:600}
+.menu-trigger .left .desc{font-size:.82rem;color:var(--muted)}
+.menu-trigger .price{font-family:var(--display);font-style:italic;color:var(--accent);font-size:1.1rem;white-space:nowrap}
+.menu-hover{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 1.2rem}
+.menu-item.open .menu-hover{max-height:200px;padding:0 1.2rem .8rem}
+.menu-hover img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:4px}
+
+/* featured dish cards */
+.dish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.dish-card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:transform .25s;position:relative}
+.dish-card:hover{transform:translateY(-4px)}
+.dish-card .dish-img{aspect-ratio:1;overflow:hidden}
+.dish-card .dish-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.dish-card:hover .dish-img img{transform:scale(1.05)}
+.dish-card .dish-body{padding:.9rem 1rem 1rem}
+.dish-card .dish-cat{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dim);margin-bottom:.2rem}
+.dish-card h3{font-family:var(--display);font-size:1.1rem;font-weight:600;margin-bottom:.2rem}
+.dish-card p{color:var(--muted);font-size:.85rem}
+.dish-card .price{font-family:var(--display);font-style:italic;display:block;margin-top:.5rem;color:var(--accent);font-size:1.05rem}
+
+/* brand kit */
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem;font-style:italic}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +81,20 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border-radius:0;border:1px solid rgba(226,184,122,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .hero{min-height:55vh}
+  .dish-grid{grid-template-columns:1fr}
+  .menu-trigger{flex-direction:column;align-items:flex-start}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -89,86 +121,73 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
-        <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
-        <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
-          <a class="btn btn-a" href="#" data-i18n="cta1"></a>
-          <a class="btn btn-g" href="#" data-i18n="cta2"></a>
-        </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
-        </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-bg"><img src="../../assets/images/restaurant/hero.jpg" alt="Olive & Ember" /></div>
+    <div class="hero-overlay">
+      <div class="kicker" data-i18n="kicker"></div>
+      <h1 data-i18n-html="h1"></h1>
+      <p class="lead" data-i18n="lead"></p>
+      <div class="hero-cta">
+        <a class="btn btn-a" href="#" data-i18n="cta1"></a>
+        <a class="btn btn-g" href="#" data-i18n="cta2"></a>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/restaurant/hero.jpg" alt="Olive & Ember" width="800" height="600" /></div>
-    </header>
+    </div>
+  </section>
+
+  <div class="wrap">
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/restaurant/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="8.5"></span></div>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="dish-grid reveal">
+        <article class="dish-card">
+          <div class="dish-img"><img src="../../assets/images/restaurant/card1.jpg" alt="" loading="lazy" /></div>
+          <div class="dish-body"><div class="dish-cat" data-i18n="cat1"></div><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="18"></span></div>
         </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/restaurant/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="16"></span></div>
+        <article class="dish-card">
+          <div class="dish-img"><img src="../../assets/images/restaurant/card2.jpg" alt="" loading="lazy" /></div>
+          <div class="dish-body"><div class="dish-cat" data-i18n="cat2"></div><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="28"></span></div>
         </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/restaurant/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="6"></span></div>
+        <article class="dish-card">
+          <div class="dish-img"><img src="../../assets/images/restaurant/card3.jpg" alt="" loading="lazy" /></div>
+          <div class="dish-body"><div class="dish-cat" data-i18n="cat3"></div><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="38"></span></div>
         </article>
       </div>
     </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 data-i18n="m_title"></h2>
+        <p data-i18n="m_sub"></p>
+      </div>
+      <div class="menu-accordion" id="menu">
+        <div class="menu-item"><div class="menu-trigger" onclick="this.parentElement.classList.toggle('open')"><div class="left"><span class="name" data-i18n="m1t"></span><span class="desc" data-i18n="m1d"></span></div><span class="price">18 JOD</span></div><div class="menu-hover"><img src="../../assets/images/restaurant/card1.jpg" alt="" loading="lazy" /></div></div>
+        <div class="menu-item"><div class="menu-trigger" onclick="this.parentElement.classList.toggle('open')"><div class="left"><span class="name" data-i18n="m2t"></span><span class="desc" data-i18n="m2d"></span></div><span class="price">28 JOD</span></div><div class="menu-hover"><img src="../../assets/images/restaurant/card2.jpg" alt="" loading="lazy" /></div></div>
+        <div class="menu-item"><div class="menu-trigger" onclick="this.parentElement.classList.toggle('open')"><div class="left"><span class="name" data-i18n="m3t"></span><span class="desc" data-i18n="m3d"></span></div><span class="price">38 JOD</span></div><div class="menu-hover"><img src="../../assets/images/restaurant/card3.jpg" alt="" loading="lazy" /></div></div>
+        <div class="menu-item"><div class="menu-trigger" onclick="this.parentElement.classList.toggle('open')"><div class="left"><span class="name" data-i18n="m4t"></span><span class="desc" data-i18n="m4d"></span></div><span class="price">42 JOD</span></div><div class="menu-hover"><img src="../../assets/images/restaurant/card1.jpg" alt="" loading="lazy" /></div></div>
+      </div>
+    </section>
+
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Olive & Ember</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Cormorant Garamond</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Nunito</strong> — body</div>
+          <div><strong>Cormorant Garamond</strong> — <span data-i18n="font_roles">Headings · body</span></div>
+          <div><strong>Inter</strong> — labels</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#1c1410" title="#1c1410"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Ember black" data-color-ar="أسود جمر">Ember black</span>
-            <span class="swatch-hex">#1c1410</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#e2b87a" title="#e2b87a"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Gold olive" data-color-ar="ذهبي زيتوني">Gold olive</span>
-            <span class="swatch-hex">#e2b87a</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#f7efe6" title="#f7efe6"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Linen cream" data-color-ar="كتان كريمي">Linen cream</span>
-            <span class="swatch-hex">#f7efe6</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#261c16" title="#261c16"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Wood brown" data-color-ar="بني خشبي">Wood brown</span>
-            <span class="swatch-hex">#261c16</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#cbb8a4" title="#cbb8a4"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Warm mute" data-color-ar="دافئ خافت">Warm mute</span>
-            <span class="swatch-hex">#cbb8a4</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#0d0a08" title="#0d0a08"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Charcoal" data-color-ar="فحمي">Charcoal</span><span class="swatch-hex">#0d0a08</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#e2b87a" title="#e2b87a"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Warm gold" data-color-ar="ذهبي دافئ">Warm gold</span><span class="swatch-hex">#e2b87a</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#f0e8df" title="#f0e8df"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Ivory" data-color-ar="عاجي">Ivory</span><span class="swatch-hex">#f0e8df</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#a09082" title="#a09082"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Stone" data-color-ar="حجري">Stone</span><span class="swatch-hex">#a09082</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#1a1410" title="#1a1410"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Espresso" data-color-ar="إسبريسو">Espresso</span><span class="swatch-hex">#1a1410</span></span></div>
         </div>
       </div>
     </section>
@@ -180,8 +199,19 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Menu", "nav2": "Reserve", "nav3": "Location", "nav4": "Book table", "kicker": "Amman · Dinner · Fire kitchen", "h1": "Slow food. Warm nights.", "lead": "Fine-dining warmth with menu cards and a clear reservation path.", "cta1": "Reserve a table", "cta2": "View menu", "s_title": "Evening menu", "c1t": "Ember flatbread", "c1p": "Labneh, chili oil, herbs.", "c2t": "Citrus lamb", "c2p": "Burnt orange, freekeh.", "c3t": "Date & tahini cake", "c3p": "Sesame, cardamom cream.", "suffix": "", "f1": "Dinner 6–11", "f2": "Private table", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Olive & Ember · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "القائمة", "nav2": "احجز", "nav3": "الموقع", "nav4": "احجز طاولة", "kicker": "عمّان · عشاء · نار", "h1": "طعام بطيء. ليالٍ دافئة.", "lead": "أجواء مطعم راقٍ مع قائمة ومسار حجز واضح.", "cta1": "احجز طاولة", "cta2": "القائمة", "s_title": "قائمة المساء", "c1t": "خبز إمبر", "c1p": "لبنة وزيت فلفل.", "c2t": "خروف بالحمضيات", "c2p": "برتقال محروق وفريكة.", "c3t": "كعكة تمر وطحينة", "c3p": "سمسم وكريمة هيل.", "suffix": "", "f1": "عشاء ٦–١١", "f2": "طاولة خاصة", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "أوليف آند إمبر · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#1c1410", "en": "Ember black", "ar": "أسود جمر"}, {"hex": "#e2b87a", "en": "Gold olive", "ar": "ذهبي زيتوني"}, {"hex": "#f7efe6", "en": "Linen cream", "ar": "كتان كريمي"}, {"hex": "#261c16", "en": "Wood brown", "ar": "بني خشبي"}, {"hex": "#cbb8a4", "en": "Warm mute", "ar": "دافئ خافت"}];
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Menu", "nav2": "Reserve", "nav3": "Gallery", "nav4": "Book table", "kicker": "Fine dining · Amman", "h1": "Where flavor<span>meets fire.</span>", "lead": "Mediterranean fine dining with wood-fired techniques, seasonal ingredients, and an intimate atmosphere.", "cta1": "Reserve a table", "cta2": "View menu", "s_title": "Signature dishes", "s_sub": "Crafted by our chef — a taste of the Mediterranean.", "cat1": "Starter", "cat2": "Main", "cat3": "Dessert", "c1t": "Burrata & Figs", "c1p": "Creamy burrata with caramelized figs, aged balsamic, and basil.", "c2t": "Wood-Fired Lamb", "c2p": "Slow-roasted lamb shoulder with rosemary jus and roasted vegetables.", "c3t": "Olive Oil Cake", "c3p": "Extra virgin olive oil cake with citrus cream and pistachio crumb.", "m_title": "À la carte menu", "m_sub": "Tap a dish to see its presentation.", "m1t": "Grilled Octopus", "m1d": "Tender octopus with smoked paprika, lemon, and herbs.", "m2t": "Beef Fillet Tagliata", "m2d": "Sliced beef fillet over rocket with parmesan and truffle oil.", "m3t": "Lobster Linguine", "m3d": "Fresh linguine with lobster tail in a saffron cream sauce.", "m4t": "Chocolate Fondant", "m4d": "Warm dark chocolate fondant with vanilla bean gelato.", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · body", "foot": "Olive & Ember · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "القائمة", "nav2": "احجز", "nav3": "معرض", "nav4": "احجز طاولة", "kicker": "مطعم راقٍ · عمّان", "h1": "حيث النكهة<span>تلتقي بالنار.</span>", "lead": "مأكولات متوسطية راقية بتقنيات الحطب ومكونات موسمية وأجواء حميمية.", "cta1": "احجز طاولة", "cta2": "عرض القائمة", "s_title": "أطباق مميزة", "s_sub": "من إعداد الشيف — طعم البحر المتوسط.", "cat1": "مقبلات", "cat2": "رئيسي", "cat3": "حلويات", "c1t": "بوراتا وتين", "c1p": "بوراتا كريمية مع تين بالكراميل وخل بلسميك.", "c2t": "خروف على الحطب", "c2p": "كتف خروف مطبوخ ببطء مع روزماري وخضروات.", "c3t": "كيك زيت الزيتون", "c3p": "كيك بزيت الزيتون البكر مع كريمة حمضيات وفستق.", "m_title": "قائمة انتقائية", "m_sub": "اضغط على الطبق لرؤية تقديمه.", "m1t": "أخطبوط مشوي", "m1d": "أخطبوط طري مع بابريكا مدخنة وليمون وأعشاب.", "m2t": "فيليه لحم تالياتا", "m2d": "شرائح فيليه البقر على الجرجير مع بارميزان وترفيل.", "m3t": "لينجويني لوبستر", "m3d": "لينجويني طازج مع ذيل اللوبستر بصلصة الزعفران.", "m4t": "فوندان الشوكولاتة", "m4d": "فوندان شوكولاتة داكنة دافئة مع آيس كريم فانيليا.", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "أوليف آند إمبر · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#0d0a08", "en": "Charcoal", "ar": "فحمي"}, {"hex": "#e2b87a", "en": "Warm gold", "ar": "ذهبي دافئ"}, {"hex": "#f0e8df", "en": "Ivory", "ar": "عاجي"}, {"hex": "#a09082", "en": "Stone", "ar": "حجري"}, {"hex": "#1a1410", "en": "Espresso", "ar": "إسبريسو"}];
+
+    function observeReveal() {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { el.classList.add("visible"); obs.unobserve(el); }
+          });
+        }, {threshold: 0.1});
+        obs.observe(el);
+      });
+    }
     function paintColorNames(lang) {
       document.querySelectorAll("[data-color-en]").forEach(function (el) {
         el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
@@ -211,6 +241,13 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
     };
     IbraLang.init(DICT);
     document.addEventListener("ibra-currency", applySuffix);
+    observeReveal();
+    /* menu toggle */
+    document.querySelectorAll(".menu-trigger").forEach(function(el) {
+      el.addEventListener("click", function() {
+        this.parentElement.classList.toggle("open");
+      });
+    });
   </script>
 </body>
 </html>

@@ -6,49 +6,72 @@
   <title>Keystone Homes · Ibra Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-:root{--display:'Playfair Display';--body:'Source Sans 3';--bg:#0c1222;--text:#e8eefc;--muted:#9aa8c7;--card:#141b2f;--line:rgba(232,238,252,.1);--accent:#d4a017;--on-accent:#1a1408;--max:1080px}
-
+:root{--display:'Syne';--body:'Inter';--bg:#0f1923;--text:#eef2f5;--muted:#7a8f9f;--card:#162230;--line:rgba(238,242,245,.06);--accent:#d4a017;--accent-light:#fef3c7;--on-accent:#0f1923;--max:1080px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh}
 html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:100%;object-fit:cover}
 .wrap{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.back{font-size:.85rem;font-weight:600;opacity:.9}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.55rem 1rem;background:rgba(15,25,35,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.back{font-size:.85rem;font-weight:600;opacity:.8}
 .toggles{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
-.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.15)}
+.lang,.currency-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.2)}
 .lang-btn,.currency-toggle button{border:0;background:transparent;color:var(--muted);padding:.32rem .65rem;cursor:pointer;font-weight:700;font-size:.78rem}
-.lang-btn.active,.currency-toggle button.active{background:rgba(255,255,255,.12);color:var(--accent)}
+.lang-btn.active,.currency-toggle button.active{background:var(--accent);color:var(--on-accent)}
 nav.site{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
-.brand{font-family:var(--display),serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.03em;color:var(--accent)}
 .nav-links{display:flex;gap:1rem;list-style:none;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.15rem;font-weight:700;border:0;cursor:pointer}
-.btn-a{background:var(--accent);color:var(--on-accent,#111)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.72rem 1.2rem;font-weight:600;font-size:.92rem;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:var(--accent);color:var(--on-accent)}
 .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
-.hero{padding:2rem 0 1.5rem}
-.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;margin-bottom:.7rem}
-h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem}
-.lead{color:var(--muted);max-width:34rem;margin-bottom:1.2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.1rem}
-.meta{display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
-.hero-photo{border-radius:22px;border:1px solid var(--line);min-height:300px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.hero-photo img{width:100%;height:100%;min-height:300px;object-fit:cover}
-.section{padding:1.2rem 0 2.5rem}
-.section h2{font-family:var(--display),serif;font-size:1.55rem;margin-bottom:1rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-img{aspect-ratio:16/11;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{padding:1rem}
-.card h3{font-family:var(--display),serif;font-size:1.15rem;margin-bottom:.3rem}
-.card p{color:var(--muted);font-size:.9rem}
-.price{display:block;margin-top:.55rem;font-weight:800;color:var(--accent)}
-.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--card)}
-.brand-kit h2{font-family:var(--display),serif;font-size:1.25rem;margin-bottom:.85rem}
+
+/* hero with search overlay */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.35) saturate(.8)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,25,35,.2),rgba(15,25,35,.8) 70%)}
+.hero-content{position:relative;z-index:2;text-align:center;width:min(100% - 2rem,580px)}
+.hero-content .kicker{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.hero-content h1{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:.5rem}
+.hero-content .lead{color:var(--muted);margin-bottom:1.5rem}
+.search-box{display:flex;gap:.5rem;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:.4rem;max-width:480px;margin:0 auto}
+.search-box input{flex:1;background:transparent;border:0;padding:.5rem 1rem;color:#fff;outline:none;font-size:.9rem}
+.search-box input::placeholder{color:var(--muted)}
+.search-box button{background:var(--accent);color:var(--on-accent);border:0;border-radius:999px;padding:.5rem 1.2rem;font-weight:700;cursor:pointer}
+
+/* map pin */
+.map-pin{position:absolute;bottom:12%;right:12%;width:16px;height:16px;z-index:3}
+.map-pin::before{content:'';width:16px;height:16px;background:var(--accent);border-radius:50%;position:absolute;animation:pinPulse 2s infinite}
+.map-pin::after{content:'';width:40px;height:40px;background:rgba(212,160,23,.15);border-radius:50%;position:absolute;top:-12px;left:-12px;animation:pinRing 2s infinite}
+@keyframes pinPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}
+@keyframes pinRing{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.6);opacity:0}}
+
+/* listing cards 3D flip */
+.section{padding:2rem 0 2.5rem}
+.section-head{margin-bottom:1.5rem}
+.section-head h2{font-family:var(--display);font-size:clamp(1.4rem,2.8vw,2rem);font-weight:700;letter-spacing:-.03em}
+.section-head p{color:var(--muted);margin-top:.3rem;font-size:.9rem}
+.list-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.list-card{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .3s,box-shadow .3s;perspective:1000px}
+.list-card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.list-card .lc-img{aspect-ratio:16/11;overflow:hidden;position:relative}
+.list-card .lc-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.list-card:hover .lc-img img{transform:scale(1.05)}
+.list-card .lc-price{position:absolute;bottom:.6rem;left:.6rem;background:rgba(212,160,23,.9);color:#0f1923;font-family:var(--display);font-weight:700;padding:.3rem .7rem;font-size:.95rem}
+.list-card .lc-body{padding:.85rem 1rem 1rem}
+.list-card .lc-loc{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:.2rem}
+.list-card h3{font-family:var(--display);font-size:1rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.15rem}
+.list-card p{color:var(--muted);font-size:.85rem}
+.list-card .lc-feat{display:flex;gap:.6rem;margin-top:.5rem;font-size:.78rem;color:var(--muted)}
+.list-card .lc-feat span{display:flex;align-items:center;gap:.2rem}
+
+/* brand kit */
+.brand-kit{margin:1rem 0 2.5rem;padding:1.25rem;border:1px solid var(--line);background:var(--card)}
+.brand-kit h2{font-family:var(--display);font-size:1.25rem;margin-bottom:.85rem;font-weight:700}
 .brand-row{margin-bottom:1rem}
 .brand-row:last-child{margin-bottom:0}
 .brand-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
@@ -56,13 +79,21 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
 .font-lines strong{color:var(--accent)}
 .swatches{display:flex;flex-wrap:wrap;gap:.75rem}
 .swatch{display:flex;align-items:center;gap:.5rem;min-width:140px}
-.swatch-sq{width:28px;height:28px;border-radius:7px;border:1px solid rgba(128,128,128,.45);flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.swatch-sq{width:28px;height:28px;border:1px solid rgba(212,160,23,.25);flex-shrink:0}
 .swatch-meta{display:flex;flex-direction:column;line-height:1.25}
 .swatch-name{font-size:.82rem;font-weight:600}
 .swatch-hex{font-size:.75rem;color:var(--muted);font-family:ui-monospace,monospace}
 .footer{border-top:1px solid var(--line);padding:1.3rem 0 2rem;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
-@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}.nav-links{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:800px){
+  .hero{min-height:55vh}
+  .search-box{flex-direction:column;border-radius:16px;padding:.6rem}
+  .search-box button{width:100%}
+  .list-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
   </style>
 </head>
 <body>
@@ -81,7 +112,7 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   </div>
   <div class="wrap">
     <nav class="site">
-      <div class="brand">Keystone Homes</div>
+      <div class="brand">Keystone</div>
       <ul class="nav-links">
         <li data-i18n="nav1"></li>
         <li data-i18n="nav2"></li>
@@ -89,86 +120,52 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
       </ul>
       <a class="btn btn-a" href="#" data-i18n="nav4"></a>
     </nav>
-    <header class="hero grid2">
-      <div>
-        <div class="kicker" data-i18n="kicker"></div>
-        <h1 data-i18n="h1"></h1>
-        <p class="lead" data-i18n="lead"></p>
-        <div class="cta">
-          <a class="btn btn-a" href="#" data-i18n="cta1"></a>
-          <a class="btn btn-g" href="#" data-i18n="cta2"></a>
-        </div>
-        <div class="meta">
-          <span data-i18n="f1"></span>
-          <span data-i18n="f2"></span>
-        </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-bg"><img src="../../assets/images/realestate/hero.jpg" alt="Keystone Homes" /></div>
+    <div class="hero-content">
+      <div class="kicker" data-i18n="kicker"></div>
+      <h1 data-i18n-html="h1"></h1>
+      <p class="lead" data-i18n="lead"></p>
+      <div class="search-box">
+        <input type="text" data-i18n-placeholder="search_pl" placeholder="Search by city, area or project..." />
+        <button data-i18n="search_btn"></button>
       </div>
-      <div class="hero-photo"><img src="../../assets/images/realestate/hero.jpg" alt="Keystone Homes" width="800" height="600" /></div>
-    </header>
+    </div>
+    <div class="map-pin"></div>
+  </section>
+
+  <div class="wrap">
     <section class="section">
-      <h2 data-i18n="s_title"></h2>
-      <div class="grid3">
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/realestate/card1.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price money-price" data-jod="185000"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/realestate/card2.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price money-price" data-jod="320000"></span></div>
-        </article>
-        <article class="card">
-          <div class="card-img"><img src="../../assets/images/realestate/card3.jpg" alt="" loading="lazy" /></div>
-          <div class="card-body"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price money-price" data-jod="210000"></span></div>
-        </article>
+      <div class="section-head">
+        <h2 data-i18n="s_title"></h2>
+        <p data-i18n="s_sub"></p>
+      </div>
+      <div class="list-grid reveal">
+        <article class="list-card"><div class="lc-img"><img src="../../assets/images/realestate/card1.jpg" alt="" loading="lazy" /><span class="lc-price money-price" data-jod="85000"></span></div><div class="lc-body"><div class="lc-loc" data-i18n="l1"></div><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><div class="lc-feat"><span>🛏️ <span data-i18n="f1"></span></span><span>🛁 <span data-i18n="f2"></span></span><span>📐 150 <span data-i18n="f3"></span></span></div></div></article>
+        <article class="list-card"><div class="lc-img"><img src="../../assets/images/realestate/card2.jpg" alt="" loading="lazy" /><span class="lc-price money-price" data-jod="125000"></span></div><div class="lc-body"><div class="lc-loc" data-i18n="l2"></div><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><div class="lc-feat"><span>🛏️ <span>4</span></span><span>🛁 <span>3</span></span><span>📐 220 <span>m²</span></span></div></div></article>
+        <article class="list-card"><div class="lc-img"><img src="../../assets/images/realestate/card3.jpg" alt="" loading="lazy" /><span class="lc-price money-price" data-jod="220000"></span></div><div class="lc-body"><div class="lc-loc" data-i18n="l3"></div><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><div class="lc-feat"><span>🛏️ <span>5</span></span><span>🛁 <span>4</span></span><span>📐 350 <span>m²</span></span></div></div></article>
       </div>
     </section>
+
     <section class="brand-kit" id="brand-kit">
       <h2><span data-i18n="brand_title">Brand kit</span> · Keystone Homes</h2>
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>Playfair Display</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>Source Sans 3</strong> — body</div>
+          <div><strong>Syne</strong> — <span data-i18n="font_roles">Headings</span></div>
+          <div><strong>Inter</strong> — body</div>
         </div>
       </div>
       <div class="brand-row">
         <div class="brand-label" data-i18n="colors_label">Colors</div>
         <div class="swatches">
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#0c1222" title="#0c1222"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Estate navy" data-color-ar="كحلي عقاري">Estate navy</span>
-            <span class="swatch-hex">#0c1222</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#d4a017" title="#d4a017"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Key gold" data-color-ar="ذهبي مفتاح">Key gold</span>
-            <span class="swatch-hex">#d4a017</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#e8eefc" title="#e8eefc"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Cloud text" data-color-ar="نص سحابي">Cloud text</span>
-            <span class="swatch-hex">#e8eefc</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#141b2f" title="#141b2f"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Ink panel" data-color-ar="لوحة حبر">Ink panel</span>
-            <span class="swatch-hex">#141b2f</span>
-          </span>
-        </div>
-        <div class="swatch">
-          <span class="swatch-sq" style="background:#9aa8c7" title="#9aa8c7"></span>
-          <span class="swatch-meta">
-            <span class="swatch-name" data-color-en="Steel mute" data-color-ar="فولاذ خافت">Steel mute</span>
-            <span class="swatch-hex">#9aa8c7</span>
-          </span>
-        </div>
+        <div class="swatch"><span class="swatch-sq" style="background:#0f1923" title="#0f1923"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Midnight navy" data-color-ar="كحلي غامق">Midnight navy</span><span class="swatch-hex">#0f1923</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#d4a017" title="#d4a017"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Gold" data-color-ar="ذهبي">Gold</span><span class="swatch-hex">#d4a017</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#fef3c7" title="#fef3c7"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Cream gold" data-color-ar="ذهبي كريمي">Cream gold</span><span class="swatch-hex">#fef3c7</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#7a8f9f" title="#7a8f9f"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Slate blue" data-color-ar="أزرق أردوازي">Slate blue</span><span class="swatch-hex">#7a8f9f</span></span></div>
+        <div class="swatch"><span class="swatch-sq" style="background:#162230" title="#162230"></span><span class="swatch-meta"><span class="swatch-name" data-color-en="Dark card" data-color-ar="بطاقة داكنة">Dark card</span><span class="swatch-hex">#162230</span></span></div>
         </div>
       </div>
     </section>
@@ -180,37 +177,13 @@ h1{font-family:var(--display),serif;font-size:clamp(2rem,4.8vw,3.2rem);line-heig
   <script src="../shared/lang.js"></script>
   <script src="../../js/currency.js"></script>
   <script>
-    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Listings", "nav2": "Agents", "nav3": "Sell", "nav4": "Contact", "kicker": "Real estate agency", "h1": "Find the key to your next home.", "lead": "Listings, agents, and a strong contact path for buyers and sellers.", "cta1": "Browse homes", "cta2": "Talk to an agent", "s_title": "Featured listings", "c1t": "Abdoun apartment", "c1p": "3 bed · city view · parking.", "c2t": "Khalda villa", "c2p": "Garden · maid room.", "c3t": "Jbeiha duplex", "c3p": "Near schools · ready.", "suffix": "", "f1": "Verified listings", "f2": "Buyer + seller support", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings · Body", "foot": "Keystone Homes · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "العقارات", "nav2": "الوسطاء", "nav3": "بِع معنا", "nav4": "تواصل", "kicker": "وكالة عقارية", "h1": "اعثر على مفتاح بيتك القادم.", "lead": "عقارات ووسطاء ومسار تواصل واضح.", "cta1": "تصفح المنازل", "cta2": "تحدث مع وسيط", "s_title": "عقارات مميزة", "c1t": "شقة عبدون", "c1p": "3 غرف · إطلالة · موقف.", "c2t": "فيلا خلدا", "c2p": "حديقة · غرفة خادمة.", "c3t": "دوبلكس الجبيهة", "c3p": "قرب المدارس · جاهز.", "suffix": "", "f1": "عقارات موثّقة", "f2": "دعم مشتري وبائع", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "عناوين · نص", "foot": "كي ستون · قالب Ibra Studio"}};
-    var COLORS = [{"hex": "#0c1222", "en": "Estate navy", "ar": "كحلي عقاري"}, {"hex": "#d4a017", "en": "Key gold", "ar": "ذهبي مفتاح"}, {"hex": "#e8eefc", "en": "Cloud text", "ar": "نص سحابي"}, {"hex": "#141b2f", "en": "Ink panel", "ar": "لوحة حبر"}, {"hex": "#9aa8c7", "en": "Steel mute", "ar": "فولاذ خافت"}];
-    function paintColorNames(lang) {
-      document.querySelectorAll("[data-color-en]").forEach(function (el) {
-        el.textContent = lang === "ar" ? el.getAttribute("data-color-ar") : el.getAttribute("data-color-en");
-      });
-    }
-    function applySuffix() {
-      var lang = document.documentElement.lang === "ar" ? "ar" : "en";
-      var suf = (DICT[lang] && DICT[lang].suffix) || "";
-      document.querySelectorAll(".money-price").forEach(function (el) {
-        el.setAttribute("data-suffix", suf);
-      });
-      if (window.IbraMoney) IbraMoney.applyAll();
-    }
-    var _init = IbraLang.init;
-    IbraLang.init = function (dict) {
-      _init(dict);
-      paintColorNames(document.documentElement.lang === "ar" ? "ar" : "en");
-      applySuffix();
-      document.querySelectorAll(".lang-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          setTimeout(function () {
-            paintColorNames(btn.getAttribute("data-lang"));
-            applySuffix();
-          }, 0);
-        });
-      });
-    };
-    IbraLang.init(DICT);
-    document.addEventListener("ibra-currency", applySuffix);
+    var DICT = {"en": {"back": "← Ibra Studio", "nav1": "Listings", "nav2": "Agents", "nav3": "About", "nav4": "Contact", "kicker": "Real estate · Jordan", "h1": "Find your<span>key to home.</span>", "lead": "Premium properties across Jordan — apartments, villas, and land for every budget.", "search_pl": "Search by city, area or project...", "search_btn": "Search", "s_title": "Featured listings", "s_sub": "Handpicked properties ready for you.", "l1": "Abdoun, Amman", "l2": "Sweifieh, Amman", "l3": "Dead Sea Road", "c1t": "Modern Apartment", "c1p": "3-bedroom with panoramic city views and balcony.", "c2t": "Family Villa", "c2p": "Garden villa with pool, garage, and finished basement.", "c3t": "Luxury Penthouse", "c3p": "Top-floor penthouse with rooftop terrace and sea views.", "f1": "3", "f2": "2", "f3": "m²", "suffix": " JOD", "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors", "font_roles": "Headings", "foot": "Keystone Homes · Ibra Studio template"}, "ar": {"back": "← Ibra Studio", "nav1": "القوائم", "nav2": "الوسطاء", "nav3": "عن", "nav4": "اتصل", "kicker": "عقارات · الأردن", "h1": "اعثر على<span>مفتاح منزلك.</span>", "lead": "عقارات فاخرة في جميع أنحاء الأردن — شقق وفيلات وأراضي.", "search_pl": "ابحث بالمدينة أو المنطقة...", "search_btn": "بحث", "s_title": "قوائم مميزة", "s_sub": "عقارات منتقاة جاهزة لك.", "l1": "عبدون، عمّان", "l2": "الصويفية، عمّان", "l3": "طريق البحر الميت", "c1t": "شقة عصرية", "c1p": "3 غرف نوم مع إطلالة بانورامية وشرفة.", "c2t": "فيلا عائلية", "c2p": "فيلا بحديقة ومسبح ومرآب وقبو.", "c3t": "بنتهاوس فاخر", "c3p": "بنتهاوس علوي مع سطح وإطلالة بحر.", "f1": "٣", "f2": "٢", "f3": "م²", "suffix": " دينار", "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان", "font_roles": "العناوين", "foot": "كي ستون · قالب Ibra Studio"}};
+    var COLORS = [{"hex": "#0f1923", "en": "Midnight navy", "ar": "كحلي غامق"}, {"hex": "#d4a017", "en": "Gold", "ar": "ذهبي"}, {"hex": "#fef3c7", "en": "Cream gold", "ar": "ذهبي كريمي"}, {"hex": "#7a8f9f", "en": "Slate blue", "ar": "أزرق أردوازي"}, {"hex": "#162230", "en": "Dark card", "ar": "بطاقة داكنة"}];
+
+    function observeReveal() {document.querySelectorAll(".reveal").forEach(function(el){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){el.classList.add("visible");o.unobserve(el)}})},{threshold:.1});o.observe(el)})}
+    function paintColorNames(lang){document.querySelectorAll("[data-color-en]").forEach(function(el){el.textContent=lang==="ar"?el.getAttribute("data-color-ar"):el.getAttribute("data-color-en")})}
+    function applySuffix(){var lang=document.documentElement.lang==="ar"?"ar":"en";var suf=(DICT[lang]&&DICT[lang].suffix)||"";document.querySelectorAll(".money-price").forEach(function(el){el.setAttribute("data-suffix",suf)});if(window.IbraMoney)IbraMoney.applyAll()}
+    var _init=IbraLang.init;IbraLang.init=function(dict){_init(dict);paintColorNames(document.documentElement.lang==="ar"?"ar":"en");applySuffix();document.querySelectorAll(".lang-btn").forEach(function(btn){btn.addEventListener("click",function(){setTimeout(function(){paintColorNames(btn.getAttribute("data-lang"));applySuffix()},0)})})};IbraLang.init(DICT);document.addEventListener("ibra-currency",applySuffix);observeReveal();
   </script>
 </body>
 </html>
