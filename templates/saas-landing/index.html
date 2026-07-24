@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaPulse — SaaS Template · Ibra Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#07090f; --card:#111622; --line:rgba(255,255,255,.08); --text:#eef2ff; --muted:#93a0b8; --a:#7c5cff; --b:#22d3ee; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 50% -10%,rgba(124,92,255,.28),transparent 55%),radial-gradient(ellipse 40% 30% at 90% 20%,rgba(34,211,238,.12),transparent);pointer-events:none;z-index:-1}
+    .wrap{width:min(100% - 2rem,1040px);margin:0 auto}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+    .brand{font-family:Outfit,sans-serif;font-weight:700;letter-spacing:-.03em}
+    .nav-links{display:flex;gap:1rem;color:var(--muted);font-size:.9rem;list-style:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.15rem;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+    .btn-a{background:linear-gradient(135deg,var(--a),#9b7bff);color:#fff}
+    .btn-g{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .hero{padding:4.5rem 0 3rem;text-align:center}
+    .badge{display:inline-block;padding:.3rem .7rem;border:1px solid var(--line);border-radius:999px;color:var(--b);font-size:.8rem;margin-bottom:1rem;background:rgba(34,211,238,.08)}
+    h1{font-family:Outfit,sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05;letter-spacing:-.04em;max-width:16ch;margin:0 auto .9rem}
+    .lead{color:var(--muted);max-width:36rem;margin:0 auto 1.5rem}
+    .cta{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:1rem;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+    .panel-inner{background:var(--card);border-radius:14px;min-height:220px;padding:1.2rem;border:1px solid var(--line)}
+    .bars{display:grid;grid-template-columns:1.2fr .8fr;gap:.8rem;height:100%;min-height:190px}
+    .main-bar{background:linear-gradient(160deg,rgba(124,92,255,.25),rgba(34,211,238,.08));border-radius:12px;border:1px solid var(--line)}
+    .side{display:grid;gap:.8rem}
+    .side div{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:3rem 0 4rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.2rem}
+    .card h3{font-family:Outfit,sans-serif;margin-bottom:.4rem;font-size:1.05rem}
+    .card p{color:var(--muted);font-size:.92rem}
+    .back{position:fixed;bottom:1rem;left:1rem;z-index:5;font-size:.85rem;background:#111622;border:1px solid var(--line);color:#fff;padding:.55rem .9rem;border-radius:999px;text-decoration:none}
+    @media(max-width:760px){.nav-links{display:none}.features,.bars{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <a class="back" href="../../index.html">← Ibra Studio</a>
+  <div class="wrap">
+    <nav>
+      <div class="brand">NovaPulse</div>
+      <ul class="nav-links"><li>Product</li><li>Pricing</li><li>Docs</li></ul>
+      <a class="btn btn-a" href="#">Start free</a>
+    </nav>
+    <header class="hero">
+      <div class="badge">Template demo · SaaS landing</div>
+      <h1>Ship product updates customers notice</h1>
+      <p class="lead">A dark, conversion-focused landing layout for apps and tools. Swap logo, copy, and colors — ready for your launch.</p>
+      <div class="cta">
+        <a class="btn btn-a" href="#">Get started</a>
+        <a class="btn btn-g" href="#">View demo</a>
+      </div>
+      <div class="panel"><div class="panel-inner"><div class="bars"><div class="main-bar"></div><div class="side"><div></div><div></div></div></div></div></div>
+    </header>
+    <section class="features">
+      <article class="card"><h3>Fast onboarding</h3><p>Clear hero, social proof space, and primary CTA above the fold.</p></article>
+      <article class="card"><h3>Feature grid</h3><p>Three-column blocks for benefits, integrations, and pricing teases.</p></article>
+      <article class="card"><h3>Launch ready</h3><p>Static HTML — easy to host on GitHub Pages or any host.</p></article>
+    </section>
+  </div>
+</body>
+</html>

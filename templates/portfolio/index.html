@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aria Cole — Portfolio Template · Ibra Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#f6f1e8;--ink:#1a1410;--muted:#6b5e52;--card:#fffdf8;--line:#e6dccf;--accent:#c45c26}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Schibsted Grotesk",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    .wrap{width:min(100% - 2rem,1000px);margin:0 auto;padding:1.5rem 0 3rem}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0 2rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem}
+    .logo{font-family:Fraunces,serif;font-weight:700;font-size:1.25rem}
+    .nav-links{display:flex;gap:1.2rem;list-style:none;color:var(--muted);font-size:.92rem}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end;margin-bottom:3rem}
+    h1{font-family:Fraunces,serif;font-size:clamp(2.4rem,6vw,4rem);line-height:.98;letter-spacing:-.03em;margin-bottom:1rem}
+    .lead{color:var(--muted);max-width:28rem;margin-bottom:1.25rem}
+    .btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;padding:.75rem 1.15rem;border-radius:999px;font-weight:600}
+    .portrait{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(160deg,#d9c3a8,#8f6a4a 55%,#2b211c);border:1px solid var(--line);box-shadow:0 20px 50px rgba(26,20,16,.12)}
+    .work{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+    .tile{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.2rem;min-height:160px}
+    .tile.tall{grid-row:span 2;min-height:340px;background:linear-gradient(180deg,#fffdf8,#f0e4d4);display:flex;flex-direction:column;justify-content:flex-end}
+    .tile h3{font-family:Fraunces,serif;font-size:1.35rem;margin-bottom:.35rem}
+    .tile p{color:var(--muted);font-size:.92rem}
+    .tag{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.5rem}
+    .back{position:fixed;bottom:1rem;left:1rem;z-index:5;font-size:.85rem;background:var(--ink);color:var(--bg);padding:.55rem .9rem;border-radius:999px;text-decoration:none}
+    @media(max-width:800px){.hero,.work{grid-template-columns:1fr}.nav-links{display:none}.tile.tall{grid-row:auto;min-height:200px}}
+  </style>
+</head>
+<body>
+  <a class="back" href="../../index.html">← Ibra Studio</a>
+  <div class="wrap">
+    <nav>
+      <div class="logo">Aria Cole</div>
+      <ul class="nav-links"><li>Work</li><li>About</li><li>Contact</li></ul>
+    </nav>
+    <header class="hero">
+      <div>
+        <h1>Design with room to breathe.</h1>
+        <p class="lead">Editorial portfolio template for creatives. Big type, warm paper tones, project grid that feels like a magazine.</p>
+        <a class="btn" href="#">View selected work</a>
+      </div>
+      <div class="portrait" aria-hidden="true"></div>
+    </header>
+    <section class="work">
+      <article class="tile tall">
+        <span class="tag">Case study</span>
+        <h3>Northwind Brand System</h3>
+        <p>Identity, packaging, and web direction for a specialty coffee label.</p>
+      </article>
+      <article class="tile">
+        <span class="tag">Web</span>
+        <h3>Studio site redesign</h3>
+        <p>Clean layout with motion-ready sections.</p>
+      </article>
+      <article class="tile">
+        <span class="tag">Print</span>
+        <h3>Festival booklet</h3>
+        <p>Typography-led spreads and poster series.</p>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
