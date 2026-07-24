@@ -3,63 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aria Cole — Portfolio Template · Ibra Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <title>Aria Cole Portfolio · Ibra Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  
   <style>
-    :root{--bg:#f6f1e8;--ink:#1a1410;--muted:#6b5e52;--card:#fffdf8;--line:#e6dccf;--accent:#c45c26}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Schibsted Grotesk",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-    .wrap{width:min(100% - 2rem,1000px);margin:0 auto;padding:1.5rem 0 3rem}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0 2rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem}
-    .logo{font-family:Fraunces,serif;font-weight:700;font-size:1.25rem}
-    .nav-links{display:flex;gap:1.2rem;list-style:none;color:var(--muted);font-size:.92rem}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end;margin-bottom:3rem}
-    h1{font-family:Fraunces,serif;font-size:clamp(2.4rem,6vw,4rem);line-height:.98;letter-spacing:-.03em;margin-bottom:1rem}
-    .lead{color:var(--muted);max-width:28rem;margin-bottom:1.25rem}
-    .btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;padding:.75rem 1.15rem;border-radius:999px;font-weight:600}
-    .portrait{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(160deg,#d9c3a8,#8f6a4a 55%,#2b211c);border:1px solid var(--line);box-shadow:0 20px 50px rgba(26,20,16,.12)}
-    .work{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
-    .tile{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.2rem;min-height:160px}
-    .tile.tall{grid-row:span 2;min-height:340px;background:linear-gradient(180deg,#fffdf8,#f0e4d4);display:flex;flex-direction:column;justify-content:flex-end}
-    .tile h3{font-family:Fraunces,serif;font-size:1.35rem;margin-bottom:.35rem}
-    .tile p{color:var(--muted);font-size:.92rem}
-    .tag{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.5rem}
-    .back{position:fixed;bottom:1rem;left:1rem;z-index:5;font-size:.85rem;background:var(--ink);color:var(--bg);padding:.55rem .9rem;border-radius:999px;text-decoration:none}
-    @media(max-width:800px){.hero,.work{grid-template-columns:1fr}.nav-links{display:none}.tile.tall{grid-row:auto;min-height:200px}}
+:root{--bg:#f6f1e8;--text:#1a1410;--muted:#6b5e52;--card:#fffdf8;--line:#e6dccf;--accent:#c45c26;--on-accent:#fff;--accent-soft:rgba(196,92,38,.12);--panel:linear-gradient(160deg,#d9c3a8,#8f6a4a 55%,#2b211c);--display:'Fraunces';--body:'Schibsted Grotesk';--max:1000px}
+
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{font-family:var(--body),system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}}
+html[dir="rtl"] body{{font-family:"IBM Plex Sans Arabic",var(--body),system-ui,sans-serif}}
+a{{color:inherit;text-decoration:none}}
+.wrap{{width:min(100% - 2rem,var(--max,1040px));margin:0 auto}}
+.topbar{{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}}
+.back{{font-size:.85rem;font-weight:600;opacity:.85}}
+.lang{{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}}
+.lang-btn{{border:0;background:transparent;color:var(--muted);padding:.35rem .7rem;cursor:pointer;font-weight:700;font-size:.8rem}}
+.lang-btn.active{{background:var(--accent-soft,rgba(255,255,255,.08));color:var(--accent)}}
+nav.site{{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}}
+.brand{{font-family:var(--display),serif;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}}
+.nav-links{{display:flex;gap:1.1rem;list-style:none;color:var(--muted);font-size:.92rem;flex-wrap:wrap}}
+.btn{{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.2rem;font-weight:700;border:0;cursor:pointer}}
+.btn-a{{background:var(--accent);color:var(--on-accent,#111)}}
+.btn-g{{background:transparent;border:1px solid var(--line);color:var(--text)}}
+.hero{{padding:2.5rem 0 2rem}}
+.kicker{{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;margin-bottom:.75rem}}
+h1{{font-family:var(--display),serif;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.85rem}}
+.lead{{color:var(--muted);max-width:34rem;margin-bottom:1.35rem;font-size:1.05rem}}
+.cta{{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}}
+.grid3{{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1rem 0 3rem}}
+.grid2{{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;align-items:center}}
+.card{{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem}}
+.card h3{{font-family:var(--display),serif;font-size:1.2rem;margin-bottom:.4rem}}
+.card p{{color:var(--muted);font-size:.93rem}}
+.price{{display:block;margin-top:.65rem;font-weight:800;color:var(--accent)}}
+.panel{{border-radius:22px;border:1px solid var(--line);min-height:280px;background:var(--panel)}}
+.section{{padding:1rem 0 3rem}}
+.section h2{{font-family:var(--display),serif;font-size:1.7rem;margin-bottom:1rem;letter-spacing:-.02em}}
+.footer{{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}}
+@media(max-width:800px){{.grid3,.grid2{{grid-template-columns:1fr}}.nav-links{{display:none}}}}
+
   </style>
 </head>
 <body>
-  <a class="back" href="../../index.html">← Ibra Studio</a>
-  <div class="wrap">
-    <nav>
-      <div class="logo">Aria Cole</div>
-      <ul class="nav-links"><li>Work</li><li>About</li><li>Contact</li></ul>
-    </nav>
-    <header class="hero">
-      <div>
-        <h1>Design with room to breathe.</h1>
-        <p class="lead">Editorial portfolio template for creatives. Big type, warm paper tones, project grid that feels like a magazine.</p>
-        <a class="btn" href="#">View selected work</a>
-      </div>
-      <div class="portrait" aria-hidden="true"></div>
-    </header>
-    <section class="work">
-      <article class="tile tall">
-        <span class="tag">Case study</span>
-        <h3>Northwind Brand System</h3>
-        <p>Identity, packaging, and web direction for a specialty coffee label.</p>
-      </article>
-      <article class="tile">
-        <span class="tag">Web</span>
-        <h3>Studio site redesign</h3>
-        <p>Clean layout with motion-ready sections.</p>
-      </article>
-      <article class="tile">
-        <span class="tag">Print</span>
-        <h3>Festival booklet</h3>
-        <p>Typography-led spreads and poster series.</p>
-      </article>
-    </section>
+  <div class="topbar">
+    <a class="back" href="../../index.html" data-i18n="back">← Ibra Studio</a>
+    <div class="lang">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ar">ع</button>
+    </div>
   </div>
+
+  <div class="wrap">
+    <nav class="site">
+      <div class="brand">Aria Cole Portfolio</div>
+      <ul class="nav-links">
+        <li data-i18n="nav1">Classes</li>
+        <li data-i18n="nav2">Trainers</li>
+        <li data-i18n="nav3">Pricing</li>
+      </ul>
+      <a class="btn btn-a" href="#" data-i18n="nav4">Join</a>
+    </nav>
+    <header class="hero grid2">
+      <div>
+        <div class="kicker" data-i18n="kicker"></div>
+        <h1 data-i18n="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="cta">
+          <a class="btn btn-a" href="#" data-i18n="cta1"></a>
+          <a class="btn btn-g" href="#" data-i18n="cta2"></a>
+        </div>
+        <div class="cta" style="gap:1.25rem;opacity:.9;font-size:.92rem;color:var(--muted)">
+          <span data-i18n="f1"></span>
+          <span data-i18n="f2"></span>
+        </div>
+      </div>
+      <div class="panel" aria-hidden="true"></div>
+    </header>
+    <section class="section">
+      <h2 data-i18n="s_title"></h2>
+      <div class="grid3">
+        <article class="card"><h3 data-i18n="c1t"></h3><p data-i18n="c1p"></p><span class="price" data-i18n="c1pr"></span></article>
+        <article class="card"><h3 data-i18n="c2t"></h3><p data-i18n="c2p"></p><span class="price" data-i18n="c2pr"></span></article>
+        <article class="card"><h3 data-i18n="c3t"></h3><p data-i18n="c3p"></p><span class="price" data-i18n="c3pr"></span></article>
+      </div>
+    </section>
+    <footer class="footer">
+      <span data-i18n="foot"></span>
+      <span>EN · AR</span>
+    </footer>
+  </div>
+
+  <script src="../shared/lang.js"></script>
+  <script>
+    IbraLang.init({"en": {"back": "← Ibra Studio", "nav1": "Work", "nav2": "About", "nav3": "Contact", "nav4": "Hire me", "kicker": "Creative portfolio", "h1": "Design with room to breathe.", "lead": "Editorial portfolio for freelancers and personal brands — big type and project cards.", "cta1": "View selected work", "cta2": "About", "s_title": "Selected projects", "c1t": "Brand system", "c1p": "Identity and packaging direction.", "c1pr": "Case study", "c2t": "Studio website", "c2p": "Clean layout with motion-ready sections.", "c2pr": "Web", "c3t": "Festival booklet", "c3p": "Typography-led print series.", "c3pr": "Print", "f1": "Available for work", "f2": "Remote friendly", "foot": "Creative Portfolio · Template by Ibra Studio"}, "ar": {"back": "← Ibra Studio", "nav1": "الأعمال", "nav2": "نبذة", "nav3": "تواصل", "nav4": "وظّفني", "kicker": "بورتفوليو إبداعي", "h1": "تصميم بمساحة للتنفّس.", "lead": "معرض أعمال تحريري للمستقلين والعلامات الشخصية — خطوط كبيرة وبطاقات مشاريع.", "cta1": "عرض الأعمال", "cta2": "نبذة", "s_title": "مشاريع مختارة", "c1t": "نظام هوية", "c1p": "هوية واتجاه تغليف.", "c1pr": "دراسة حالة", "c2t": "موقع استوديو", "c2p": "تخطيط نظيف جاهز للحركة.", "c2pr": "ويب", "c3t": "كتيّب مهرجان", "c3p": "سلسلة مطبوعة تعتمد على الخط.", "c3pr": "طباعة", "f1": "متاح للعمل", "f2": "عمل عن بُعد", "foot": "بورتفوليو إبداعي · قالب من Ibra Studio"}});
+  </script>
 </body>
 </html>

@@ -61,8 +61,8 @@
               <span data-i18n="stat1_label">Focus</span>
             </div>
             <div>
-              <strong data-i18n="stat2_value">Fast turnaround</strong>
-              <span data-i18n="stat2_label">Delivery</span>
+              <strong data-i18n="stat2_value">18+ demos</strong>
+              <span data-i18n="stat2_label">Templates</span>
             </div>
             <div>
               <strong data-i18n="stat3_value">EN + AR</strong>
@@ -129,71 +129,16 @@
         </div>
         <div class="filter-row">
           <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+          <button type="button" class="filter-btn" data-filter="gym" data-i18n="filter_gym">Gym</button>
+          <button type="button" class="filter-btn" data-filter="market" data-i18n="filter_market">Market</button>
+          <button type="button" class="filter-btn" data-filter="clinic" data-i18n="filter_clinic">Clinic</button>
+          <button type="button" class="filter-btn" data-filter="restaurant" data-i18n="filter_restaurant">Restaurant</button>
+          <button type="button" class="filter-btn" data-filter="salon" data-i18n="filter_salon">Salon</button>
           <button type="button" class="filter-btn" data-filter="business" data-i18n="filter_business">Business</button>
           <button type="button" class="filter-btn" data-filter="creative" data-i18n="filter_creative">Creative</button>
           <button type="button" class="filter-btn" data-filter="shop" data-i18n="filter_shop">Shop</button>
         </div>
-        <div class="templates-grid">
-          <article class="template-card" data-category="business">
-            <div class="template-preview">
-              <iframe src="templates/saas-landing/index.html" title="SaaS Landing preview" loading="lazy" tabindex="-1"></iframe>
-            </div>
-            <div class="template-body">
-              <div class="template-tags"><span class="tag">SaaS</span><span class="tag">Landing</span></div>
-              <h3 data-i18n="t1_title">SaaS Landing</h3>
-              <p data-i18n="t1_text">Dark product landing for apps, tools, and startups. Strong CTA and feature grid.</p>
-              <div class="template-actions">
-                <a class="btn btn-ghost btn-sm" href="templates/saas-landing/index.html" target="_blank" rel="noopener" data-i18n="preview">Live preview</a>
-                <a class="btn btn-primary btn-sm" href="#contact" data-i18n="want_this">Want this</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="template-card" data-category="creative">
-            <div class="template-preview">
-              <iframe src="templates/portfolio/index.html" title="Portfolio preview" loading="lazy" tabindex="-1"></iframe>
-            </div>
-            <div class="template-body">
-              <div class="template-tags"><span class="tag">Portfolio</span><span class="tag">Creative</span></div>
-              <h3 data-i18n="t2_title">Creative Portfolio</h3>
-              <p data-i18n="t2_text">Bold editorial portfolio for freelancers, designers, and personal brands.</p>
-              <div class="template-actions">
-                <a class="btn btn-ghost btn-sm" href="templates/portfolio/index.html" target="_blank" rel="noopener" data-i18n="preview">Live preview</a>
-                <a class="btn btn-primary btn-sm" href="#contact" data-i18n="want_this">Want this</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="template-card" data-category="business">
-            <div class="template-preview">
-              <iframe src="templates/restaurant/index.html" title="Restaurant preview" loading="lazy" tabindex="-1"></iframe>
-            </div>
-            <div class="template-body">
-              <div class="template-tags"><span class="tag">Local</span><span class="tag">Food</span></div>
-              <h3 data-i18n="t3_title">Restaurant / Local</h3>
-              <p data-i18n="t3_text">Warm local-business page for cafés, restaurants, and neighborhood shops.</p>
-              <div class="template-actions">
-                <a class="btn btn-ghost btn-sm" href="templates/restaurant/index.html" target="_blank" rel="noopener" data-i18n="preview">Live preview</a>
-                <a class="btn btn-primary btn-sm" href="#contact" data-i18n="want_this">Want this</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="template-card" data-category="shop">
-            <div class="template-preview">
-              <iframe src="templates/ecommerce/index.html" title="Ecommerce preview" loading="lazy" tabindex="-1"></iframe>
-            </div>
-            <div class="template-body">
-              <div class="template-tags"><span class="tag">Shop</span><span class="tag">Products</span></div>
-              <h3 data-i18n="t4_title">E‑commerce Lite</h3>
-              <p data-i18n="t4_text">Clean product grid for small shops and product launches.</p>
-              <div class="template-actions">
-                <a class="btn btn-ghost btn-sm" href="templates/ecommerce/index.html" target="_blank" rel="noopener" data-i18n="preview">Live preview</a>
-                <a class="btn btn-primary btn-sm" href="#contact" data-i18n="want_this">Want this</a>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="templates-grid" id="templates-grid"></div>
       </div>
     </section>
 
@@ -302,6 +247,7 @@
     </div>
   </footer>
 
+  <script src="js/catalog.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

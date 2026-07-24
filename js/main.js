@@ -11,13 +11,13 @@ const i18n = {
     hero_title: "I design websites people actually want to",
     hero_title_accent: "hire you from",
     hero_lead:
-      "Browse ready-made site designs, pick a style, then I’ll customize it — or build a full site that goes live for your business.",
+      "Browse ready-made site designs for gyms, markets, clinics, restaurants and more — then I’ll customize one or build a full site that goes live.",
     cta_templates: "View templates",
     cta_whatsapp: "WhatsApp me",
     stat1_label: "Focus",
     stat1_value: "Design first",
-    stat2_label: "Delivery",
-    stat2_value: "Fast turnaround",
+    stat2_label: "Templates",
+    stat2_value: "18+ demos",
     stat3_label: "Languages",
     stat3_value: "EN + AR",
     mock_brand: "Your Brand",
@@ -33,19 +33,16 @@ const i18n = {
     s3_text: "Design + build + publish. Your site goes live on the web so customers can find you.",
     templates_label: "Gallery",
     templates_title: "Template designs",
-    templates_lead: "Open a live preview. Like one? Message me and we’ll make it yours.",
+    templates_lead: "Filter by business type. Open a live preview — every template works in English and Arabic.",
     filter_all: "All",
+    filter_gym: "Gym",
+    filter_market: "Market",
+    filter_clinic: "Clinic",
+    filter_restaurant: "Restaurant",
     filter_business: "Business",
     filter_creative: "Creative",
     filter_shop: "Shop",
-    t1_title: "SaaS Landing",
-    t1_text: "Dark product landing for apps, tools, and startups. Strong CTA and feature grid.",
-    t2_title: "Creative Portfolio",
-    t2_text: "Bold editorial portfolio for freelancers, designers, and personal brands.",
-    t3_title: "Restaurant / Local",
-    t3_text: "Warm local-business page for cafés, restaurants, and neighborhood shops.",
-    t4_title: "E‑commerce Lite",
-    t4_text: "Clean product grid for small shops and product launches.",
+    filter_salon: "Salon",
     preview: "Live preview",
     want_this: "Want this",
     process_label: "How it works",
@@ -95,13 +92,13 @@ const i18n = {
     hero_title: "أصمّم مواقع تجعل الناس",
     hero_title_accent: "تثق بك وتتواصل معك",
     hero_lead:
-      "تصفّح تصاميم جاهزة، اختر الستايل المناسب، وأنا أخصّصه لك — أو أبني موقعاً كاملاً ينشر على الإنترنت لعملك.",
+      "تصفّح قوالب جاهزة للنوادي والسوبرماركت والعيادات والمطاعم وأكثر — ثم أخصّص واحداً لك أو أبني موقعاً كاملاً ينشر أونلاين.",
     cta_templates: "عرض القوالب",
     cta_whatsapp: "واتساب",
     stat1_label: "التركيز",
     stat1_value: "التصميم أولاً",
-    stat2_label: "التسليم",
-    stat2_value: "سرعة واحتراف",
+    stat2_label: "القوالب",
+    stat2_value: "+18 عرض",
     stat3_label: "اللغات",
     stat3_value: "عربي + إنجليزي",
     mock_brand: "علامتك",
@@ -117,19 +114,16 @@ const i18n = {
     s3_text: "تصميم + بناء + نشر. موقعك يظهر على الويب ويصل لعملائك.",
     templates_label: "المعرض",
     templates_title: "تصاميم القوالب",
-    templates_lead: "افتح معاينة مباشرة. أعجبك واحد؟ راسلني ونجهّزه لك.",
+    templates_lead: "صفّ حسب نوع النشاط. افتح معاينة مباشرة — كل قالب يعمل بالعربي والإنجليزي.",
     filter_all: "الكل",
+    filter_gym: "نادي",
+    filter_market: "سوق",
+    filter_clinic: "عيادة",
+    filter_restaurant: "مطعم",
     filter_business: "أعمال",
     filter_creative: "إبداعي",
     filter_shop: "متجر",
-    t1_title: "صفحة منتج SaaS",
-    t1_text: "صفحة هبوط داكنة للتطبيقات والأدوات والشركات الناشئة.",
-    t2_title: "بورتفوليو إبداعي",
-    t2_text: "معرض أعمال جريء للمستقلين والمصممين والعلامات الشخصية.",
-    t3_title: "مطعم / محلي",
-    t3_text: "صفحة دافئة للمقاهي والمطاعم والمحلات المحلية.",
-    t4_title: "متجر خفيف",
-    t4_text: "شبكة منتجات نظيفة للمتاجر الصغيرة وإطلاق المنتجات.",
+    filter_salon: "صالون",
     preview: "معاينة مباشرة",
     want_this: "أريد هذا",
     process_label: "كيف نشتغل",
@@ -174,8 +168,11 @@ const PHONE_DISPLAY = "+962 792939802";
 const PHONE_E164 = "962792939802";
 const WHATSAPP = `https://wa.me/${PHONE_E164}`;
 
+let currentLang = "en";
+
 function applyLang(lang) {
   const t = i18n[lang] || i18n.en;
+  currentLang = lang;
   document.documentElement.lang = t.lang;
   document.documentElement.dir = t.dir;
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -186,6 +183,9 @@ function applyLang(lang) {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
   localStorage.setItem("ibra_lang", lang);
+  renderCatalog(lang);
+  const activeFilter = document.querySelector(".filter-btn.active");
+  if (activeFilter) applyFilter(activeFilter.dataset.filter);
 }
 
 function initLang() {
@@ -194,6 +194,40 @@ function initLang() {
   applyLang(start);
   document.querySelectorAll(".lang-toggle button").forEach((btn) => {
     btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+  });
+}
+
+function renderCatalog(lang) {
+  const grid = document.getElementById("templates-grid");
+  if (!grid || !window.IBRA_CATALOG) return;
+  const t = i18n[lang] || i18n.en;
+  grid.innerHTML = window.IBRA_CATALOG.map((item) => {
+    const loc = item[lang] || item.en;
+    const tags = (item.tags || [])
+      .map((tag) => `<span class="tag">${tag}</span>`)
+      .join("");
+    return `
+      <article class="template-card" data-category="${item.category}">
+        <div class="template-preview">
+          <iframe src="${item.path}" title="${loc.title} preview" loading="lazy" tabindex="-1"></iframe>
+        </div>
+        <div class="template-body">
+          <div class="template-tags">${tags}</div>
+          <h3>${loc.title}</h3>
+          <p>${loc.text}</p>
+          <div class="template-actions">
+            <a class="btn btn-ghost btn-sm" href="${item.path}" target="_blank" rel="noopener">${t.preview}</a>
+            <a class="btn btn-primary btn-sm" href="#contact">${t.want_this}</a>
+          </div>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function applyFilter(f) {
+  document.querySelectorAll(".template-card").forEach((card) => {
+    const show = f === "all" || card.dataset.category === f;
+    card.style.display = show ? "" : "none";
   });
 }
 
@@ -209,16 +243,11 @@ function initNav() {
 
 function initFilters() {
   const buttons = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".template-card");
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       buttons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      const f = btn.dataset.filter;
-      cards.forEach((card) => {
-        const show = f === "all" || card.dataset.category === f;
-        card.style.display = show ? "" : "none";
-      });
+      applyFilter(btn.dataset.filter);
     });
   });
 }
