@@ -279,41 +279,40 @@ function showPreviewPopup(card){
   var src=link?link.getAttribute("href"):"";
   if(!src)return;
   var imgs=previewPopup.querySelector(".pp-imgs");
-  imgs.innerHTML='<iframe class="pp-frame" src="'+src+'" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>';
+  imgs.innerHTML='<iframe class="pp-frame" src="'+src+'" sandbox="allow-scripts allow-same-origin"></iframe>';
   previewPopup.querySelector(".pp-name").textContent=card.querySelector("h3")?.textContent||"";
-  /* position: top-right corner of card */
+  /* position popup so its top-right corner touches card's top-right corner */
   var rect=card.getBoundingClientRect();
   var pw=480,ph=540;
-  var left=rect.right-pw;
-  var top=rect.top-8;
-  if(left<16)left=16;
-  if(left+pw>window.innerWidth-16)left=window.innerWidth-pw-16;
-  if(top<16)top=rect.top;
-  if(top+ph>window.innerHeight-16)top=window.innerHeight-ph-16;
+  var left=rect.right-pw;   /* popup right edge = card right edge */
+  var top=rect.top-12;       /* popup top edge = card top edge - small gap */
+  if(left<12)left=12;
+  if(left+pw>window.innerWidth-12)left=window.innerWidth-pw-12;
+  if(top<12)top=rect.top+4;
+  if(top+ph>window.innerHeight-12)top=window.innerHeight-ph-12;
   previewPopup.style.left=left+"px";
   previewPopup.style.top=top+"px";
   previewPopup.style.width=pw+"px";
   previewPopup.style.display="block";
-  /* auto-scroll iframe top→bottom */
+  /* auto-scroll iframe top→bottom on load */
   var ifr=imgs.querySelector("iframe");
-  if(ifr){
-    var scrollTimer=null;
-    function tryScroll(){
-      var win;
-      try{win=ifr.contentWindow}catch(e){}
-      if(!win||!win.document||!win.document.body){scrollTimer=setTimeout(tryScroll,200);return}
-      var body=win.document.body,html=win.document.documentElement;
-      var h=Math.max(body.scrollHeight,html.scrollHeight,body.offsetHeight,html.offsetHeight);
-      var start=0,step=h/140;
-      scrollTimer=setInterval(function(){
-        start+=step;
-        win.scrollTo(0,Math.round(start));
-        if(start>=h){clearInterval(scrollTimer);scrollTimer=null}
-      },30);
-    }
-    tryScroll();
-    card._ppScrollClean=function(){if(scrollTimer){clearInterval(scrollTimer);scrollTimer=null}}
-  }
+  if(!ifr)return;
+  var scrollTimer=null;
+  ifr.onload=function(){
+    var win;
+    try{win=ifr.contentWindow}catch(e){}
+    if(!win||!win.document)return;
+    var body=win.document.body,html=win.document.documentElement;
+    var h=Math.max(body&&body.scrollHeight||0,html&&html.scrollHeight||0);
+    if(h<200)return;
+    var pos=0,step=h/140;
+    scrollTimer=setInterval(function(){
+      pos+=step;
+      win.scrollTo(0,Math.round(pos));
+      if(pos>=h){clearInterval(scrollTimer);scrollTimer=null}
+    },30);
+  };
+  card._ppScrollClean=function(){if(scrollTimer){clearInterval(scrollTimer);scrollTimer=null}}
 }
 
 function hidePreviewPopup(card){
