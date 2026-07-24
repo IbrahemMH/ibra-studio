@@ -281,26 +281,45 @@ function showPreviewPopup(card){
   var imgs=previewPopup.querySelector(".pp-imgs");
   imgs.innerHTML='<iframe class="pp-frame" src="'+src+'" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>';
   previewPopup.querySelector(".pp-name").textContent=card.querySelector("h3")?.textContent||"";
-  /* position */
+  /* position: top-right corner of card */
   var rect=card.getBoundingClientRect();
-  var gap=12;
-  var left=rect.right+gap;
-  var top=rect.top;
-  var pw=420,ph=340;
-  /* flip if overflow right */
-  if(left+pw>window.innerWidth-16)left=rect.left-pw-gap;
-  /* flip if overflow bottom */
+  var pw=480,ph=540;
+  var left=rect.right-pw;
+  var top=rect.top-8;
+  if(left<16)left=16;
+  if(left+pw>window.innerWidth-16)left=window.innerWidth-pw-16;
+  if(top<16)top=rect.top;
   if(top+ph>window.innerHeight-16)top=window.innerHeight-ph-16;
-  if(top<16)top=16;
   previewPopup.style.left=left+"px";
   previewPopup.style.top=top+"px";
   previewPopup.style.width=pw+"px";
   previewPopup.style.display="block";
+  /* auto-scroll iframe top→bottom */
+  var ifr=imgs.querySelector("iframe");
+  if(ifr){
+    var scrollTimer=null;
+    function tryScroll(){
+      var win;
+      try{win=ifr.contentWindow}catch(e){}
+      if(!win||!win.document||!win.document.body){scrollTimer=setTimeout(tryScroll,200);return}
+      var body=win.document.body,html=win.document.documentElement;
+      var h=Math.max(body.scrollHeight,html.scrollHeight,body.offsetHeight,html.offsetHeight);
+      var start=0,step=h/140;
+      scrollTimer=setInterval(function(){
+        start+=step;
+        win.scrollTo(0,Math.round(start));
+        if(start>=h){clearInterval(scrollTimer);scrollTimer=null}
+      },30);
+    }
+    tryScroll();
+    card._ppScrollClean=function(){if(scrollTimer){clearInterval(scrollTimer);scrollTimer=null}}
+  }
 }
 
 function hidePreviewPopup(card){
   if(previewPopup)previewPopup.style.display="none";
   if(card&&card._ppTimer){clearInterval(card._ppTimer);card._ppTimer=null}
+  if(card&&card._ppScrollClean){card._ppScrollClean();card._ppScrollClean=null}
 }
 
 function initHoverPreview(card){

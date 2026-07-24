@@ -678,11 +678,11 @@ section {
 }
 
 /* floating preview popup */
-.preview-popup{display:none;position:fixed;z-index:999;width:420px;border-radius:16px;background:var(--bg-elevated);border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.6);overflow:hidden;pointer-events:none;animation:pp-fade .2s ease}
+.preview-popup{display:none;position:fixed;z-index:999;width:480px;border-radius:16px;background:var(--bg-elevated);border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.6);overflow:hidden;pointer-events:none;animation:pp-fade .2s ease}
 @keyframes pp-fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .pp-inner{display:flex;flex-direction:column}
 .pp-imgs{position:relative;overflow:hidden;background:var(--bg)}
-.pp-frame{display:block;width:100%;height:340px;border:0}
+.pp-frame{display:block;width:100%;height:540px;border:0}
 
 /* Process */
 .process-grid {
