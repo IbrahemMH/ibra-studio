@@ -80,8 +80,8 @@ const i18n = {
     c_phone: "Phone / WhatsApp",
     c_lang: "Languages",
     c_lang_v: "English & Arabic",
-    footer: "Ibra Studio · Website design & templates",
-    footer_host: "Ready for GitHub Pages",
+    footer: "Ibra Studio · by Ibrahim",
+    footer_host: "Website design & templates",
   },
   ar: {
     dir: "rtl",
@@ -164,8 +164,8 @@ const i18n = {
     c_phone: "هاتف / واتساب",
     c_lang: "اللغات",
     c_lang_v: "العربية والإنجليزية",
-    footer: "Ibra Studio · تصميم مواقع وقوالب",
-    footer_host: "جاهز لـ GitHub Pages",
+    footer: "Ibra Studio · بواسطة إبراهيم",
+    footer_host: "تصميم مواقع وقوالب",
   },
 };
 
