@@ -35,8 +35,7 @@
     home_pricing_title: "Simple pricing",
     home_pricing_lead: "Starting ranges - open full details or switch JOD / USD in the header.",
     eyebrow: "18 templates · Gyms · Clinics · Restaurants · Cafés · Salons · Shops",
-    hero_title: "I design websites people actually want to",
-    hero_title_accent: "hire you from",
+    hero_title: 'I design websites people actually want to <span class="grad-text">hire you from</span>',
     hero_lead:
       "18 industry-specific templates for gyms, clinics, markets, restaurants, cafés, salons, shops, and more. Pick a style, I will customize it - or build a full site that goes live in days.",
     cta_templates: "View templates",
@@ -144,8 +143,7 @@
     home_pricing_title: "أسعار بسيطة",
     home_pricing_lead: "نطاقات بداية - افتح التفاصيل أو بدّل دينار/دولار من الأعلى.",
     eyebrow: "18 قالباً · نوادي · عيادات · مطاعم · مقاهٍ · صالونات · متاجر",
-    hero_title: "أصمّم مواقع تجعل الناس",
-    hero_title_accent: "تثق بك وتتواصل معك",
+    hero_title: 'أصمّم مواقع تجعل الناس <span class="grad-text">تثق بك وتتواصل معك</span>',
     hero_lead:
       "تصفّح قوالب جاهزة للنوادي والسوبرماركت والعيادات والمطاعم وأكثر - ثم أخصّص واحداً لك أو أبني موقعاً كاملاً ينشر أونلاين.",
     cta_templates: "عرض القوالب",
@@ -233,7 +231,7 @@ function applyLang(lang) {
   document.documentElement.dir = t.dir;
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (t[key] != null) el.textContent = t[key];
+    if (t[key] != null) el.innerHTML = t[key];
   });
   document.querySelectorAll(".lang-toggle button").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
