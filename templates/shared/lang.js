@@ -28,11 +28,13 @@
 
   window.IbraLang = {
     init: function (dict) {
-      var saved = "ar";
-      try {
-        saved = localStorage.getItem("ibra_lang") || "ar";
-      } catch (e) {}
-      if (saved !== "ar" && saved !== "en") saved = "ar";
+      var saved = null;
+      try { saved = localStorage.getItem("ibra_lang"); } catch (e) {}
+      if (saved !== "ar" && saved !== "en") {
+        var bl = "";
+        try { bl = (navigator.language || navigator.userLanguage || "").toLowerCase(); } catch (e) {}
+        saved = bl.startsWith("ar") ? "ar" : "en";
+      }
       apply(dict, saved);
       document.querySelectorAll(".lang-btn").forEach(function (btn) {
         btn.addEventListener("click", function () {

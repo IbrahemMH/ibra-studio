@@ -247,8 +247,12 @@ function applyLang(lang) {
 
 function initLang() {
   const saved = localStorage.getItem("ibra_lang");
-  const start = saved === "ar" || saved === "en" ? saved : "ar";
-  applyLang(start);
+  if (saved === "ar" || saved === "en") {
+    applyLang(saved);
+  } else {
+    const bl = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    applyLang(bl.startsWith("ar") ? "ar" : "en");
+  }
   document.querySelectorAll(".lang-toggle button").forEach((btn) => {
     btn.addEventListener("click", () => applyLang(btn.dataset.lang));
   });

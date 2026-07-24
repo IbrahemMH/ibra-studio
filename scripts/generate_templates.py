@@ -791,7 +791,7 @@ def write_one(t):
     colors_js = json.dumps(t["colors"], ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
