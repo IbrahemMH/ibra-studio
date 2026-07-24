@@ -256,14 +256,8 @@ function initLang() {
 
 let currentFilter = "featured";
 
-function getPreviews(thumb) {
-  if (!thumb) return [];
-  var base = thumb.replace(/\/[^/]+$/,"/");
-  return [base+"card1.jpg",base+"card2.jpg",base+"card3.jpg"];
-}
-
 /* floating preview popup */
-var previewPopup=null;
+var previewPopup=null,popupHideTimer=null;
 function createPreviewPopup(){
   if(previewPopup)return;
   previewPopup=document.createElement("div");
@@ -273,7 +267,8 @@ function createPreviewPopup(){
 }
 
 function showPreviewPopup(card){
-  if(!card||card.dataset.category!=="gym")return;
+  if(!card)return;
+  if(popupHideTimer){clearTimeout(popupHideTimer);popupHideTimer=null}
   createPreviewPopup();
   var link=card.querySelector(".template-preview");
   var src=link?link.getAttribute("href"):"";
@@ -284,8 +279,8 @@ function showPreviewPopup(card){
   /* position popup so its top-right corner touches card's top-right corner */
   var rect=card.getBoundingClientRect();
   var pw=480,ph=540;
-  var left=rect.right-pw;   /* popup right edge = card right edge */
-  var top=rect.top-12;       /* popup top edge = card top edge - small gap */
+  var left=rect.right-pw;
+  var top=rect.top-12;
   if(left<12)left=12;
   if(left+pw>window.innerWidth-12)left=window.innerWidth-pw-12;
   if(top<12)top=rect.top+4;
@@ -317,38 +312,20 @@ function showPreviewPopup(card){
 }
 
 function hidePreviewPopup(card){
-  if(previewPopup)previewPopup.style.display="none";
-  if(card&&card._ppTimer){clearInterval(card._ppTimer);card._ppTimer=null}
-  if(card&&card._ppScrollClean){card._ppScrollClean();card._ppScrollClean=null}
+  if(popupHideTimer)clearTimeout(popupHideTimer);
+  popupHideTimer=setTimeout(function(){
+    if(previewPopup)previewPopup.style.display="none";
+    if(card&&card._ppScrollClean){card._ppScrollClean();card._ppScrollClean=null}
+  },200);
 }
 
 function initHoverPreview(card){
-  var previews = card.querySelectorAll(".thumb-preview");
-  var timer=null,el=card.querySelector(".template-preview");
-  /* floating popup for gym, in-card cycle for others */
-  if(card.dataset.category==="gym"){
-    card.addEventListener("mouseenter",function(){showPreviewPopup(card)});
-    card.addEventListener("mouseleave",function(){hidePreviewPopup(card)});
-  } else {
-    card.addEventListener("mouseenter",function(){
-      var idx=0;
-      if(previews.length<2)return;
-      previews.forEach(function(p,i){p.style.opacity=i===0?"1":"0"});
-      timer=setInterval(function(){
-        previews.forEach(function(p){p.style.opacity="0"});
-        idx=(idx+1)%previews.length;
-        if(previews[idx])previews[idx].style.opacity="1";
-      },1000);
-    });
-    card.addEventListener("mouseleave",function(){
-      if(timer){clearInterval(timer);timer=null}
-      previews.forEach(function(p,i){p.style.opacity=i===0?"1":"0"});
-    });
-  }
+  card.addEventListener("mouseenter",function(){showPreviewPopup(card)});
+  card.addEventListener("mouseleave",function(){hidePreviewPopup(card)});
 }
 /* hide popup on scroll/resize to avoid stale positioning */
-window.addEventListener("scroll",function(){if(previewPopup)previewPopup.style.display="none"},{passive:true});
-window.addEventListener("resize",function(){if(previewPopup)previewPopup.style.display="none"},{passive:true});
+window.addEventListener("scroll",function(){if(popupHideTimer)clearTimeout(popupHideTimer);if(previewPopup)previewPopup.style.display="none"},{passive:true});
+window.addEventListener("resize",function(){if(popupHideTimer)clearTimeout(popupHideTimer);if(previewPopup)previewPopup.style.display="none"},{passive:true});
 
 function renderCatalog(lang) {
   const grid = document.getElementById("templates-grid");
@@ -361,13 +338,11 @@ function renderCatalog(lang) {
       .join("");
     const bg = item.color || "linear-gradient(145deg,#222,#444)";
     const accent = item.accent || "#3dffa8";
-    var previewSrcs = getPreviews(item.thumb);
-    var heroImg = item.thumb ? '<img class="thumb-img thumb-preview" src="'+item.thumb+'" alt="" loading="lazy" />' : "";
-    var extraPreviews = previewSrcs.map(function(s){return '<img class="thumb-preview thumb-extra" src="'+s+'" alt="" loading="lazy" />'}).join("");
+    var heroImg = item.thumb ? '<img class="thumb-img" src="'+item.thumb+'" alt="" loading="lazy" />' : "";
     return `
       <article class="template-card" data-category="${item.category}" data-featured="${item.featured ? "1" : "0"}">
         <a class="template-preview" href="${item.path}" target="_blank" rel="noopener" style="--thumb:${bg};--thumb-accent:${accent}" aria-label="${loc.title}">
-          ${heroImg}${extraPreviews}
+          ${heroImg}
           <span class="thumb-ui">
             <span class="thumb-dot"></span><span class="thumb-dot"></span><span class="thumb-dot"></span>
           </span>
