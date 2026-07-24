@@ -413,9 +413,9 @@ html[dir="rtl"] .nav-brand span{font-family:"IBM Plex Sans Arabic","Syne",sans-s
         <h3 data-i18n="contact_h">Request a site</h3>
         <p data-i18n="contact_lead">Send a short message. I will reply with next steps and a clear offer.</p>
         <form id="contact-form" class="form-grid">
-          <label data-i18n="label_name">Name <input name="name" type="text" required autocomplete="name" /></label>
-          <label data-i18n="label_email">Email <input name="email" type="email" required autocomplete="email" /></label>
-          <label data-i18n="label_type">Project type
+          <label><span data-i18n="label_name">Name</span> <input name="name" type="text" required autocomplete="name" /></label>
+          <label><span data-i18n="label_email">Email</span> <input name="email" type="email" required autocomplete="email" /></label>
+          <label><span data-i18n="label_type">Project type</span>
             <select name="type">
               <option value="Customize a template" data-i18n="opt_template">Customize a template</option>
               <option value="Custom design" data-i18n="opt_custom">Custom design</option>
@@ -423,7 +423,7 @@ html[dir="rtl"] .nav-brand span{font-family:"IBM Plex Sans Arabic","Syne",sans-s
               <option value="Not sure yet" data-i18n="opt_unsure">Not sure yet</option>
             </select>
           </label>
-          <label data-i18n="label_message">Message <textarea name="message" required rows="3"></textarea></label>
+          <label><span data-i18n="label_message">Message</span> <textarea name="message" required rows="3"></textarea></label>
           <button class="glass-btn glass-btn-accent" type="submit" data-i18n="form_submit">Send via email</button>
         </form>
         <p class="form-note" data-i18n="form_note">Opens your email app with the details filled in. Or use WhatsApp for a faster reply.</p>

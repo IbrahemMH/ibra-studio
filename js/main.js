@@ -98,8 +98,8 @@
     opt_custom: "Custom design",
     opt_full: "Full website online",
     opt_unsure: "Not sure yet",
-    form_submit: "Send via WhatsApp",
-    form_note: "Opens WhatsApp with your message prefilled. I'll reply fast.",
+    form_submit: "Send via email",
+    form_note: "Opens your email app with the details filled in.",
     c_email: "Email",
     c_phone: "Phone / WhatsApp",
     c_lang: "Languages",
@@ -206,8 +206,8 @@
     opt_custom: "تصميم مخصص",
     opt_full: "موقع كامل أونلاين",
     opt_unsure: "لست متأكداً بعد",
-    form_submit: "أرسل عبر واتساب",
-    form_note: "يفتح واتساب مع رسالتك. سأرد بسرعة.",
+    form_submit: "أرسل عبر الإيميل",
+    form_note: "يفتح تطبيق البريد مع التفاصيل.",
     c_email: "البريد",
     c_phone: "هاتف / واتساب",
     c_lang: "اللغات",
@@ -404,12 +404,14 @@ function initForm() {
     const email = form.email.value.trim();
     const type = form.type.value;
     const message = form.message.value.trim();
-    var txt = `Name: ${name}\nEmail: ${email}\nProject: ${type}\n\n${message}`;
+    const subject = encodeURIComponent(`Ibra Studio request - ${type}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nProject: ${type}\n\n${message}`
+    );
     var ok = false;
-    try { var w = window.open(WHATSAPP + "?text=" + encodeURIComponent(txt), "_blank"); if(w) ok = true } catch(e) {}
-    if(!ok) { try { window.location.href = WHATSAPP + "?text=" + encodeURIComponent(txt); ok = true } catch(e) {} }
+    try { window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`; ok = true } catch(e) {}
     if(!ok) {
-      try { navigator.clipboard.writeText(txt); showFormMsg(form, "Copied to clipboard. Send via WhatsApp.", "success") } catch(e) { showFormMsg(form, "Could not open WhatsApp. Try again.", "error") }
+      try { navigator.clipboard.writeText(`To: ${EMAIL}\nSubject: Ibra Studio request - ${type}\n\nName: ${name}\nEmail: ${email}\nProject: ${type}\n\n${message}`); showFormMsg(form, "Copied to clipboard. Send via your email app.", "success") } catch(e) { showFormMsg(form, "Could not open email app. Email ibraheem.ha2@hotmail.com directly.", "error") }
     }
   });
 }
