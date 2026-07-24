@@ -294,7 +294,7 @@ function showPreviewPopup(card){
   previewPopup.style.top=top+"px";
   previewPopup.style.width=pw+"px";
   previewPopup.style.display="block";
-  /* auto-scroll iframe top→bottom on load */
+  /* auto-scroll iframe top→bottom→top looping */
   var ifr=imgs.querySelector("iframe");
   if(!ifr)return;
   var scrollTimer=null;
@@ -305,11 +305,12 @@ function showPreviewPopup(card){
     var body=win.document.body,html=win.document.documentElement;
     var h=Math.max(body&&body.scrollHeight||0,html&&html.scrollHeight||0);
     if(h<200)return;
-    var pos=0,step=h/140;
+    var pos=0,dir=1,speed=6;
     scrollTimer=setInterval(function(){
-      pos+=step;
+      pos+=speed*dir;
+      if(pos>=h){pos=h;dir=-1}
+      else if(pos<=0){pos=0;dir=1}
       win.scrollTo(0,Math.round(pos));
-      if(pos>=h){clearInterval(scrollTimer);scrollTimer=null}
     },30);
   };
   card._ppScrollClean=function(){if(scrollTimer){clearInterval(scrollTimer);scrollTimer=null}}
