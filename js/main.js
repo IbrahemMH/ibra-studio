@@ -222,7 +222,7 @@ const PHONE_DISPLAY = "+962 792939802";
 const PHONE_E164 = "962792939802";
 const WHATSAPP = `https://wa.me/${PHONE_E164}`;
 
-let currentLang = "en";
+let currentLang = "ar";
 
 function applyLang(lang) {
   const t = i18n[lang] || i18n.en;
@@ -245,7 +245,7 @@ function applyLang(lang) {
 
 function initLang() {
   const saved = localStorage.getItem("ibra_lang");
-  const start = saved === "ar" || saved === "en" ? saved : "en";
+  const start = saved === "ar" || saved === "en" ? saved : "ar";
   applyLang(start);
   document.querySelectorAll(".lang-toggle button").forEach((btn) => {
     btn.addEventListener("click", () => applyLang(btn.dataset.lang));
