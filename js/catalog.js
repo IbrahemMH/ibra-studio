@@ -1,4 +1,4 @@
-/* Template catalog — drives gallery cards (EN + AR) */
+﻿/* Template catalog - drives gallery cards (EN + AR) */
 window.IBRA_CATALOG = [
   {
     id: "gym-iron",
@@ -9,8 +9,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#1c1c1f,#3f0d0d)",
     accent: "#ef4444",
     tags: ["Gym", "Fitness"],
-    en: { title: "Iron Forge Gym", text: "Bold dark gym — memberships, classes, join CTA." },
-    ar: { title: "نادي آيرون فورج", text: "نادي رياضي قوي — عضويات وحصص وانضمام." },
+    en: { title: "Iron Forge Gym", text: "Bold dark gym - memberships, classes, join CTA." },
+    ar: { title: "نادي آيرون فورج", text: "نادي رياضي قوي - عضويات وحصص وانضمام." },
   },
   {
     id: "market-fresh",
@@ -21,8 +21,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#bbf7d0,#fdba74)",
     accent: "#16a34a",
     tags: ["Market", "Grocery"],
-    en: { title: "FreshBasket Market", text: "Friendly supermarket — deals and delivery." },
-    ar: { title: "فريش باسكت", text: "سوبرماركت — عروض وتوصيل." },
+    en: { title: "FreshBasket Market", text: "Friendly supermarket - deals and delivery." },
+    ar: { title: "فريش باسكت", text: "سوبرماركت - عروض وتوصيل." },
   },
   {
     id: "clinic-care",
@@ -33,8 +33,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#bfdbfe,#93c5fd)",
     accent: "#2563eb",
     tags: ["Clinic", "Medical"],
-    en: { title: "CarePlus Clinic", text: "Medical clinic — services, doctors, booking." },
-    ar: { title: "عيادة كير بلس", text: "عيادة طبية — خدمات وأطباء وحجز." },
+    en: { title: "CarePlus Clinic", text: "Medical clinic - services, doctors, booking." },
+    ar: { title: "عيادة كير بلس", text: "عيادة طبية - خدمات وأطباء وحجز." },
   },
   {
     id: "restaurant",
@@ -45,8 +45,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(160deg,#5a3a28,#120d0a)",
     accent: "#e2b87a",
     tags: ["Food", "Fine"],
-    en: { title: "Olive & Ember", text: "Fine dining — menu cards and reserve CTA." },
-    ar: { title: "أوليف آند إمبر", text: "مطعم راقٍ — قائمة وحجز طاولة." },
+    en: { title: "Olive & Ember", text: "Fine dining - menu cards and reserve CTA." },
+    ar: { title: "أوليف آند إمبر", text: "مطعم راقٍ - قائمة وحجز طاولة." },
   },
   {
     id: "salon-luxe",
@@ -57,8 +57,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#4a1d4a,#1a1420)",
     accent: "#e879f9",
     tags: ["Salon", "Beauty"],
-    en: { title: "Luxe Hair Studio", text: "Elegant salon — services and booking." },
-    ar: { title: "لوكس للشعر", text: "صالون أنيق — خدمات وحجز." },
+    en: { title: "Luxe Hair Studio", text: "Elegant salon - services and booking." },
+    ar: { title: "لوكس للشعر", text: "صالون أنيق - خدمات وحجز." },
   },
   {
     id: "realestate-keys",
@@ -69,8 +69,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#1e3a5f,#3b2f15)",
     accent: "#d4a017",
     tags: ["Real Estate", "Homes"],
-    en: { title: "Keystone Homes", text: "Real estate — listings, agents, contact." },
-    ar: { title: "كي ستون للعقارات", text: "عقارات — قوائم ووسطاء وتواصل." },
+    en: { title: "Keystone Homes", text: "Real estate - listings, agents, contact." },
+    ar: { title: "كي ستون للعقارات", text: "عقارات - قوائم ووسطاء وتواصل." },
   },
   {
     id: "gym-flow",
@@ -81,8 +81,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(160deg,#d9ebe3,#c9b8a4)",
     accent: "#2f6f5e",
     tags: ["Gym", "Wellness"],
-    en: { title: "Flow Wellness", text: "Bright wellness studio — yoga and pilates." },
-    ar: { title: "فلاو ويلنس", text: "استوديو عافية — يوغا وبيلاتس." },
+    en: { title: "Flow Wellness", text: "Bright wellness studio - yoga and pilates." },
+    ar: { title: "فلاو ويلنس", text: "استوديو عافية - يوغا وبيلاتس." },
   },
   {
     id: "gym-box",
@@ -93,8 +93,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(135deg,#2a321c,#3d2a10)",
     accent: "#c8f542",
     tags: ["Gym", "CrossFit"],
-    en: { title: "Box 42 Training", text: "Industrial CrossFit box — WODs and coaches." },
-    ar: { title: "بوكس 42", text: "صالة كروس فت — تمارين يومية." },
+    en: { title: "Box 42 Training", text: "Industrial CrossFit box - WODs and coaches." },
+    ar: { title: "بوكس 42", text: "صالة كروس فت - تمارين يومية." },
   },
   {
     id: "market-city",
@@ -105,8 +105,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#1e3a5f,#164e63)",
     accent: "#38bdf8",
     tags: ["Market", "Hyper"],
-    en: { title: "CityMart Hyper", text: "Modern hypermarket — categories and hours." },
-    ar: { title: "سيتي مارت", text: "هايبر ماركت — أقسام وأوقات." },
+    en: { title: "CityMart Hyper", text: "Modern hypermarket - categories and hours." },
+    ar: { title: "سيتي مارت", text: "هايبر ماركت - أقسام وأوقات." },
   },
   {
     id: "market-organic",
@@ -117,8 +117,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(160deg,#d9f99d,#bbf7d0)",
     accent: "#4d7c0f",
     tags: ["Market", "Organic"],
-    en: { title: "GreenLeaf Organic", text: "Organic grocery — farm-to-table story." },
-    ar: { title: "جرين ليف عضوي", text: "بقالة عضوية — من المزرعة." },
+    en: { title: "GreenLeaf Organic", text: "Organic grocery - farm-to-table story." },
+    ar: { title: "جرين ليف عضوي", text: "بقالة عضوية - من المزرعة." },
   },
   {
     id: "clinic-dental",
@@ -129,8 +129,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(150deg,#e0f2fe,#bae6fd)",
     accent: "#0ea5e9",
     tags: ["Clinic", "Dental"],
-    en: { title: "BrightSmile Dental", text: "Dental clinic — whitening and family care." },
-    ar: { title: "ابتسامة مشرقة", text: "عيادة أسنان — تبييض وعائلة." },
+    en: { title: "BrightSmile Dental", text: "Dental clinic - whitening and family care." },
+    ar: { title: "ابتسامة مشرقة", text: "عيادة أسنان - تبييض وعائلة." },
   },
   {
     id: "clinic-family",
@@ -141,8 +141,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#fed7aa,#fdba74)",
     accent: "#ea580c",
     tags: ["Clinic", "Family"],
-    en: { title: "Family Health Hub", text: "Family practice — kids, labs, follow-up." },
-    ar: { title: "مركز صحة العائلة", text: "عيادة عائلية — أطفال ومختبر." },
+    en: { title: "Family Health Hub", text: "Family practice - kids, labs, follow-up." },
+    ar: { title: "مركز صحة العائلة", text: "عيادة عائلية - أطفال ومختبر." },
   },
   {
     id: "restaurant-bistro",
@@ -153,8 +153,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(150deg,#fde68a,#fdba74)",
     accent: "#b45309",
     tags: ["Food", "Bistro"],
-    en: { title: "Noon Bistro", text: "Light bistro — brunch and neighborhood lunch." },
-    ar: { title: "نون بيسترو", text: "بيسترو خفيف — برانش وغداء." },
+    en: { title: "Noon Bistro", text: "Light bistro - brunch and neighborhood lunch." },
+    ar: { title: "نون بيسترو", text: "بيسترو خفيف - برانش وغداء." },
   },
   {
     id: "restaurant-grill",
@@ -165,8 +165,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(145deg,#3b2114,#7c2d12)",
     accent: "#f97316",
     tags: ["Food", "Grill"],
-    en: { title: "Charcoal Grill House", text: "Bold grill house — meat and combos." },
-    ar: { title: "بيت الشواء", text: "مشاوي — لحم ووجبات." },
+    en: { title: "Charcoal Grill House", text: "Bold grill house - meat and combos." },
+    ar: { title: "بيت الشواء", text: "مشاوي - لحم ووجبات." },
   },
   {
     id: "cafe-brew",
@@ -177,8 +177,8 @@ window.IBRA_CATALOG = [
     color: "linear-gradient(150deg,#d6b89c,#a67c52)",
     accent: "#6f4e37",
     tags: ["Cafe", "Coffee"],
-    en: { title: "Brew & Bean Cafe", text: "Cozy cafe — drinks menu and hours." },
-    ar: { title: "برو آند بين", text: "مقهى دافئ — مشروبات وأوقات." },
+    en: { title: "Brew & Bean Cafe", text: "Cozy cafe - drinks menu and hours." },
+    ar: { title: "برو آند بين", text: "مقهى دافئ - مشروبات وأوقات." },
   },
   {
     id: "saas-landing",

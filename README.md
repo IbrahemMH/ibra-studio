@@ -1,6 +1,6 @@
-# Ibra Studio
+﻿# Ibra Studio
 
-**Website design studio by Ibrahim** — modern bilingual templates and full sites ready to go live.
+**Website design studio by Ibrahim** - modern bilingual templates and full sites ready to go live.
 
 | | |
 |---|---|

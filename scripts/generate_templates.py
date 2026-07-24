@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Generate full bilingual templates with images, brand kits, dual currency."""
 from pathlib import Path
 import json
@@ -23,7 +23,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Classes", "nav2": "Trainers", "nav3": "Pricing", "nav4": "Join",
       "kicker": "Amman · Strength · 24/7", "h1": "Forge a stronger you.",
-      "lead": "Serious training floor — power racks, coaches, memberships built for results.",
+      "lead": "Serious training floor - power racks, coaches, memberships built for results.",
       "cta1": "Start free week", "cta2": "View classes",
       "s_title": "Memberships", "c1t": "Starter", "c1p": "Gym floor + locker.",
       "c2t": "Athlete", "c2p": "Classes + coach check-ins.", "c3t": "Elite", "c3p": "Unlimited + guest passes.",
@@ -34,7 +34,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "الحصص", "nav2": "المدربين", "nav3": "الأسعار", "nav4": "انضم",
       "kicker": "عمّان · قوة · 24/7", "h1": "اصنع نسخة أقوى منك.",
-      "lead": "صالة جدية — أجهزة قوة ومدربين وعضويات للنتائج.",
+      "lead": "صالة جدية - أجهزة قوة ومدربين وعضويات للنتائج.",
       "cta1": "أسبوع مجاني", "cta2": "عرض الحصص",
       "s_title": "العضويات", "c1t": "مبتدئ", "c1p": "صالة + خزانة.",
       "c2t": "رياضي", "c2p": "حصص + متابعة مدرب.", "c3t": "نخبة", "c3p": "بلا حدود + ضيوف.",
@@ -59,7 +59,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Yoga", "nav2": "Pilates", "nav3": "Schedule", "nav4": "Book",
       "kicker": "Mind · Body · Breath", "h1": "Move gently. Feel stronger.",
-      "lead": "Calm studio for yoga, pilates, and recovery — book in minutes.",
+      "lead": "Calm studio for yoga, pilates, and recovery - book in minutes.",
       "cta1": "Book a class", "cta2": "See schedule",
       "s_title": "Popular sessions", "c1t": "Morning flow", "c1p": "45 min vinyasa.",
       "c2t": "Core pilates", "c2p": "Mat strength work.", "c3t": "Restore", "c3p": "Stretch & breathwork.",
@@ -70,7 +70,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "يوغا", "nav2": "بيلاتس", "nav3": "الجدول", "nav4": "احجز",
       "kicker": "عقل · جسد · تنفّس", "h1": "تحرّك بهدوء. اشعر بالقوة.",
-      "lead": "استوديو هادئ لليوغا والبيلاتس — احجز خلال دقائق.",
+      "lead": "استوديو هادئ لليوغا والبيلاتس - احجز خلال دقائق.",
       "cta1": "احجز حصة", "cta2": "عرض الجدول",
       "s_title": "حصص مميزة", "c1t": "تدفق صباحي", "c1p": "45 دقيقة فينياسا.",
       "c2t": "بيلاتس كور", "c2p": "تمارين حصيرة.", "c3t": "استشفاء", "c3p": "تمدد وتنفس.",
@@ -132,11 +132,11 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Deals", "nav2": "Departments", "nav3": "Delivery", "nav4": "Shop now",
       "kicker": "Fresh today · Delivered fast", "h1": "Your weekly basket, filled smarter.",
-      "lead": "Friendly supermarket — produce, bakery, weekly deals, home delivery.",
+      "lead": "Friendly supermarket - produce, bakery, weekly deals, home delivery.",
       "cta1": "Order delivery", "cta2": "This week's deals",
       "s_title": "Departments", "c1t": "Produce", "c1p": "Fruits & vegetables daily.",
       "c2t": "Dairy & eggs", "c2p": "Local brands, fresh milk.", "c3t": "Bakery", "c3p": "Warm bread every morning.",
-      "c1pr": "Aisle 1–2", "c2pr": "Aisle 4", "c3pr": "Front",
+      "c1pr": "Aisle 1-2", "c2pr": "Aisle 4", "c3pr": "Front",
       "suffix": "", "f1": "Same-day delivery", "f2": "Weekly offers",
       "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors",
       "font_roles": "Headings · Body", "foot": "FreshBasket · Ibra Studio template",
@@ -144,11 +144,11 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "العروض", "nav2": "الأقسام", "nav3": "التوصيل", "nav4": "تسوق",
       "kicker": "طازج اليوم · توصيل سريع", "h1": "سلّتك الأسبوعية… بذكاء.",
-      "lead": "سوبرماركت ودود — خضار ومخبز وعروض وتوصيل.",
+      "lead": "سوبرماركت ودود - خضار ومخبز وعروض وتوصيل.",
       "cta1": "اطلب توصيل", "cta2": "عروض الأسبوع",
       "s_title": "الأقسام", "c1t": "خضار وفواكه", "c1p": "تُختار يومياً.",
       "c2t": "ألبان وبيض", "c2p": "ماركات محلية.", "c3t": "المخبز", "c3p": "خبز دافئ كل صباح.",
-      "c1pr": "ممر 1–2", "c2pr": "ممر 4", "c3pr": "المدخل",
+      "c1pr": "ممر 1-2", "c2pr": "ممر 4", "c3pr": "المدخل",
       "suffix": "", "f1": "توصيل نفس اليوم", "f2": "عروض أسبوعية",
       "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان",
       "font_roles": "عناوين · نص", "foot": "فريش باسكت · قالب Ibra Studio",
@@ -170,24 +170,24 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Categories", "nav2": "Hours", "nav3": "Locations", "nav4": "Find store",
       "kicker": "Hypermarket · City-wide", "h1": "Everything under one bright roof.",
-      "lead": "Modern hypermarket — categories, hours, store-first layout.",
+      "lead": "Modern hypermarket - categories, hours, store-first layout.",
       "cta1": "Browse categories", "cta2": "Store hours",
       "s_title": "Shop by category", "c1t": "Electronics", "c1p": "Phones & home tech.",
       "c2t": "Home & living", "c2p": "Kitchen and décor.", "c3t": "Grocery", "c3p": "Full supermarket floor.",
       "c1pr": "Floor 2", "c2pr": "Floor 1", "c3pr": "Ground",
-      "suffix": "", "f1": "Open 9–12", "f2": "Parking",
+      "suffix": "", "f1": "Open 9-12", "f2": "Parking",
       "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors",
       "font_roles": "Headings · Body", "foot": "CityMart · Ibra Studio template",
     },
     "ar": {
       "back": "← Ibra Studio", "nav1": "التصنيفات", "nav2": "الأوقات", "nav3": "الفروع", "nav4": "اعثر على فرع",
       "kicker": "هايبر ماركت", "h1": "كل ما تحتاجه تحت سقف واحد.",
-      "lead": "هايبر حديث — تصنيفات وأوقات وتخطيط واضح.",
+      "lead": "هايبر حديث - تصنيفات وأوقات وتخطيط واضح.",
       "cta1": "تصفح التصنيفات", "cta2": "أوقات العمل",
       "s_title": "تسوق حسب القسم", "c1t": "إلكترونيات", "c1p": "هواتف وتقنية.",
       "c2t": "المنزل", "c2p": "مطبخ وديكور.", "c3t": "البقالة", "c3p": "سوبرماركت كامل.",
       "c1pr": "طابق 2", "c2pr": "طابق 1", "c3pr": "الأرضي",
-      "suffix": "", "f1": "٩ ص – ١٢ م", "f2": "موقف",
+      "suffix": "", "f1": "٩ ص - ١٢ م", "f2": "موقف",
       "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان",
       "font_roles": "عناوين · نص", "foot": "سيتي مارت · قالب Ibra Studio",
     },
@@ -208,9 +208,9 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Farm", "nav2": "Products", "nav3": "Story", "nav4": "Order box",
       "kicker": "Organic · Local farms", "h1": "Clean food from soil you can trust.",
-      "lead": "Soft organic grocery — seasonal boxes and farm-to-table story.",
+      "lead": "Soft organic grocery - seasonal boxes and farm-to-table story.",
       "cta1": "Get a weekly box", "cta2": "Our farms",
-      "s_title": "This season", "c1t": "Harvest box", "c1p": "8–10 seasonal items.",
+      "s_title": "This season", "c1t": "Harvest box", "c1p": "8-10 seasonal items.",
       "c2t": "Pantry", "c2p": "Oils, grains, honey.", "c3t": "Dairy", "c3p": "Small-batch yogurt.",
       "c2pr": "Shop", "c3pr": "Chilled",
       "suffix": " / week", "f1": "No fake labels", "f2": "Jordan farms",
@@ -220,9 +220,9 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "المزارع", "nav2": "المنتجات", "nav3": "قصتنا", "nav4": "اطلب صندوقاً",
       "kicker": "عضوي · مزارع محلية", "h1": "طعام نظيف من تربة تثق بها.",
-      "lead": "بقالة عضوية — صناديق موسمية وقصة من المزرعة.",
+      "lead": "بقالة عضوية - صناديق موسمية وقصة من المزرعة.",
       "cta1": "صندوق أسبوعي", "cta2": "مزارعنا",
-      "s_title": "هذا الموسم", "c1t": "صندوق الحصاد", "c1p": "٨–١٠ أصناف موسمية.",
+      "s_title": "هذا الموسم", "c1t": "صندوق الحصاد", "c1p": "٨-١٠ أصناف موسمية.",
       "c2t": "المؤن", "c2p": "زيوت وحبوب وعسل.", "c3t": "ألبان", "c3p": "دفعات صغيرة.",
       "c2pr": "تسوق", "c3pr": "مبرد",
       "suffix": " / أسبوع", "f1": "بدون تسميات وهمية", "f2": "مزارع أردنية",
@@ -246,7 +246,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Services", "nav2": "Doctors", "nav3": "Insurance", "nav4": "Book visit",
       "kicker": "Multi-specialty clinic", "h1": "Care that feels clear and human.",
-      "lead": "Book visits, meet doctors, understand services — calm medical design.",
+      "lead": "Book visits, meet doctors, understand services - calm medical design.",
       "cta1": "Book appointment", "cta2": "Meet doctors",
       "s_title": "Services", "c1t": "General medicine", "c1p": "Checkups & follow-up.",
       "c2t": "Diagnostics", "c2p": "Labs & imaging referrals.", "c3t": "Pediatrics", "c3p": "Child wellness visits.",
@@ -257,7 +257,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "الخدمات", "nav2": "الأطباء", "nav3": "التأمين", "nav4": "احجز زيارة",
       "kicker": "عيادة متعددة التخصصات", "h1": "رعاية واضحة وإنسانية.",
-      "lead": "احجز زيارات وتعرّف على الأطباء — تصميم طبي هادئ.",
+      "lead": "احجز زيارات وتعرّف على الأطباء - تصميم طبي هادئ.",
       "cta1": "احجز موعداً", "cta2": "الأطباء",
       "s_title": "الخدمات", "c1t": "طب عام", "c1p": "فحوصات ومتابعة.",
       "c2t": "تشخيص", "c2p": "مختبرات وتصوير.", "c3t": "أطفال", "c3p": "متابعة صحة الطفل.",
@@ -282,7 +282,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Treatments", "nav2": "Gallery", "nav3": "FAQ", "nav4": "Book smile",
       "kicker": "Dental · Family & cosmetic", "h1": "Brighter smiles start here.",
-      "lead": "Fresh dental clinic — whitening, cleanings, easy booking.",
+      "lead": "Fresh dental clinic - whitening, cleanings, easy booking.",
       "cta1": "Book cleaning", "cta2": "Whitening offer",
       "s_title": "Popular treatments", "c1t": "Cleaning", "c1p": "Gentle hygiene + check.",
       "c2t": "Whitening", "c2p": "In-clinic brightening.", "c3t": "Aligners consult", "c3p": "Clear aligner assessment.",
@@ -294,7 +294,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "العلاجات", "nav2": "المعرض", "nav3": "أسئلة", "nav4": "احجز",
       "kicker": "أسنان · تجميل وعائلة", "h1": "ابتسامة أسطع تبدأ من هنا.",
-      "lead": "عيادة أسنان عصرية — تبييض وتنظيف وحجز سهل.",
+      "lead": "عيادة أسنان عصرية - تبييض وتنظيف وحجز سهل.",
       "cta1": "احجز تنظيفاً", "cta2": "عرض التبييض",
       "s_title": "علاجات شائعة", "c1t": "تنظيف", "c1p": "عناية لطيفة + فحص.",
       "c2t": "تبييض", "c2p": "جلسة داخل العيادة.", "c3t": "استشارة تقويم", "c3p": "تقييم تقويم شفاف.",
@@ -320,7 +320,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Family care", "nav2": "Labs", "nav3": "Hours", "nav4": "Call clinic",
       "kicker": "Neighborhood family practice", "h1": "One clinic for the whole family.",
-      "lead": "Kids, adults, labs, follow-ups — warm design for a trusted local clinic.",
+      "lead": "Kids, adults, labs, follow-ups - warm design for a trusted local clinic.",
       "cta1": "Book for family", "cta2": "Lab services",
       "s_title": "Why families choose us", "c1t": "Kids & adults", "c1p": "Care under one roof.",
       "c2t": "On-site labs", "c2p": "Fast clear reports.", "c3t": "Easy follow-up", "c3p": "Reminders via WhatsApp.",
@@ -332,7 +332,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "رعاية العائلة", "nav2": "المختبر", "nav3": "الأوقات", "nav4": "اتصل",
       "kicker": "عيادة عائلية في الحي", "h1": "عيادة واحدة لكل العائلة.",
-      "lead": "أطفال وكبار ومختبرات — تصميم دافئ لعيادة موثوقة.",
+      "lead": "أطفال وكبار ومختبرات - تصميم دافئ لعيادة موثوقة.",
       "cta1": "احجز للعائلة", "cta2": "المختبر",
       "s_title": "لماذا العائلات", "c1t": "أطفال وكبار", "c1p": "رعاية تحت سقف واحد.",
       "c2t": "مختبر في الموقع", "c2p": "تقارير واضحة سريعة.", "c3t": "متابعة سهلة", "c3p": "تذكير عبر واتساب.",
@@ -362,7 +362,7 @@ TEMPLATES = [
       "cta1": "Reserve a table", "cta2": "View menu",
       "s_title": "Evening menu", "c1t": "Ember flatbread", "c1p": "Labneh, chili oil, herbs.",
       "c2t": "Citrus lamb", "c2p": "Burnt orange, freekeh.", "c3t": "Date & tahini cake", "c3p": "Sesame, cardamom cream.",
-      "suffix": "", "f1": "Dinner 6–11", "f2": "Private table",
+      "suffix": "", "f1": "Dinner 6-11", "f2": "Private table",
       "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors",
       "font_roles": "Headings · Body", "foot": "Olive & Ember · Ibra Studio template",
     },
@@ -373,7 +373,7 @@ TEMPLATES = [
       "cta1": "احجز طاولة", "cta2": "القائمة",
       "s_title": "قائمة المساء", "c1t": "خبز إمبر", "c1p": "لبنة وزيت فلفل.",
       "c2t": "خروف بالحمضيات", "c2p": "برتقال محروق وفريكة.", "c3t": "كعكة تمر وطحينة", "c3p": "سمسم وكريمة هيل.",
-      "suffix": "", "f1": "عشاء ٦–١١", "f2": "طاولة خاصة",
+      "suffix": "", "f1": "عشاء ٦-١١", "f2": "طاولة خاصة",
       "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان",
       "font_roles": "عناوين · نص", "foot": "أوليف آند إمبر · قالب Ibra Studio",
     },
@@ -398,7 +398,7 @@ TEMPLATES = [
       "cta1": "See brunch menu", "cta2": "Get directions",
       "s_title": "On the table", "c1t": "Shakshuka board", "c1p": "Eggs, herbs, flatbread.",
       "c2t": "Garden bowl", "c2p": "Grains, greens, citrus.", "c3t": "Lemon tart", "c3p": "Bright finish with cream.",
-      "suffix": "", "f1": "Open 8–5", "f2": "Weekend brunch",
+      "suffix": "", "f1": "Open 8-5", "f2": "Weekend brunch",
       "brand_title": "Brand kit", "fonts_label": "Fonts", "colors_label": "Colors",
       "font_roles": "Headings · Body", "foot": "Noon Bistro · Ibra Studio template",
     },
@@ -409,7 +409,7 @@ TEMPLATES = [
       "cta1": "قائمة البرانش", "cta2": "الاتجاهات",
       "s_title": "على الطاولة", "c1t": "شكشوكة", "c1p": "بيض وأعشاب وخبز.",
       "c2t": "صحن الحديقة", "c2p": "حبوب وخضار وصوص.", "c3t": "تارت ليمون", "c3p": "ختام منعش.",
-      "suffix": "", "f1": "٨ ص – ٥ م", "f2": "برانش نهاية الأسبوع",
+      "suffix": "", "f1": "٨ ص - ٥ م", "f2": "برانش نهاية الأسبوع",
       "brand_title": "هوية العلامة", "fonts_label": "الخطوط", "colors_label": "الألوان",
       "font_roles": "عناوين · نص", "foot": "نون بيسترو · قالب Ibra Studio",
     },
@@ -466,7 +466,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Drinks", "nav2": "Food", "nav3": "Hours", "nav4": "Visit us",
       "kicker": "Specialty coffee", "h1": "Slow cups. Good beans.",
-      "lead": "Cozy cafe — espresso menu, light bites, neighborhood hours.",
+      "lead": "Cozy cafe - espresso menu, light bites, neighborhood hours.",
       "cta1": "See drink menu", "cta2": "Opening hours",
       "s_title": "Favorites", "c1t": "Flat white", "c1p": "Silky milk, rich espresso.",
       "c2t": "V60 pour-over", "c2p": "Single origin rotation.", "c3t": "Date oat cookie", "c3p": "Baked every morning.",
@@ -477,7 +477,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "المشروبات", "nav2": "الطعام", "nav3": "الأوقات", "nav4": "زورنا",
       "kicker": "قهوة مختصة", "h1": "فناجين بطيئة. حبوب ممتازة.",
-      "lead": "مقهى دافئ — إسبريسو ووجبات خفيفة وأوقات الحي.",
+      "lead": "مقهى دافئ - إسبريسو ووجبات خفيفة وأوقات الحي.",
       "cta1": "قائمة المشروبات", "cta2": "أوقات العمل",
       "s_title": "الأكثر طلباً", "c1t": "فلات وايت", "c1p": "حليب ناعم وإسبريسو.",
       "c2t": "V60", "c2p": "محصول أحادي.", "c3t": "كوكيز تمر", "c3p": "يُخبز كل صباح.",
@@ -502,7 +502,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Services", "nav2": "Stylists", "nav3": "Gallery", "nav4": "Book",
       "kicker": "Hair · Color · Care", "h1": "Your next look, crafted.",
-      "lead": "Elegant salon — cuts, color, bridal, easy booking.",
+      "lead": "Elegant salon - cuts, color, bridal, easy booking.",
       "cta1": "Book appointment", "cta2": "View services",
       "s_title": "Signature services", "c1t": "Cut & style", "c1p": "Consultation + finish.",
       "c2t": "Color", "c2p": "Balayage, gloss, full color.", "c3t": "Bridal trial", "c3p": "Hair & soft glam.",
@@ -513,7 +513,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "الخدمات", "nav2": "المصففين", "nav3": "المعرض", "nav4": "احجز",
       "kicker": "شعر · لون · عناية", "h1": "إطلالتك القادمة… بإتقان.",
-      "lead": "صالون أنيق — قص وصبغ وعرايس وحجز.",
+      "lead": "صالون أنيق - قص وصبغ وعرايس وحجز.",
       "cta1": "احجز موعداً", "cta2": "الخدمات",
       "s_title": "خدمات مميزة", "c1t": "قص وتصفيف", "c1p": "استشارة + تشطيب.",
       "c2t": "صبغ", "c2p": "بالاياح ولمعة ولون.", "c3t": "تجربة عروس", "c3p": "شعر ومكياج ناعم.",
@@ -574,7 +574,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Product", "nav2": "Pricing", "nav3": "Docs", "nav4": "Start free",
       "kicker": "SaaS landing template", "h1": "Ship updates customers notice.",
-      "lead": "Dark conversion landing for apps and tools — hero, features, strong CTA.",
+      "lead": "Dark conversion landing for apps and tools - hero, features, strong CTA.",
       "cta1": "Get started", "cta2": "View demo",
       "s_title": "Plans", "c1t": "Free", "c1p": "Try core features.",
       "c2t": "Pro", "c2p": "Teams & integrations.", "c3t": "Business", "c3p": "Scale with support.",
@@ -586,7 +586,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "المنتج", "nav2": "الأسعار", "nav3": "التوثيق", "nav4": "ابدأ مجاناً",
       "kicker": "قالب صفحة منتج", "h1": "أطلق تحديثات يلاحظها عملاؤك.",
-      "lead": "صفحة هبوط داكنة للتطبيقات — بطل ومميزات ودعوة واضحة.",
+      "lead": "صفحة هبوط داكنة للتطبيقات - بطل ومميزات ودعوة واضحة.",
       "cta1": "ابدأ الآن", "cta2": "عرض تجريبي",
       "s_title": "الخطط", "c1t": "مجاني", "c1p": "جرّب الميزات الأساسية.",
       "c2t": "احترافي", "c2p": "فرق وتكاملات.", "c3t": "أعمال", "c3p": "توسّع مع دعم.",
@@ -612,7 +612,7 @@ TEMPLATES = [
     "en": {
       "back": "← Ibra Studio", "nav1": "Work", "nav2": "About", "nav3": "Contact", "nav4": "Hire me",
       "kicker": "Creative portfolio", "h1": "Design with room to breathe.",
-      "lead": "Editorial portfolio for freelancers — big type and project cards.",
+      "lead": "Editorial portfolio for freelancers - big type and project cards.",
       "cta1": "View selected work", "cta2": "About",
       "s_title": "Selected projects", "c1t": "Brand system", "c1p": "Identity and packaging.",
       "c2t": "Studio website", "c2p": "Clean motion-ready layout.", "c3t": "Festival booklet", "c3p": "Typography-led print.",
@@ -624,7 +624,7 @@ TEMPLATES = [
     "ar": {
       "back": "← Ibra Studio", "nav1": "الأعمال", "nav2": "نبذة", "nav3": "تواصل", "nav4": "وظّفني",
       "kicker": "بورتفوليو إبداعي", "h1": "تصميم بمساحة للتنفّس.",
-      "lead": "معرض أعمال للمستقلين — خطوط كبيرة وبطاقات مشاريع.",
+      "lead": "معرض أعمال للمستقلين - خطوط كبيرة وبطاقات مشاريع.",
       "cta1": "عرض الأعمال", "cta2": "نبذة",
       "s_title": "مشاريع مختارة", "c1t": "نظام هوية", "c1p": "هوية وتغليف.",
       "c2t": "موقع استوديو", "c2p": "تخطيط نظيف.", "c3t": "كتيّب مهرجان", "c3p": "طباعة تعتمد على الخط.",
@@ -866,8 +866,8 @@ def write_one(t):
       <div class="brand-row">
         <div class="brand-label" data-i18n="fonts_label">Fonts</div>
         <div class="font-lines">
-          <div><strong>{t["font_display"]}</strong> — <span data-i18n="font_roles">Headings · Body</span> (display)</div>
-          <div><strong>{t["font_body"]}</strong> — body</div>
+          <div><strong>{t["font_display"]}</strong> - <span data-i18n="font_roles">Headings · Body</span> (display)</div>
+          <div><strong>{t["font_body"]}</strong> - body</div>
         </div>
       </div>
       <div class="brand-row">

@@ -1,4 +1,4 @@
-/* Shared EN/AR for all Ibra Studio templates — reads ibra_lang from localStorage */
+﻿/* Shared EN/AR for all Ibra Studio templates - reads ibra_lang from localStorage */
 (function () {
   function apply(dict, lang) {
     const t = dict[lang] || dict.en;

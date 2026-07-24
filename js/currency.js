@@ -1,4 +1,4 @@
-/* JOD base prices → display JOD or USD */
+﻿/* JOD base prices → display JOD or USD */
 (function () {
   var RATE = 1.41; // 1 JOD ≈ 1.41 USD
 
@@ -47,7 +47,7 @@
       var a = formatJod(parts[0]);
       var b = formatJod(parts[1]);
       var prefix = el.getAttribute("data-prefix") || "From ";
-      el.textContent = prefix + a + " – " + b;
+      el.textContent = prefix + a + " - " + b;
     });
   }
 

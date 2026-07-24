@@ -1,4 +1,4 @@
-# Ibra Studio — What it is & Pricing
+﻿# Ibra Studio - What it is & Pricing
 
 **Owner:** Ibrahim  
 **Brand:** Ibra Studio  
@@ -33,18 +33,18 @@ USD on the website uses ≈ **1 JOD = 1.41 USD** (rounded).
 
 | Package | What you get | JOD | USD (approx.) |
 |---------|----------------|-----|----------------|
-| **A — Template customize** | Client picks a gallery template. You change logo, colors, text, photos, contact. Design-focused delivery (files + preview). | **50 – 80 JOD** | **$70 – $113** |
-| **B — Custom design** | Unique look from scratch (not only a template). Layouts, brand direction, polished pages. | **100 – 180 JOD** | **$141 – $254** |
-| **C — Full site online** | Design + build + publish (e.g. GitHub Pages or help with their domain). Live URL clients can share. | **150 – 300 JOD** | **$212 – $423** |
+| **A - Template customize** | Client picks a gallery template. You change logo, colors, text, photos, contact. Design-focused delivery (files + preview). | **50 - 80 JOD** | **$70 - $113** |
+| **B - Custom design** | Unique look from scratch (not only a template). Layouts, brand direction, polished pages. | **100 - 180 JOD** | **$141 - $254** |
+| **C - Full site online** | Design + build + publish (e.g. GitHub Pages or help with their domain). Live URL clients can share. | **150 - 300 JOD** | **$212 - $423** |
 
-### What’s usually included
-- Up to agreed number of pages (often 1–5 for starters)  
+### What's usually included
+- Up to agreed number of pages (often 1-5 for starters)  
 - Mobile-friendly layout  
 - EN and/or AR content (client provides text or you place what they send)  
 - Contact / WhatsApp buttons  
-- 1–2 rounds of small revisions  
+- 1-2 rounds of small revisions  
 
-### What’s usually NOT included (extra quote)
+### What's usually NOT included (extra quote)
 - Logo design from zero  
 - Professional photography  
 - Online payments / booking systems  
@@ -56,9 +56,9 @@ USD on the website uses ≈ **1 JOD = 1.41 USD** (rounded).
 ## Suggested timelines
 | Package | Typical time |
 |---------|----------------|
-| A Template customize | 3–7 days |
-| B Custom design | 7–14 days |
-| C Full site online | 10–21 days |
+| A Template customize | 3-7 days |
+| B Custom design | 7-14 days |
+| C Full site online | 10-21 days |
 
 ---
 
@@ -82,8 +82,8 @@ USD on the website uses ≈ **1 JOD = 1.41 USD** (rounded).
 ---
 
 ## Notes for Ibrahim
-- These are **starting ranges** — raise price for rush jobs, many pages, or heavy custom work.  
+- These are **starting ranges** - raise price for rush jobs, many pages, or heavy custom work.  
 - Always confirm currency (JOD vs USD) in the chat before starting.  
-- Template demo prices (menu items, gym memberships) are **fake sample data** for design only — not your service fees.  
+- Template demo prices (menu items, gym memberships) are **fake sample data** for design only - not your service fees.  
 
 © Ibrahim · Ibra Studio
