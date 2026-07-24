@@ -192,6 +192,7 @@ section{padding:4.5rem 0;position:relative;z-index:1}
   .contact-grid{grid-template-columns:1fr}
   section{padding:3rem 0}
   .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:4.5rem 0 auto 0;background:rgba(8,8,15,.98);border-bottom:1px solid rgba(255,255,255,.06);padding:1rem;gap:.25rem;z-index:99}
   .menu-btn{display:grid;place-items:center}
 }
 @media(max-width:560px){
@@ -247,7 +248,7 @@ html[dir="rtl"] .nav-brand span{font-family:"IBM Plex Sans Arabic","Syne",sans-s
       <h1 data-i18n="hero_title">I design websites people actually want to <span class="grad-text">hire you from</span></h1>
       <p class="lead" data-i18n="hero_lead">18 industry-specific templates for gyms, clinics, markets, restaurants, cafes, salons, shops, and more. Pick a style, I will customize it &mdash; or build a full site that goes live in days.</p>
       <div class="hero-cta">
-        <a class="glass-btn glass-btn-accent" style="padding:.7rem 1.35rem" href="#templates" data-i18n="cta_templates">View templates</a>
+        <a class="glass-btn glass-btn-accent" href="#templates" data-i18n="cta_templates">View templates</a>
         <a class="glass-btn" data-whatsapp data-i18n="cta_whatsapp">WhatsApp me</a>
       </div>
       <div class="hero-stats">
