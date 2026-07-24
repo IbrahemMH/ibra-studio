@@ -96,6 +96,12 @@
     p3_text: "You get a polished design - and optionally a working website ready to publish.",
     p4_title: "Go live",
     p4_text: "We publish online (GitHub Pages or your domain) so people can reach you.",
+    portfolio_label: "Portfolio",
+    portfolio_title: "Sites I've built",
+    portfolio_lead: "Each project starts with a template or custom design, then goes live as a working site. Here are recent deliveries.",
+    pf1_text: "Customized from the Iron Forge template. Dark bold gym site with membership system and class schedule.",
+    pf2_text: "Adapted from FreshBasket. Color-matched to brand, added delivery info and weekly deal sliders.",
+    pf3_text: "Built from CarePlus. Featured doctor profiles, online booking link, and multilingual AR/EN pages.",
     about_label: "About",
     about_title: "Work with Ibra Studio",
     about_h: "Design that helps you get clients",
@@ -217,6 +223,12 @@
     p3_text: "تحصل على تصميم احترافي - واختيارياً موقع جاهز للنشر.",
     p4_title: "انشر أونلاين",
     p4_text: "ننشر الموقع (GitHub Pages أو دومينك) ليصل الناس إليك.",
+    portfolio_label: "أعمالي",
+    portfolio_title: "مواقع أنجزتها",
+    portfolio_lead: "كل مشروع يبدأ بقالب أو تصميم مخصص، ثم ينشر كموقع حي. هذه نماذج لآخر التوصيلات.",
+    pf1_text: "مخصص من قالب Iron Forge. موقع نادي رياضي داكن مع نظام عضويات وجدول حصص.",
+    pf2_text: "مقتبس من FreshBasket. ألوان مطابقة للعلامة مع معلومات توصيل وعروض أسبوعية.",
+    pf3_text: "مبني من CarePlus. ملفات أطباء ورابط حجز أونلاين وصفحات بالعربي والإنجليزي.",
     about_label: "نبذة",
     about_title: "اعمل مع Ibra Studio",
     about_h: "تصميم يساعدك تجيب عملاء",
@@ -434,8 +446,24 @@ function initForm() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nProject: ${type}\n\n${message}`
     );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    var mailto = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    var ok = false;
+    try { var w = window.open(mailto, "_blank"); if(w) ok = true } catch(e) {}
+    if(!ok) { try { window.location.href = mailto; ok = true } catch(e) {} }
+    if(!ok) {
+      var txt = `To: ${EMAIL}\nSubject: Ibra Studio request - ${type}\n\nName: ${name}\nEmail: ${email}\nProject: ${type}\n\n${message}`;
+      try { navigator.clipboard.writeText(txt); showFormMsg(form, "Copied to clipboard. Send via your email app.", "success") } catch(e) { showFormMsg(form, "Could not open email app. Email ibraheem.ha2@hotmail.com directly.", "error") }
+    }
   });
+}
+function showFormMsg(form, txt, type){
+  var el = form.querySelector(".form-msg") || function(){var d=document.createElement("p");d.className="form-msg";form.appendChild(d);return d}();
+  el.textContent = txt; el.className = "form-msg " + (type||"");
+  setTimeout(function(){el.textContent=""}, 5000);
+}
+
+function trackEvent(name){
+  try{var d=JSON.parse(localStorage.getItem("ibra_events")||"{}");d[name]=(d[name]||0)+1;localStorage.setItem("ibra_events",JSON.stringify(d))}catch(e){}
 }
 
 function initContactLinks() {
@@ -443,10 +471,12 @@ function initContactLinks() {
     el.setAttribute("href", WHATSAPP);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
+    el.addEventListener("click", function(){trackEvent("whatsapp_click")});
   });
   document.querySelectorAll("[data-email-link]").forEach((el) => {
     el.setAttribute("href", `mailto:${EMAIL}`);
     el.textContent = EMAIL;
+    el.addEventListener("click", function(){trackEvent("email_click")});
   });
   document.querySelectorAll("[data-phone]").forEach((el) => {
     el.textContent = PHONE_DISPLAY;

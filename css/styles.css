@@ -726,6 +726,17 @@ html[dir="rtl"] .t-quote::before{content:"\201D";margin-right:0;margin-left:.15r
   font-size: 0.9rem;
 }
 
+/* Portfolio */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.portfolio-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .15s}
+.portfolio-card:hover{border-color:rgba(61,255,168,.3);transform:translateY(-2px)}
+.pf-visual{aspect-ratio:16/9;display:flex;align-items:flex-start;justify-content:flex-end;padding:.5rem}
+.pf-tag{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:rgba(0,0,0,.55);color:#fff;padding:.2rem .5rem;border-radius:999px}
+.pf-body{padding:.75rem .85rem .9rem}
+.pf-body h3{font-family:var(--font-display);font-size:.95rem;letter-spacing:-.02em;margin-bottom:.3rem}
+.pf-body p{color:var(--muted);font-size:.8rem;line-height:1.4}
+@media(max-width:800px){.portfolio-grid{grid-template-columns:1fr}}
+
 /* About */
 .about-box {
   display: grid;
@@ -820,6 +831,9 @@ html[dir="rtl"] .t-quote::before{content:"\201D";margin-right:0;margin-left:.15r
   font-size: 0.85rem;
   color: var(--muted);
 }
+.form-msg{margin-top:.5rem;padding:.5rem .75rem;border-radius:10px;font-size:.82rem;line-height:1.4}
+.form-msg.success{background:var(--accent-soft);color:var(--accent)}
+.form-msg.error{background:rgba(255,107,122,.12);color:var(--danger)}
 
 /* Footer */
 .footer {
